@@ -15,8 +15,8 @@ import java.util.Collections;
  * Created by wanghongfei(hongfei7@staff.sina.com.cn) on 9/11/16.
  */
 @Component
-public class AlanSsoAuthProvider implements AuthenticationProvider {
-    private static final Logger log = LoggerFactory.getLogger(AlanSsoAuthProvider.class);
+public class SsoAuthProvider implements AuthenticationProvider {
+    private static final Logger log = LoggerFactory.getLogger(SsoAuthProvider.class);
 
     @Override
     public Authentication authenticate(Authentication authentication) throws AuthenticationException {
