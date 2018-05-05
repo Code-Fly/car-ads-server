@@ -1,0 +1,18 @@
+package com.cloud.carads.management.controller;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+
+@Controller
+@RequestMapping(value = "/user")
+public class UserController {
+    @RequestMapping(value = "/{page}", method = RequestMethod.GET)
+    public String login(Model model,
+                        @PathVariable String page) {
+        model.addAttribute("name", "Dear");
+        return "user/" + page;
+    }
+}

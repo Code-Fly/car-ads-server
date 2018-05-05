@@ -4,11 +4,10 @@
 package com.cloud.carads.account.controller;
 
 import com.cloud.carads.account.service.IUserService;
-import com.cloud.wechat.commons.controller.BaseController;
-import com.cloud.wechat.commons.entity.Error;
-import com.cloud.wechat.commons.entity.ErrorMsg;
-import com.cloud.wechat.commons.exception.ConnectionFailedException;
-import com.cloud.wechat.commons.exception.WeChatException;
+import com.cloud.carads.commons.controller.BaseController;
+import com.cloud.carads.commons.entity.Error;
+import com.cloud.carads.commons.entity.ErrorMsg;
+import com.cloud.carads.commons.exception.ConnectionFailedException;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
@@ -42,7 +41,6 @@ public class UserController extends BaseController {
      * @param nextOpenId nextOpenId
      * @return
      * @throws ConnectionFailedException
-     * @throws WeChatException
      */
     @GetMapping(value = "/user", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
     @ApiOperation(value = "用户列表")
@@ -50,7 +48,7 @@ public class UserController extends BaseController {
                                       HttpServletResponse response,
                                       @ApiParam(value = "起始openId，0为第一个")
                                       @RequestParam(required = false, defaultValue = "0") String nextOpenId
-    ) throws ConnectionFailedException, WeChatException, UnsupportedEncodingException {
+    ) throws ConnectionFailedException, UnsupportedEncodingException {
 
         if ("0".equals(nextOpenId)) {
             nextOpenId = null;

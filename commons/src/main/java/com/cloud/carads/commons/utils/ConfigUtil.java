@@ -7,6 +7,7 @@ import org.apache.commons.codec.CharEncoding;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import javax.servlet.http.HttpServletRequest;
 import java.io.*;
 import java.util.Map;
 import java.util.Properties;
@@ -17,8 +18,12 @@ import java.util.Properties;
 public class ConfigUtil {
     private static final Logger logger = LoggerFactory.getLogger(ConfigUtil.class);
 
+    public static final String LINE_SEPARATOR = System.getProperty("line.separator", "\n");
+
+    public static final String PATH_SEPARATOR = File.separator;
+
     public static String getJson(String fileName) {
-        String path = WxConst.getServerPath() + "WEB-INF/classes/" + fileName;
+        String path = getServerPath() + "WEB-INF/classes/" + fileName;
         String tempString = null;
         String lastStr = "";
 
@@ -39,7 +44,7 @@ public class ConfigUtil {
         Properties p = new Properties();
         String result = "";
         try {
-            String path = WxConst.getServerPath() + "WEB-INF/classes/" + fileName;
+            String path = getServerPath() + "WEB-INF/classes/" + fileName;
             p.load(new InputStreamReader(new FileInputStream(path), "UTF-8"));
 //            String path = "/api/" + fileName;
 //            p.load(new InputStreamReader(ClassLoader.getSystemResourceAsStream(path), "UTF-8"));
@@ -54,7 +59,7 @@ public class ConfigUtil {
     public static void setProperty(String fileName, String keyname, String keyvalue) {
         Properties p = new Properties();
         try {
-            String path = WxConst.getServerPath() + "WEB-INF/classes/" + fileName;
+            String path = getServerPath() + "WEB-INF/classes/" + fileName;
             p.load(new FileInputStream(path));
             OutputStream fos = new FileOutputStream(path);
             p.setProperty(keyname, keyvalue);
@@ -67,7 +72,7 @@ public class ConfigUtil {
     public static void setProperty(String fileName, Map<String, String> map) {
         Properties p = new Properties();
         try {
-            String path = WxConst.getServerPath() + "WEB-INF/classes/" + fileName;
+            String path = getServerPath() + "WEB-INF/classes/" + fileName;
             p.load(new FileInputStream(path));
             OutputStream fos = new FileOutputStream(path);
             p.putAll(map);
@@ -75,5 +80,54 @@ public class ConfigUtil {
         } catch (IOException e) {
             logger.error("更新配置失败", e);
         }
+    }
+
+    public static String getServerPath() {
+        String path = Thread.currentThread().getContextClassLoader().getResource(PATH_SEPARATOR).getPath();
+
+        if (path.startsWith("file:/")) {
+            path = "/" + path.substring(6, path.indexOf("/" + "WEB-INF")) + "/";
+        } else {
+            path = "/" + path.substring(1, path.indexOf("/" + "WEB-INF")) + "/";
+        }
+
+        return path;
+    }
+
+    /**
+     * 获取请求的URL
+     *
+     * @param request
+     * @return
+     */
+    public String getServerUrl(HttpServletRequest request) {
+        String path = request.getContextPath() + "/";
+//        int port = request.getServerPort();
+//        String basePath = null;
+//        if (80 == port) {
+//            basePath = request.getScheme() + "://" + request.getServerName() + path;
+//        } else {
+//            basePath = request.getScheme() + "://" + request.getServerName() + ":" + request.getServerPort() + path;
+//        }
+
+        return path;
+    }
+
+    /**
+     * 获取请求的IP
+     *
+     * @param request
+     * @return
+     */
+    public static String getClientIp(HttpServletRequest request) {
+        String remoteAddr = null;
+
+        if (request != null) {
+            remoteAddr = request.getHeader("X-FORWARDED-FOR");
+            if (remoteAddr == null || "".equals(remoteAddr)) {
+                remoteAddr = request.getRemoteAddr();
+            }
+        }
+        return remoteAddr;
     }
 }

@@ -1,6 +1,6 @@
 package com.cloud.carads.commons.utils;
 
-import com.cloud.wechat.commons.exception.ConnectionFailedException;
+import com.cloud.carads.commons.exception.ConnectionFailedException;
 import org.apache.http.Header;
 import org.apache.http.HttpEntity;
 import org.apache.http.NameValuePair;

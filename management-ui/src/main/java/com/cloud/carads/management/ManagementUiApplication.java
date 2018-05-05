@@ -1,4 +1,4 @@
-package com.cloud.carads.account;
+package com.cloud.carads.management;
 
 import com.cloud.carads.Scan;
 import org.springframework.boot.SpringApplication;
@@ -13,9 +13,9 @@ import org.springframework.context.annotation.ComponentScan;
 @EnableDiscoveryClient
 @SpringBootApplication
 @ComponentScan(basePackageClasses = {Scan.class})
-public class AccountApplication {
+public class ManagementUiApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(AccountApplication.class, args);
+        SpringApplication.run(ManagementUiApplication.class, args);
     }
 }

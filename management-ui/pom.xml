@@ -10,8 +10,9 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.cloud.carads</groupId>
-    <artifactId>account</artifactId>
+    <artifactId>management-ui</artifactId>
     <packaging>jar</packaging>
+
 
     <dependencies>
         <dependency>
@@ -22,6 +23,10 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-actuator</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-thymeleaf</artifactId>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -81,4 +86,6 @@
             </plugin>
         </plugins>
     </build>
+
+
 </project>
