@@ -10,9 +10,8 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.cloud.carads</groupId>
-    <artifactId>management-ui</artifactId>
+    <artifactId>authorization</artifactId>
     <packaging>jar</packaging>
-
 
     <dependencies>
         <dependency>
@@ -38,10 +37,10 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
-        <dependency>
-            <groupId>org.flywaydb</groupId>
-            <artifactId>flyway-core</artifactId>
-        </dependency>
+        <!--<dependency>-->
+        <!--<groupId>org.flywaydb</groupId>-->
+        <!--<artifactId>flyway-core</artifactId>-->
+        <!--</dependency>-->
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-config</artifactId>
@@ -66,10 +65,15 @@
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-oauth2</artifactId>
         </dependency>
-        <!--<dependency>-->
-        <!--<groupId>org.springframework.boot</groupId>-->
-        <!--<artifactId>spring-boot-starter-data-redis</artifactId>-->
-        <!--</dependency>-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-velocity</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-jdbc</artifactId>
+        </dependency>
         <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
