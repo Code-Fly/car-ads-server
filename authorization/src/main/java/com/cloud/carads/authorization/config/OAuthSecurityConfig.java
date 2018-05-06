@@ -23,10 +23,6 @@ import org.springframework.security.oauth2.provider.token.store.JdbcTokenStore;
 import javax.sql.DataSource;
 import java.util.concurrent.TimeUnit;
 
-
-/**
- * Created by wanghongfei(hongfei7@staff.sina.com.cn) on 9/12/16.
- */
 @Configuration
 @EnableAuthorizationServer
 public class OAuthSecurityConfig extends AuthorizationServerConfigurerAdapter {
@@ -93,6 +89,7 @@ public class OAuthSecurityConfig extends AuthorizationServerConfigurerAdapter {
         endpoints.authenticationManager(authenticationManager);
         endpoints.tokenStore(tokenStore());
         endpoints.userDetailsService(userService);
+//        endpoints.pathMapping("/oauth/confirm_access", "/extenal/oauth/confirm_access");
 //        endpoints.authorizationCodeServices(authorizationCodeServices());
 //        endpoints.approvalStore(approvalStore());
 

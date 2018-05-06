@@ -9,5 +9,8 @@ index
 <p th:text="'Hello！, ' + ${name} + '!'">3333</p>
 <p th:text=" ${appId} ">3333</p>
 <p th:text=" ${appSecret} ">3333</p>
+<form th:action="@{/logout}" method="post">
+    <button type="submit">logout</button>
+</form>
 </body>
 </html>
