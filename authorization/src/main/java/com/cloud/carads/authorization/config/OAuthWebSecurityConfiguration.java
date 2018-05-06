@@ -20,6 +20,8 @@ public class OAuthWebSecurityConfiguration extends WebSecurityConfigurerAdapter 
                 .authorizeRequests()
                 .antMatchers("/oauth/login").permitAll()
                 .antMatchers("/oauth/logout").permitAll()
+                .antMatchers("/oauth/exit").permitAll()
+
 
                 .anyRequest().authenticated()
                 .and()
@@ -31,10 +33,10 @@ public class OAuthWebSecurityConfiguration extends WebSecurityConfigurerAdapter 
                 .loginPage("/oauth/login")
                 .failureUrl("/oauth/login?error=1")
                 .permitAll()
-                .and()
-                .logout().logoutUrl("/oauth/logout")
-                .logoutSuccessUrl("/oauth/exit")
-                .permitAll()
+//                .and()
+//                .logout().logoutUrl("/oauth/logout")
+//                .logoutSuccessUrl("/oauth/exit")
+//                .permitAll()
                 .and().httpBasic();
     }
 

@@ -2,7 +2,6 @@ package com.cloud.carads.management.config;
 
 import com.google.gson.Gson;
 import com.google.gson.JsonObject;
-import com.sun.security.auth.UserPrincipal;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.security.oauth2.client.EnableOAuth2Sso;
@@ -15,6 +14,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
+import org.springframework.security.core.userdetails.User;
 import org.springframework.security.oauth2.client.OAuth2ClientContext;
 import org.springframework.security.oauth2.client.OAuth2RestTemplate;
 import org.springframework.security.oauth2.client.filter.OAuth2ClientAuthenticationProcessingFilter;
@@ -33,7 +33,7 @@ import java.util.Map;
 @EnableAutoConfiguration
 public class OAuthConfiguration extends WebSecurityConfigurerAdapter {
     @Autowired
-    OAuth2ClientContext oauth2ClientContext;
+    private OAuth2ClientContext oauth2ClientContext;
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
@@ -109,7 +109,7 @@ public class OAuthConfiguration extends WebSecurityConfigurerAdapter {
             JsonObject principal = new Gson().toJsonTree(map).getAsJsonObject();
             principal.remove("authorities");
 
-            return new Gson().fromJson(principal.toString(), UserPrincipal.class);
+            return new Gson().fromJson(principal.toString(), User.class);
         }
     }
 }
