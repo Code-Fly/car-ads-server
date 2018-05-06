@@ -18,23 +18,23 @@ public class OAuthWebSecurityConfiguration extends WebSecurityConfigurerAdapter 
                 .and()
                 .antMatcher("/**") // 捕捉所有路由
                 .authorizeRequests()
-                .antMatchers("/index").permitAll()
+                .antMatchers("/oauth/login").permitAll()
+                .antMatchers("/oauth/logout").permitAll()
+
                 .anyRequest().authenticated()
                 .and()
                 .exceptionHandling()
-                .authenticationEntryPoint(new LoginUrlAuthenticationEntryPoint("/index"))
+                .authenticationEntryPoint(new LoginUrlAuthenticationEntryPoint("/oauth/login"))
                 .and().formLogin()
                 .usernameParameter("username")
                 .passwordParameter("password")
-                .loginPage("/index")
+                .loginPage("/oauth/login")
+                .failureUrl("/oauth/login?error=1")
                 .permitAll()
+//                .and()
+//                .logout().logoutUrl("/oauth/logout")
+//                .permitAll()
                 .and().httpBasic();
-//        http.authorizeRequests().antMatchers("/oauth/**").permitAll();
-//        http.formLogin()
-//                .usernameParameter("username")
-//                .passwordParameter("password")
-//                .loginPage("/index")
-//                .permitAll();
     }
 
     @Override
