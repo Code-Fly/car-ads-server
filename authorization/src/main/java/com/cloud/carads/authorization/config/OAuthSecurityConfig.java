@@ -121,7 +121,7 @@ public class OAuthSecurityConfig extends AuthorizationServerConfigurerAdapter {
 //        oauthServer.checkTokenAccess("permitAll()");
 //        oauthServer.allowFormAuthenticationForClients();
         security.realm(REALM);
-        security.passwordEncoder(passwordEncoder);
+//        security.passwordEncoder(passwordEncoder);
         security.allowFormAuthenticationForClients();
         security.tokenKeyAccess("permitAll()");
         security.checkTokenAccess("isAuthenticated()");

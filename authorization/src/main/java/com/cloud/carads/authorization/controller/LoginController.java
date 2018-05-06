@@ -18,13 +18,13 @@ public class LoginController {
 //
 //        return "forward:index";
 //    }
-
-//    @RequestMapping(value = "/login", method = RequestMethod.GET)
+//
+//    @RequestMapping(value = "/index", method = RequestMethod.GET)
 //    public String index(Model model) {
 //        model.addAttribute("name", "Dear");
 //        model.addAttribute("appId", WECHAT_SETTING_APP_ID);
 //        model.addAttribute("appSecret", WECHAT_SETTING_APP_SECRET);
 //
-//        return "login";
+//        return "index";
 //    }
 }
