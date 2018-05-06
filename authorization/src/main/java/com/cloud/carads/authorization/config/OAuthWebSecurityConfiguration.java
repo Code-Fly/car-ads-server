@@ -13,7 +13,6 @@ public class OAuthWebSecurityConfiguration extends WebSecurityConfigurerAdapter 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
 //        super.configure(http);
-//        http.csrf().disable();
         http.cors()
                 .and()
                 .csrf().disable()
@@ -32,9 +31,10 @@ public class OAuthWebSecurityConfiguration extends WebSecurityConfigurerAdapter 
                 .loginPage("/oauth/login")
                 .failureUrl("/oauth/login?error=1")
                 .permitAll()
-//                .and()
-//                .logout().logoutUrl("/oauth/logout")
-//                .permitAll()
+                .and()
+                .logout().logoutUrl("/oauth/logout")
+                .logoutSuccessUrl("/oauth/exit")
+                .permitAll()
                 .and().httpBasic();
     }
 
