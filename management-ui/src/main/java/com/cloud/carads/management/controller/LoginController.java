@@ -6,6 +6,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import java.security.Principal;
+
 @Controller
 @RequestMapping(value = "/")
 public class LoginController {
@@ -27,8 +29,8 @@ public class LoginController {
 //    }
 
     @RequestMapping(value = "/index", method = RequestMethod.GET)
-    public String index(Model model) {
-        model.addAttribute("name", "Dear");
+    public String index(Model model, Principal principal) {
+        model.addAttribute("name", principal.getName());
         model.addAttribute("appId", WECHAT_SETTING_APP_ID);
         model.addAttribute("appSecret", WECHAT_SETTING_APP_SECRET);
 
