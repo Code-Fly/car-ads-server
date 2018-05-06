@@ -10,20 +10,17 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
  * Created by wanghongfei(hongfei7@staff.sina.com.cn) on 9/12/16.
  */
 @Configuration
-public class OAuthWebConfig extends WebSecurityConfigurerAdapter {
-
+public class OAuthWebSecurityConfiguration extends WebSecurityConfigurerAdapter {
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
-//        http.csrf().disable()
-//                .authorizeRequests().antMatchers("/UI/login/**").permitAll()
-//                .anyRequest().authenticated();
         super.configure(http);
     }
 
     @Override
     public void configure(WebSecurity web) throws Exception {
         web.ignoring()
-                .antMatchers("/favor.ico");
+                .antMatchers("/favicon.ico");
     }
+
 }
