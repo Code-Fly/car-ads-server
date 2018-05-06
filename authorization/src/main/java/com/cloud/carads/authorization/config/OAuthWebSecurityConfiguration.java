@@ -16,6 +16,7 @@ public class OAuthWebSecurityConfiguration extends WebSecurityConfigurerAdapter 
 //        http.csrf().disable();
         http.cors()
                 .and()
+                .csrf().disable()
                 .antMatcher("/**") // 捕捉所有路由
                 .authorizeRequests()
                 .antMatchers("/oauth/login").permitAll()

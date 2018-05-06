@@ -39,10 +39,11 @@ public class OAuthConfiguration extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
         http.csrf().disable()
                 // UI
-                .authorizeRequests().antMatchers("/login/**").permitAll()
-                .anyRequest().authenticated().and()
+                .authorizeRequests()
+                .antMatchers("/login").permitAll()
+                .anyRequest().authenticated()
                 // UI login / logout
-                .exceptionHandling().authenticationEntryPoint(new LoginUrlAuthenticationEntryPoint("/login"))
+                .and().exceptionHandling().authenticationEntryPoint(new LoginUrlAuthenticationEntryPoint("/login"))
                 .and().logout().logoutUrl("/logout")
                 .and().addFilterBefore(ssoFilter(), BasicAuthenticationFilter.class);
     }
