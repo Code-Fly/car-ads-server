@@ -1,0 +1,618 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 19.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="图层_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 524 70" style="enable-background:new 0 0 524 70;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:url(#XMLID_2_);}
+	.st1{fill:#195B96;}
+	.st2{fill-rule:evenodd;clip-rule:evenodd;fill:#171717;}
+	.st3{clip-path:url(#XMLID_3_);fill-rule:evenodd;clip-rule:evenodd;fill:#FCFDFD;}
+	.st4{clip-path:url(#XMLID_3_);fill-rule:evenodd;clip-rule:evenodd;fill:#FBFBFC;}
+	.st5{clip-path:url(#XMLID_3_);fill-rule:evenodd;clip-rule:evenodd;fill:#F9FAFC;}
+	.st6{clip-path:url(#XMLID_3_);fill-rule:evenodd;clip-rule:evenodd;fill:#F9FAFA;}
+	.st7{clip-path:url(#XMLID_3_);fill-rule:evenodd;clip-rule:evenodd;fill:#F7F9FA;}
+	.st8{clip-path:url(#XMLID_3_);fill-rule:evenodd;clip-rule:evenodd;fill:#F5F8FA;}
+	.st9{clip-path:url(#XMLID_3_);fill-rule:evenodd;clip-rule:evenodd;fill:#F3F7FA;}
+	.st10{clip-path:url(#XMLID_3_);fill-rule:evenodd;clip-rule:evenodd;fill:#F1F5F9;}
+	.st11{clip-path:url(#XMLID_3_);fill-rule:evenodd;clip-rule:evenodd;fill:#EEF4F9;}
+	.st12{clip-path:url(#XMLID_3_);fill-rule:evenodd;clip-rule:evenodd;fill:#ECF1F6;}
+	.st13{clip-path:url(#XMLID_3_);fill-rule:evenodd;clip-rule:evenodd;fill:#EAF0F5;}
+	.st14{clip-path:url(#XMLID_3_);fill-rule:evenodd;clip-rule:evenodd;fill:#E8EFF5;}
+	.st15{clip-path:url(#XMLID_3_);fill-rule:evenodd;clip-rule:evenodd;fill:#E6EFF5;}
+	.st16{clip-path:url(#XMLID_3_);fill-rule:evenodd;clip-rule:evenodd;fill:#E4EDF3;}
+	.st17{clip-path:url(#XMLID_3_);fill-rule:evenodd;clip-rule:evenodd;fill:#E4ECF2;}
+	.st18{clip-path:url(#XMLID_3_);fill-rule:evenodd;clip-rule:evenodd;fill:#E1EBF2;}
+	.st19{clip-path:url(#XMLID_3_);fill-rule:evenodd;clip-rule:evenodd;fill:#DFEAF1;}
+	.st20{clip-path:url(#XMLID_3_);fill-rule:evenodd;clip-rule:evenodd;fill:#DDE9F1;}
+	.st21{clip-path:url(#XMLID_3_);fill-rule:evenodd;clip-rule:evenodd;fill:#DAE6F0;}
+	.st22{clip-path:url(#XMLID_3_);fill-rule:evenodd;clip-rule:evenodd;fill:#D8E5EE;}
+	.st23{clip-path:url(#XMLID_3_);fill-rule:evenodd;clip-rule:evenodd;fill:#D6E3ED;}
+	.st24{clip-path:url(#XMLID_3_);fill-rule:evenodd;clip-rule:evenodd;fill:#D3E2ED;}
+	.st25{clip-path:url(#XMLID_3_);fill-rule:evenodd;clip-rule:evenodd;fill:#D1E1EC;}
+	.st26{clip-path:url(#XMLID_3_);fill-rule:evenodd;clip-rule:evenodd;fill:#CFE0EC;}
+	.st27{clip-path:url(#XMLID_3_);fill-rule:evenodd;clip-rule:evenodd;fill:#CDDEE9;}
+	.st28{clip-path:url(#XMLID_3_);fill-rule:evenodd;clip-rule:evenodd;fill:#CADDE9;}
+	.st29{clip-path:url(#XMLID_3_);fill-rule:evenodd;clip-rule:evenodd;fill:#C8DAE8;}
+	.st30{clip-path:url(#XMLID_3_);fill-rule:evenodd;clip-rule:evenodd;fill:#C6D9E6;}
+	.st31{clip-path:url(#XMLID_3_);fill-rule:evenodd;clip-rule:evenodd;fill:#C3D8E6;}
+	.st32{clip-path:url(#XMLID_3_);fill-rule:evenodd;clip-rule:evenodd;fill:#C1D6E5;}
+	.st33{clip-path:url(#XMLID_3_);fill-rule:evenodd;clip-rule:evenodd;fill:#BED5E4;}
+	.st34{clip-path:url(#XMLID_3_);fill-rule:evenodd;clip-rule:evenodd;fill:#BCD2E1;}
+	.st35{clip-path:url(#XMLID_3_);fill-rule:evenodd;clip-rule:evenodd;fill:#BAD1E1;}
+	.st36{clip-path:url(#XMLID_3_);fill-rule:evenodd;clip-rule:evenodd;fill:#B7D0E1;}
+	.st37{clip-path:url(#XMLID_3_);fill-rule:evenodd;clip-rule:evenodd;fill:#B5CEDE;}
+	.st38{clip-path:url(#XMLID_3_);fill-rule:evenodd;clip-rule:evenodd;fill:#B2CDDE;}
+	.st39{clip-path:url(#XMLID_3_);fill-rule:evenodd;clip-rule:evenodd;fill:#B0CBDD;}
+	.st40{clip-path:url(#XMLID_3_);fill-rule:evenodd;clip-rule:evenodd;fill:#AECADB;}
+	.st41{clip-path:url(#XMLID_3_);fill-rule:evenodd;clip-rule:evenodd;fill:#A8C8DB;}
+	.st42{clip-path:url(#XMLID_3_);fill-rule:evenodd;clip-rule:evenodd;fill:#A6C5D9;}
+	.st43{clip-path:url(#XMLID_3_);fill-rule:evenodd;clip-rule:evenodd;fill:#A3C3D6;}
+	.st44{clip-path:url(#XMLID_3_);fill-rule:evenodd;clip-rule:evenodd;fill:#A1C2D6;}
+	.st45{clip-path:url(#XMLID_3_);fill-rule:evenodd;clip-rule:evenodd;fill:#9EC1D6;}
+	.st46{clip-path:url(#XMLID_3_);fill-rule:evenodd;clip-rule:evenodd;fill:#99BED3;}
+	.st47{clip-path:url(#XMLID_3_);fill-rule:evenodd;clip-rule:evenodd;fill:#96BDD1;}
+	.st48{clip-path:url(#XMLID_3_);fill-rule:evenodd;clip-rule:evenodd;fill:#94BAD0;}
+	.st49{clip-path:url(#XMLID_3_);fill-rule:evenodd;clip-rule:evenodd;fill:#91B8CF;}
+	.st50{clip-path:url(#XMLID_3_);fill-rule:evenodd;clip-rule:evenodd;fill:#8EB7CD;}
+	.st51{clip-path:url(#XMLID_3_);fill-rule:evenodd;clip-rule:evenodd;fill:#8CB4CC;}
+	.st52{clip-path:url(#XMLID_3_);fill-rule:evenodd;clip-rule:evenodd;fill:#86B3CA;}
+	.st53{clip-path:url(#XMLID_3_);fill-rule:evenodd;clip-rule:evenodd;fill:#83B0C9;}
+	.st54{clip-path:url(#XMLID_3_);fill-rule:evenodd;clip-rule:evenodd;fill:#81AEC6;}
+	.st55{clip-path:url(#XMLID_3_);fill-rule:evenodd;clip-rule:evenodd;fill:#7AACC6;}
+	.st56{clip-path:url(#XMLID_3_);fill-rule:evenodd;clip-rule:evenodd;fill:#78AAC3;}
+	.st57{clip-path:url(#XMLID_3_);fill-rule:evenodd;clip-rule:evenodd;fill:#75A8C2;}
+	.st58{clip-path:url(#XMLID_3_);fill-rule:evenodd;clip-rule:evenodd;fill:#72A7C0;}
+	.st59{clip-path:url(#XMLID_3_);fill-rule:evenodd;clip-rule:evenodd;fill:#6FA4BF;}
+	.st60{clip-path:url(#XMLID_3_);fill-rule:evenodd;clip-rule:evenodd;fill:#6DA2BD;}
+	.st61{clip-path:url(#XMLID_3_);fill-rule:evenodd;clip-rule:evenodd;fill:#6AA1BB;}
+	.st62{clip-path:url(#XMLID_3_);fill-rule:evenodd;clip-rule:evenodd;fill:#679FBA;}
+	.st63{clip-path:url(#XMLID_3_);fill-rule:evenodd;clip-rule:evenodd;fill:#649DB7;}
+	.st64{clip-path:url(#XMLID_3_);fill-rule:evenodd;clip-rule:evenodd;fill:#629BB5;}
+	.st65{clip-path:url(#XMLID_3_);fill-rule:evenodd;clip-rule:evenodd;fill:#5F99B4;}
+	.st66{clip-path:url(#XMLID_3_);fill-rule:evenodd;clip-rule:evenodd;fill:#5B98B2;}
+	.st67{clip-path:url(#XMLID_3_);fill-rule:evenodd;clip-rule:evenodd;fill:#5994AF;}
+	.st68{clip-path:url(#XMLID_3_);fill-rule:evenodd;clip-rule:evenodd;fill:#5291AB;}
+	.st69{clip-path:url(#XMLID_3_);fill-rule:evenodd;clip-rule:evenodd;fill:#4F8EA7;}
+	.st70{clip-path:url(#XMLID_3_);fill-rule:evenodd;clip-rule:evenodd;fill:#4D8AA3;}
+	.st71{clip-path:url(#XMLID_3_);fill-rule:evenodd;clip-rule:evenodd;fill:#46849C;}
+	.st72{clip-path:url(#XMLID_3_);fill-rule:evenodd;clip-rule:evenodd;fill:#438199;}
+	.st73{clip-path:url(#XMLID_3_);fill-rule:evenodd;clip-rule:evenodd;fill:#407C93;}
+	.st74{clip-path:url(#XMLID_3_);fill-rule:evenodd;clip-rule:evenodd;fill:#3D778C;}
+	.st75{clip-path:url(#XMLID_3_);fill-rule:evenodd;clip-rule:evenodd;fill:#367287;}
+	.st76{clip-path:url(#XMLID_3_);fill-rule:evenodd;clip-rule:evenodd;fill:#336D81;}
+	.st77{clip-path:url(#XMLID_3_);fill-rule:evenodd;clip-rule:evenodd;fill:#30697B;}
+	.st78{clip-path:url(#XMLID_3_);fill-rule:evenodd;clip-rule:evenodd;fill:#2D6476;}
+	.st79{clip-path:url(#XMLID_3_);fill-rule:evenodd;clip-rule:evenodd;fill:#2B5E6E;}
+	.st80{clip-path:url(#XMLID_3_);fill-rule:evenodd;clip-rule:evenodd;fill:#255969;}
+	.st81{clip-path:url(#XMLID_3_);fill-rule:evenodd;clip-rule:evenodd;fill:#205563;}
+	.st82{clip-path:url(#XMLID_3_);fill-rule:evenodd;clip-rule:evenodd;fill:#1E4F5D;}
+	.st83{clip-path:url(#XMLID_3_);fill-rule:evenodd;clip-rule:evenodd;fill:#1B4A57;}
+	.st84{clip-path:url(#XMLID_3_);fill-rule:evenodd;clip-rule:evenodd;fill:#184652;}
+	.st85{clip-path:url(#XMLID_3_);fill-rule:evenodd;clip-rule:evenodd;fill:#14414D;}
+	.st86{clip-path:url(#XMLID_3_);fill-rule:evenodd;clip-rule:evenodd;fill:#103D48;}
+	.st87{clip-path:url(#XMLID_3_);fill-rule:evenodd;clip-rule:evenodd;fill:#0D3842;}
+	.st88{clip-path:url(#XMLID_3_);fill-rule:evenodd;clip-rule:evenodd;fill:#09353E;}
+	.st89{clip-path:url(#XMLID_3_);fill-rule:evenodd;clip-rule:evenodd;fill:#05303A;}
+	.st90{clip-path:url(#XMLID_3_);fill-rule:evenodd;clip-rule:evenodd;fill:#062C35;}
+	.st91{clip-path:url(#XMLID_3_);fill-rule:evenodd;clip-rule:evenodd;fill:#022730;}
+	.st92{clip-path:url(#XMLID_3_);fill-rule:evenodd;clip-rule:evenodd;fill:#00252D;}
+	.st93{clip-path:url(#XMLID_3_);fill-rule:evenodd;clip-rule:evenodd;fill:#00212A;}
+	.st94{clip-path:url(#XMLID_3_);fill-rule:evenodd;clip-rule:evenodd;fill:#001D26;}
+	.st95{clip-path:url(#XMLID_3_);fill-rule:evenodd;clip-rule:evenodd;fill:#001A22;}
+	.st96{clip-path:url(#XMLID_3_);fill-rule:evenodd;clip-rule:evenodd;fill:#00171F;}
+	.st97{clip-path:url(#XMLID_3_);fill-rule:evenodd;clip-rule:evenodd;fill:#00151D;}
+	.st98{clip-path:url(#XMLID_3_);fill-rule:evenodd;clip-rule:evenodd;fill:#00121A;}
+	.st99{clip-path:url(#XMLID_3_);fill-rule:evenodd;clip-rule:evenodd;fill:#001019;}
+	.st100{clip-path:url(#XMLID_3_);fill-rule:evenodd;clip-rule:evenodd;fill:#000D17;}
+	.st101{clip-path:url(#XMLID_3_);fill-rule:evenodd;clip-rule:evenodd;fill:#000B15;}
+	.st102{clip-path:url(#XMLID_3_);fill-rule:evenodd;clip-rule:evenodd;fill:#000A14;}
+	.st103{clip-path:url(#XMLID_3_);fill-rule:evenodd;clip-rule:evenodd;fill:#000D16;}
+	.st104{clip-path:url(#XMLID_3_);fill-rule:evenodd;clip-rule:evenodd;fill:#000E18;}
+	.st105{clip-path:url(#XMLID_3_);fill-rule:evenodd;clip-rule:evenodd;fill:#000F19;}
+	.st106{clip-path:url(#XMLID_3_);fill-rule:evenodd;clip-rule:evenodd;fill:#00101A;}
+	.st107{clip-path:url(#XMLID_3_);fill-rule:evenodd;clip-rule:evenodd;fill:#00111B;}
+	.st108{clip-path:url(#XMLID_3_);fill-rule:evenodd;clip-rule:evenodd;fill:#00121D;}
+	.st109{clip-path:url(#XMLID_3_);fill-rule:evenodd;clip-rule:evenodd;fill:#00151F;}
+	.st110{clip-path:url(#XMLID_3_);fill-rule:evenodd;clip-rule:evenodd;fill:#001622;}
+	.st111{clip-path:url(#XMLID_3_);fill-rule:evenodd;clip-rule:evenodd;fill:#001824;}
+	.st112{clip-path:url(#XMLID_3_);fill-rule:evenodd;clip-rule:evenodd;fill:#001925;}
+	.st113{clip-path:url(#XMLID_3_);fill-rule:evenodd;clip-rule:evenodd;fill:#001A28;}
+	.st114{clip-path:url(#XMLID_3_);fill-rule:evenodd;clip-rule:evenodd;fill:#001C2A;}
+	.st115{clip-path:url(#XMLID_3_);fill-rule:evenodd;clip-rule:evenodd;fill:#001E2C;}
+	.st116{clip-path:url(#XMLID_3_);fill-rule:evenodd;clip-rule:evenodd;fill:#00202F;}
+	.st117{clip-path:url(#XMLID_3_);fill-rule:evenodd;clip-rule:evenodd;fill:#002231;}
+	.st118{clip-path:url(#XMLID_3_);fill-rule:evenodd;clip-rule:evenodd;fill:#002333;}
+	.st119{clip-path:url(#XMLID_3_);fill-rule:evenodd;clip-rule:evenodd;fill:#002436;}
+	.st120{clip-path:url(#XMLID_3_);fill-rule:evenodd;clip-rule:evenodd;fill:#002738;}
+	.st121{clip-path:url(#XMLID_3_);fill-rule:evenodd;clip-rule:evenodd;fill:#00283B;}
+	.st122{clip-path:url(#XMLID_3_);fill-rule:evenodd;clip-rule:evenodd;fill:#012A3E;}
+	.st123{clip-path:url(#XMLID_3_);fill-rule:evenodd;clip-rule:evenodd;fill:#012B3F;}
+	.st124{clip-path:url(#XMLID_3_);fill-rule:evenodd;clip-rule:evenodd;fill:#002D42;}
+	.st125{clip-path:url(#XMLID_3_);fill-rule:evenodd;clip-rule:evenodd;fill:#012E44;}
+	.st126{clip-path:url(#XMLID_3_);fill-rule:evenodd;clip-rule:evenodd;fill:#003148;}
+	.st127{clip-path:url(#XMLID_3_);fill-rule:evenodd;clip-rule:evenodd;fill:#003149;}
+	.st128{clip-path:url(#XMLID_3_);fill-rule:evenodd;clip-rule:evenodd;fill:#00334C;}
+	.st129{clip-path:url(#XMLID_3_);fill-rule:evenodd;clip-rule:evenodd;fill:#00354F;}
+	.st130{clip-path:url(#XMLID_3_);fill-rule:evenodd;clip-rule:evenodd;fill:#003751;}
+	.st131{clip-path:url(#XMLID_3_);fill-rule:evenodd;clip-rule:evenodd;fill:#003854;}
+	.st132{clip-path:url(#XMLID_3_);fill-rule:evenodd;clip-rule:evenodd;fill:#003A56;}
+	.st133{clip-path:url(#XMLID_3_);fill-rule:evenodd;clip-rule:evenodd;fill:#003B58;}
+	.st134{clip-path:url(#XMLID_3_);fill-rule:evenodd;clip-rule:evenodd;fill:#003C5A;}
+	.st135{clip-path:url(#XMLID_3_);fill-rule:evenodd;clip-rule:evenodd;fill:#003E5D;}
+	.st136{clip-path:url(#XMLID_3_);fill-rule:evenodd;clip-rule:evenodd;fill:#00405F;}
+	.st137{clip-path:url(#XMLID_3_);fill-rule:evenodd;clip-rule:evenodd;fill:#004262;}
+	.st138{clip-path:url(#XMLID_3_);fill-rule:evenodd;clip-rule:evenodd;fill:#004566;}
+	.st139{clip-path:url(#XMLID_3_);fill-rule:evenodd;clip-rule:evenodd;fill:#004667;}
+	.st140{clip-path:url(#XMLID_3_);fill-rule:evenodd;clip-rule:evenodd;fill:#00486A;}
+	.st141{clip-path:url(#XMLID_3_);fill-rule:evenodd;clip-rule:evenodd;fill:#004B6D;}
+	.st142{clip-path:url(#XMLID_3_);fill-rule:evenodd;clip-rule:evenodd;fill:#004C6F;}
+	.st143{clip-path:url(#XMLID_3_);fill-rule:evenodd;clip-rule:evenodd;fill:#005072;}
+	.st144{clip-path:url(#XMLID_3_);fill-rule:evenodd;clip-rule:evenodd;fill:#005375;}
+	.st145{clip-path:url(#XMLID_3_);fill-rule:evenodd;clip-rule:evenodd;fill:#005678;}
+	.st146{clip-path:url(#XMLID_3_);fill-rule:evenodd;clip-rule:evenodd;fill:#075A7D;}
+	.st147{clip-path:url(#XMLID_3_);fill-rule:evenodd;clip-rule:evenodd;fill:#125E80;}
+	.st148{clip-path:url(#XMLID_3_);fill-rule:evenodd;clip-rule:evenodd;fill:#1D6183;}
+	.st149{clip-path:url(#XMLID_3_);fill-rule:evenodd;clip-rule:evenodd;fill:#266587;}
+	.st150{clip-path:url(#XMLID_3_);fill-rule:evenodd;clip-rule:evenodd;fill:#32698B;}
+	.st151{clip-path:url(#XMLID_3_);fill-rule:evenodd;clip-rule:evenodd;fill:#376E8F;}
+	.st152{clip-path:url(#XMLID_3_);fill-rule:evenodd;clip-rule:evenodd;fill:#3E7393;}
+	.st153{clip-path:url(#XMLID_3_);fill-rule:evenodd;clip-rule:evenodd;fill:#487796;}
+	.st154{clip-path:url(#XMLID_3_);fill-rule:evenodd;clip-rule:evenodd;fill:#4D7C9A;}
+	.st155{clip-path:url(#XMLID_3_);fill-rule:evenodd;clip-rule:evenodd;fill:#56819F;}
+	.st156{clip-path:url(#XMLID_3_);fill-rule:evenodd;clip-rule:evenodd;fill:#5F86A2;}
+	.st157{clip-path:url(#XMLID_3_);fill-rule:evenodd;clip-rule:evenodd;fill:#648BA6;}
+	.st158{clip-path:url(#XMLID_3_);fill-rule:evenodd;clip-rule:evenodd;fill:#6C92AB;}
+	.st159{clip-path:url(#XMLID_3_);fill-rule:evenodd;clip-rule:evenodd;fill:#7196AF;}
+	.st160{clip-path:url(#XMLID_3_);fill-rule:evenodd;clip-rule:evenodd;fill:#799BB2;}
+	.st161{clip-path:url(#XMLID_3_);fill-rule:evenodd;clip-rule:evenodd;fill:#7EA0B6;}
+	.st162{clip-path:url(#XMLID_3_);fill-rule:evenodd;clip-rule:evenodd;fill:#86A6BA;}
+	.st163{clip-path:url(#XMLID_3_);fill-rule:evenodd;clip-rule:evenodd;fill:#8EABBE;}
+	.st164{clip-path:url(#XMLID_3_);fill-rule:evenodd;clip-rule:evenodd;fill:#93B0C2;}
+	.st165{clip-path:url(#XMLID_3_);fill-rule:evenodd;clip-rule:evenodd;fill:#98B5C6;}
+	.st166{clip-path:url(#XMLID_3_);fill-rule:evenodd;clip-rule:evenodd;fill:#9DB8C9;}
+	.st167{clip-path:url(#XMLID_3_);fill-rule:evenodd;clip-rule:evenodd;fill:#A4BECD;}
+	.st168{clip-path:url(#XMLID_3_);fill-rule:evenodd;clip-rule:evenodd;fill:#A9C3CF;}
+	.st169{clip-path:url(#XMLID_3_);fill-rule:evenodd;clip-rule:evenodd;fill:#AEC6D2;}
+	.st170{clip-path:url(#XMLID_3_);fill-rule:evenodd;clip-rule:evenodd;fill:#B3CAD5;}
+	.st171{clip-path:url(#XMLID_3_);fill-rule:evenodd;clip-rule:evenodd;fill:#B8CDD8;}
+	.st172{clip-path:url(#XMLID_3_);fill-rule:evenodd;clip-rule:evenodd;fill:#BCD2DC;}
+	.st173{clip-path:url(#XMLID_3_);fill-rule:evenodd;clip-rule:evenodd;fill:#BFD5DE;}
+	.st174{clip-path:url(#XMLID_3_);fill-rule:evenodd;clip-rule:evenodd;fill:#C4D8E1;}
+	.st175{clip-path:url(#XMLID_3_);fill-rule:evenodd;clip-rule:evenodd;fill:#C8DBE4;}
+	.st176{clip-path:url(#XMLID_3_);fill-rule:evenodd;clip-rule:evenodd;fill:#CBDEE5;}
+	.st177{clip-path:url(#XMLID_3_);fill-rule:evenodd;clip-rule:evenodd;fill:#CDDFE5;}
+	.st178{clip-path:url(#XMLID_3_);fill-rule:evenodd;clip-rule:evenodd;fill:#D2E2E8;}
+	.st179{clip-path:url(#XMLID_3_);fill-rule:evenodd;clip-rule:evenodd;fill:#D4E5EB;}
+	.st180{clip-path:url(#XMLID_3_);fill-rule:evenodd;clip-rule:evenodd;fill:#D6E6EB;}
+	.st181{clip-path:url(#XMLID_3_);fill-rule:evenodd;clip-rule:evenodd;fill:#D9E7EC;}
+	.st182{clip-path:url(#XMLID_3_);fill-rule:evenodd;clip-rule:evenodd;fill:#DDEAEF;}
+	.st183{clip-path:url(#XMLID_3_);fill-rule:evenodd;clip-rule:evenodd;fill:#DFECF1;}
+	.st184{clip-path:url(#XMLID_3_);fill-rule:evenodd;clip-rule:evenodd;fill:#E4EDF1;}
+	.st185{clip-path:url(#XMLID_3_);fill-rule:evenodd;clip-rule:evenodd;fill:#E6F0F4;}
+	.st186{clip-path:url(#XMLID_3_);fill-rule:evenodd;clip-rule:evenodd;fill:#E8F1F4;}
+	.st187{clip-path:url(#XMLID_3_);fill-rule:evenodd;clip-rule:evenodd;fill:#EAF4F7;}
+	.st188{clip-path:url(#XMLID_3_);fill-rule:evenodd;clip-rule:evenodd;fill:#EDF5F8;}
+	.st189{clip-path:url(#XMLID_3_);fill-rule:evenodd;clip-rule:evenodd;fill:#F1F6FA;}
+	.st190{clip-path:url(#XMLID_3_);fill-rule:evenodd;clip-rule:evenodd;fill:#F3F9FB;}
+	.st191{clip-path:url(#XMLID_3_);fill-rule:evenodd;clip-rule:evenodd;fill:#F5FAFB;}
+	.st192{clip-path:url(#XMLID_3_);fill-rule:evenodd;clip-rule:evenodd;fill:#F5FAFD;}
+	.st193{clip-path:url(#XMLID_3_);fill-rule:evenodd;clip-rule:evenodd;fill:#F7FBFD;}
+	.st194{clip-path:url(#XMLID_3_);fill-rule:evenodd;clip-rule:evenodd;fill:#FAFDFE;}
+	.st195{clip-path:url(#XMLID_3_);fill-rule:evenodd;clip-rule:evenodd;fill:#FAFDFF;}
+	.st196{clip-path:url(#XMLID_3_);fill-rule:evenodd;clip-rule:evenodd;fill:#FCFEFF;}
+	.st197{clip-path:url(#XMLID_3_);fill-rule:evenodd;clip-rule:evenodd;fill:#FEFEFF;}
+	.st198{clip-path:url(#XMLID_3_);fill-rule:evenodd;clip-rule:evenodd;fill:#F7FCFE;}
+	.st199{clip-path:url(#XMLID_3_);fill-rule:evenodd;clip-rule:evenodd;fill:#F5FBFE;}
+	.st200{clip-path:url(#XMLID_3_);fill-rule:evenodd;clip-rule:evenodd;fill:#F3F9FC;}
+	.st201{clip-path:url(#XMLID_3_);fill-rule:evenodd;clip-rule:evenodd;fill:#F1F8FC;}
+	.st202{clip-path:url(#XMLID_3_);fill-rule:evenodd;clip-rule:evenodd;fill:#EFF7FC;}
+	.st203{clip-path:url(#XMLID_3_);fill-rule:evenodd;clip-rule:evenodd;fill:#EDF6FC;}
+</style>
+<g id="XMLID_47_">
+	<linearGradient id="XMLID_2_" gradientUnits="userSpaceOnUse" x1="256.0838" y1="35" x2="254.5897" y2="35">
+		<stop  offset="0" style="stop-color:#E6E6E5"/>
+		<stop  offset="0.3698" style="stop-color:#E3E2E2"/>
+		<stop  offset="0.7256" style="stop-color:#D9D9D8"/>
+		<stop  offset="1" style="stop-color:#CCCCCC"/>
+	</linearGradient>
+	<path id="XMLID_17_" class="st0" d="M256.1,52.9c0,0.5-0.3,1-0.7,1c-0.4,0-0.7-0.5-0.7-1V17.1c0-0.5,0.3-1,0.7-1
+		c0.4,0,0.7,0.5,0.7,1V52.9z"/>
+</g>
+<g id="XMLID_10_">
+	<g id="XMLID_11_">
+		<g id="XMLID_12_">
+			<path id="XMLID_45_" class="st1" d="M277.8,30.6h7.7c0.1-1.4,0.1-3.1,0.1-4.9h3c0,1.9-0.1,3.6-0.2,4.9h8.1v2.7h-7.8
+				c1.1,4.3,3.8,7.3,8.1,8.8c-0.9,1.1-1.7,2-2.2,2.7c-3.5-1.7-6-4.4-7.4-8.1c-1.1,3.4-3.6,6.1-7.5,8.2c-0.5-0.7-1.3-1.5-2.2-2.5
+				c4.7-2.1,7.3-5.2,7.8-9.1h-7.4V30.6z"/>
+			<path id="XMLID_40_" class="st1" d="M299.8,29.5h1.5c-0.3-0.7-0.8-1.4-1.4-2.2l1.8-1.1c0.4,0.5,1,1.2,1.6,2.3l-1.8,1.1h2.2v-3.8
+				h2.5v3.8h2.1l-1.6-1.1c0.7-0.8,1.2-1.6,1.6-2.3l1.8,1.1c-0.4,0.7-1,1.5-1.6,2.3h1.1v2h-3.4v1.4l0.7-0.9c0.8,0.4,1.6,0.9,2.3,1.3
+				c1.1-2,2-4.5,2.8-7.7l2.7,0.3c-0.3,1-0.5,2-0.8,2.9h4.9v2.4H318c-0.3,3.5-1,6.3-2.2,8.5c0.8,1,1.9,1.8,3.1,2.5
+				c-0.5,0.5-1,1.4-1.7,2.6c-1.1-0.8-2.1-1.7-3-2.8c-1.1,1.3-2.3,2.3-3.7,3.1c-0.5-0.7-1.1-1.5-1.7-2.1L308,44
+				c-0.8-0.4-1.6-0.9-2.6-1.4c-1.4,1-3.1,1.6-5.1,2c-0.2-0.7-0.6-1.5-1-2.4c1.4-0.1,2.6-0.4,3.6-0.8c-0.9-0.4-1.8-0.8-2.9-1.2
+				c0.4-0.6,0.8-1.3,1.2-1.9h-1.6v-2h2.6c0.2-0.5,0.4-1,0.6-1.5l1.1,0.1V33c-1,1-2.2,2-3.6,2.8c-0.3-0.9-0.6-1.7-0.9-2.3
+				c1.3-0.5,2.5-1.2,3.5-2h-2.9V29.5z M303.2,39.3l2,0.8c0.6-0.5,1.1-1.1,1.4-1.8h-2.9L303.2,39.3z M306.3,35.3h-1
+				c-0.1,0.3-0.3,0.7-0.5,1h4.6v1.8c-0.5,1.1-1.1,2-1.9,2.8l1.9,0.8l-0.4,0.6c1.4-0.7,2.7-1.7,3.7-2.9c-0.6-1.3-1.1-2.8-1.5-4.4
+				c-0.2,0.4-0.5,0.8-0.7,1.2c-0.3-0.5-0.6-1.1-1-1.6l-0.6,0.9c-0.8-0.5-1.7-1.1-2.6-1.7V35.3z M312.8,31.6c0.3,2.2,0.7,4,1.4,5.4
+				c0.8-1.7,1.2-3.7,1.4-6H313C313,31.3,312.9,31.5,312.8,31.6z"/>
+			<path id="XMLID_34_" class="st1" d="M321.6,29.3h1.9v-3.5h2.4v3.5h1.7v2.5h-1.7v2.7c0.6-0.1,1.2-0.3,1.8-0.4
+				c-0.1,1-0.1,1.9-0.1,2.5c-0.6,0.1-1.1,0.3-1.7,0.4v5.4c0,1.4-0.6,2.2-1.8,2.2c-0.7,0.1-1.4,0.1-2,0.1c-0.1-0.8-0.3-1.6-0.6-2.5
+				c0.4,0,0.9,0,1.3,0c0.4,0,0.7-0.3,0.7-0.9v-3.6c-0.6,0.2-1.3,0.3-1.9,0.5l-0.2-2.7c0.6-0.1,1.3-0.3,2.1-0.4v-3.3h-1.9V29.3z
+				 M340.8,36.3h-4.5v1.6h3.3v7h-2.3v-1h-4.4v1h-2.3v-7h3.2v-1.6h-3.4c-0.2,3.6-1.1,6.4-2.5,8.5c-0.5-0.7-1.1-1.4-1.8-2
+				c1.3-2.3,2-5.4,2-9.3v-7.1h11.8v6.1h-3.6v1.7h4.5V36.3z M337.5,30.4v-2h-7v2H337.5z M333.9,34.2v-1.7h-3.3v1.7H333.9z M337.3,40
+				h-4.4v1.9h4.4V40z"/>
+			<path id="XMLID_25_" class="st1" d="M343.7,29.2h1.6v-3.4h2.4v3.4h1.7v2.4h-1.7v2.8c0.5-0.1,0.9-0.2,1.3-0.4c0,1,0,1.9,0,2.6
+				l-1.3,0.4v5.1c0,0.7-0.1,1.3-0.4,1.7c-0.2,0.4-0.7,0.6-1.3,0.7c-0.6,0.1-1.3,0.1-2.1,0.1c-0.1-0.8-0.3-1.6-0.5-2.5
+				c0.9,0,1.4,0,1.5,0c0.1,0,0.2-0.1,0.3-0.2c0.1-0.1,0.1-0.3,0.1-0.5v-3.7l-1.8,0.5l-0.2-2.9c0.7-0.1,1.4-0.3,2-0.4v-3.4h-1.6V29.2
+				z M349.1,37.8h5.4v-0.9h2.5v0.9h5.5v2h-4.3c1.2,1.1,2.7,1.9,4.6,2.4c-0.5,0.8-1,1.4-1.4,2.1c-1.8-0.9-3.3-2-4.4-3.3v3.9h-2.5V41
+				c-1.5,1.5-2.9,2.7-4.4,3.4c-0.4-0.5-1-1.1-1.7-1.8c1.9-0.8,3.5-1.7,4.7-2.8h-4V37.8z M349.7,31.9h5.6v4.7h-5.6V31.9z M350.6,26.3
+				H361v4.8h-10.4V26.3z M353.3,35v-1.4h-1.6V35H353.3z M358.6,29.2v-1.1h-5.4v1.1H358.6z M356.4,31.9h5.7v4.7h-5.7V31.9z M360,35
+				v-1.4h-1.6V35H360z"/>
+			<path id="XMLID_22_" class="st1" d="M369.2,25.7l2.6,0.8c-0.4,1.3-0.9,2.6-1.4,3.8v14.6h-2.7v-9.3c-0.5,0.9-1.1,1.7-1.7,2.5
+				c-0.1-1-0.4-2.2-0.7-3.6C367,31.9,368.3,29,369.2,25.7z M383.7,36.1h-5.3v2.4h5.7v2.5h-5.7v3.9h-2.8V31.2H375
+				c-0.8,1.8-1.7,3.4-2.7,4.7c-0.4-0.7-0.9-1.6-1.5-2.5c1.5-2.2,2.6-4.8,3.5-7.7l2.5,0.6c-0.2,0.9-0.5,1.7-0.8,2.5h8.7v2.5h-6.4v2.4
+				h5.3V36.1z"/>
+			<path id="XMLID_18_" class="st1" d="M392,38.8l2,1.7c-1.5,1.4-3.1,2.6-4.8,3.8c-0.6-0.8-1.2-1.5-1.8-2.1
+				C389.1,41.3,390.6,40.2,392,38.8z M388.2,26.9c6.4,0,12.2-0.2,17.4-0.8l0.4,2.1c-2.6,0.2-5.4,0.4-8.2,0.6
+				c-1.4,0.8-2.8,1.6-4.3,2.3l6.5-0.3c1-0.5,2-1.1,3-1.7l1.8,1.8c-3.6,2-7.5,3.8-11.6,5.4c2.8-0.1,5.6-0.3,8.5-0.5
+				c-0.5-0.5-1-0.9-1.4-1.3l1.8-1.5c1,0.9,2.6,2.4,4.8,4.6l-1.9,1.7c-0.5-0.5-0.9-1-1.3-1.5l-4.7,0.2v4.6c0,0.7-0.2,1.2-0.6,1.5
+				c-0.4,0.3-1,0.5-1.8,0.6c-0.8,0-1.8,0-3.2,0c-0.1-1-0.3-1.8-0.5-2.7c0.6,0.1,1.3,0.1,2,0.1c0.5,0,0.9-0.1,1-0.2
+				c0.2-0.1,0.3-0.3,0.3-0.7v-3.2c-2.9,0.1-5.1,0.3-6.7,0.5l-0.7-2.4c2.2-0.8,4.6-1.9,7.1-3.2c-2.6,0.2-4.6,0.3-6,0.5l-0.7-2.4
+				c1.4-0.5,2.9-1.2,4.4-2.2l-5,0.1C388.5,28.5,388.4,27.7,388.2,26.9z M401.9,38.7c1.4,1,3.1,2.2,4.9,3.6l-1.8,1.9
+				c-1.4-1.2-3-2.5-4.7-3.8L401.9,38.7z"/>
+			<path id="XMLID_13_" class="st1" d="M413,37l2.9-0.3c-0.1,0.8-0.1,1.5-0.1,2.2c-2.1,0.1-3.9,0.3-5.3,0.5l-0.6-2.2
+				c0.7-0.7,1.7-1.9,2.7-3.5c-1,0.1-1.9,0.2-2.5,0.3l-0.7-2.2c1.2-1.7,2.4-3.8,3.4-6.3l2.6,1c-1,1.8-2,3.5-3.1,5
+				c0.5,0,1.2,0,1.8-0.1l0.9-1.5l2,1.1C415.6,33.3,414.3,35.2,413,37z M426.5,38.9c0.8,0.4,1.6,0.7,2.3,1c-0.2,2-0.5,3.3-0.9,3.8
+				c-0.4,0.6-1.1,0.8-2.1,0.8h-1.2c-1.5,0-2.3-0.8-2.3-2.5v-6.2l-1.6,0.1c-0.1,2.9-0.5,4.9-1.3,6.2c-0.8,1.3-1.8,2.2-2.9,2.8
+				c-0.5-0.6-1.2-1.3-1.9-2c-1.7,0.2-3.4,0.4-4.9,0.6l-0.2-2.6c1.3-0.1,3.5-0.3,6.7-0.7c0,0.5-0.1,1-0.1,1.6
+				c1.4-0.9,2.2-2.8,2.2-5.7c-0.7,0.1-1.3,0.2-1.7,0.3l-0.7-2.4c1-0.7,2.1-2,3.3-4.1H416v-2.2h4.3c-0.2-0.5-0.5-1.1-0.7-1.6l2.9-0.5
+				c0.4,0.7,0.7,1.4,1,2.2h4.9v2.2h-6.3c-0.9,1.3-1.8,2.6-2.9,3.9c1.6-0.1,3.4-0.1,5.4-0.3c-0.4-0.7-0.9-1.4-1.4-2l2-1.1
+				c1.4,1.8,2.6,3.5,3.6,5.1l-2.1,1.3c-0.2-0.4-0.5-0.8-0.7-1.2l-0.9,0v5.6c0,0.5,0.2,0.8,0.5,0.8h0.2c0.3,0,0.5-0.2,0.6-0.5
+				C426.3,41.2,426.4,40.3,426.5,38.9z"/>
+		</g>
+	</g>
+</g>
+<g id="XMLID_49_">
+	<g id="XMLID_333_">
+		<path id="XMLID_351_" class="st2" d="M225.5,27.9c0-0.1,0-0.3,0-0.4c0-0.1,0-0.2,0-0.4c0-0.1,0-0.2,0-0.3v-5.2l2.8-0.6v16.9h-1.9
+			l-0.8-0.9h0c-0.4,0.3-0.8,0.5-1.3,0.8c-0.4,0.2-1,0.4-1.5,0.4c-0.5,0-1-0.1-1.5-0.3c-0.5-0.2-0.9-0.5-1.3-0.9
+			c-0.4-0.4-0.7-0.9-0.9-1.5c-0.2-0.6-0.3-1.4-0.3-2.3c0-0.9,0.1-1.6,0.3-2.3c0.2-0.7,0.5-1.2,0.9-1.7c0.4-0.5,0.9-0.8,1.5-1.1
+			c0.6-0.2,1.2-0.4,2-0.4c0.3,0,0.6,0,1,0C224.8,27.8,225.1,27.8,225.5,27.9L225.5,27.9z M221.7,33c0,1.1,0.2,2,0.6,2.5
+			c0.4,0.5,0.9,0.8,1.5,0.8c0.3,0,0.6,0,0.9-0.1c0.3-0.1,0.6-0.2,0.8-0.3v-6.5c-0.4-0.1-0.9-0.1-1.3-0.1c-0.4,0-0.7,0-1.1,0.1
+			c-0.3,0.1-0.5,0.2-0.7,0.3c-0.2,0.2-0.3,0.5-0.5,1.1C221.7,31.3,221.7,32,221.7,33z"/>
+		<path id="XMLID_350_" class="st2" d="M213.5,37.9v-6.7c0-0.6-0.1-1-0.3-1.3c-0.2-0.3-0.5-0.4-1-0.4c-0.2,0-0.3,0-0.5,0.1
+			s-0.4,0.1-0.6,0.2c-0.2,0.1-0.4,0.2-0.6,0.3c-0.2,0.1-0.4,0.2-0.5,0.3v7.5h-2.8v-10h2.5l0.3,1.2h0c0.2-0.1,0.4-0.3,0.7-0.4
+			c0.3-0.2,0.6-0.3,0.9-0.4c0.3-0.1,0.7-0.3,1-0.4c0.3-0.1,0.7-0.1,1-0.1c0.4,0,0.7,0.1,1.1,0.2c0.3,0.1,0.6,0.3,0.9,0.5
+			c0.2,0.2,0.4,0.5,0.6,0.9c0.1,0.4,0.2,0.8,0.2,1.3v7.2H213.5z"/>
+		<rect id="XMLID_349_" x="201.2" y="27.9" class="st2" width="2.8" height="10"/>
+		<polygon id="XMLID_348_" class="st2" points="195.5,37.9 194.4,26.5 189.2,37.9 188.4,37.9 183,26.5 182.1,37.9 180.4,37.9 
+			181.9,22.9 184.5,22.9 189.5,33.4 194.2,22.9 196.9,22.9 198.4,37.9 		"/>
+		<path id="XMLID_345_" class="st2" d="M151.1,27.7c0.5,0,0.9,0.1,1.4,0.2c0.4,0.1,0.9,0.4,1.2,0.7c0.4,0.3,0.7,0.7,1,1.3
+			c0.3,0.5,0.5,1.2,0.6,2V32c-0.1,0.1-0.2,0.2-0.3,0.3c-0.1,0.1-0.3,0.2-0.6,0.2c-0.2,0.1-0.5,0.1-0.9,0.2c-0.3,0.1-0.8,0.1-1.2,0.1
+			l-3.1,0.2v0.4c0,0.8,0.2,1.4,0.6,1.9c0.4,0.5,1,0.8,1.8,0.8c0.3,0,0.7,0,1.1-0.1c0.4-0.1,0.7-0.2,1-0.3c0.3-0.1,0.6-0.2,0.9-0.3
+			c0.3-0.1,0.5-0.2,0.6-0.3l0.2,0.7c-0.3,0.2-0.6,0.5-1,0.7c-0.4,0.2-0.8,0.5-1.2,0.7c-0.4,0.2-0.9,0.4-1.4,0.5
+			c-0.5,0.1-1,0.2-1.5,0.2c-0.6,0-1.1-0.1-1.7-0.3c-0.5-0.2-1-0.5-1.3-0.8c-0.4-0.4-0.7-0.9-0.9-1.5c-0.2-0.6-0.3-1.4-0.3-2.3
+			c0-1,0.1-1.8,0.4-2.5c0.2-0.7,0.6-1.3,1-1.7c0.4-0.4,1-0.7,1.6-0.9C149.7,27.8,150.4,27.7,151.1,27.7L151.1,27.7z M149.7,29.4
+			c-0.1,0.1-0.1,0.2-0.2,0.4c-0.1,0.2-0.1,0.4-0.2,0.6c0,0.2-0.1,0.5-0.1,0.8c0,0.3,0,0.5,0,0.8l3.1-0.1c0-0.3-0.1-0.6-0.1-0.9
+			c-0.1-0.3-0.2-0.6-0.3-0.9c-0.1-0.3-0.3-0.5-0.5-0.6c-0.2-0.2-0.4-0.3-0.7-0.3c-0.2,0-0.4,0-0.5,0.1
+			C150,29.2,149.9,29.3,149.7,29.4z"/>
+		<path id="XMLID_342_" class="st2" d="M134.3,30.4c0,1.2-0.1,2.2-0.4,3.2c-0.3,0.9-0.7,1.8-1.3,2.4c-0.6,0.7-1.3,1.2-2.2,1.5
+			c-0.9,0.4-1.9,0.5-3.1,0.5c-1.2,0-2.3-0.2-3.1-0.6c-0.9-0.4-1.6-0.9-2.1-1.6c-0.6-0.7-1-1.5-1.2-2.4c-0.3-0.9-0.4-2-0.4-3.2
+			c0-1.2,0.1-2.2,0.4-3.1c0.3-0.9,0.7-1.7,1.3-2.4c0.6-0.7,1.3-1.2,2.2-1.5c0.9-0.3,1.9-0.5,3.1-0.5c1.2,0,2.2,0.2,3.1,0.5
+			c0.9,0.4,1.6,0.9,2.2,1.5c0.6,0.7,1,1.5,1.3,2.4C134.2,28.2,134.3,29.2,134.3,30.4L134.3,30.4z M131.3,30.4c0-0.9-0.1-1.7-0.2-2.4
+			c-0.2-0.7-0.4-1.3-0.7-1.8c-0.3-0.5-0.8-0.9-1.3-1.1c-0.5-0.3-1.1-0.4-1.8-0.4c-0.6,0-1.2,0.1-1.7,0.2c-0.5,0.1-1,0.3-1.3,0.6
+			c-0.3,0.2-0.5,0.8-0.7,1.6c-0.1,0.8-0.2,2-0.2,3.4c0,0.9,0.1,1.7,0.2,2.4c0.1,0.7,0.3,1.4,0.6,1.9c0.3,0.5,0.7,0.9,1.2,1.2
+			c0.5,0.3,1.1,0.4,1.9,0.4c0.8,0,1.4-0.1,1.9-0.2c0.5-0.1,0.9-0.3,1.3-0.6c0.2-0.1,0.3-0.3,0.4-0.6c0.1-0.3,0.2-0.7,0.3-1.2
+			c0.1-0.5,0.1-1,0.2-1.6C131.3,31.6,131.3,31,131.3,30.4z"/>
+		<path id="XMLID_341_" class="st2" d="M139.5,34.6c0.1,0.4,0.2,0.8,0.4,1c0.2,0.3,0.4,0.5,0.6,0.6c0.3,0.1,0.6,0.2,0.9,0.2
+			c0.5,0,1.1-0.1,1.6-0.2c0.6-0.1,1.1-0.3,1.5-0.5l0.3,0.7c-0.6,0.4-1.2,0.8-1.9,1.1c-0.7,0.3-1.5,0.4-2.3,0.4
+			c-0.6,0-1.1-0.1-1.7-0.3c-0.5-0.2-1-0.5-1.4-0.8c-0.4-0.4-0.7-0.9-0.9-1.5c-0.5-1.3-0.5-3.8,0-5.1c0.2-0.6,0.5-1.1,0.9-1.5
+			c0.4-0.4,0.8-0.7,1.4-0.8c0.5-0.2,1.1-0.3,1.7-0.3c0.8,0,1.6,0.1,2.3,0.4c0.7,0.3,1.3,0.7,1.9,1.1l-0.3,0.7
+			c-0.5-0.2-1-0.3-1.5-0.5c-0.6-0.1-1.1-0.2-1.6-0.2c-0.3,0-0.6,0.1-0.9,0.2c-0.3,0.1-0.5,0.3-0.6,0.6c-0.2,0.3-0.3,0.6-0.4,1
+			C139.3,32,139.3,33.7,139.5,34.6z"/>
+		<path id="XMLID_337_" class="st2" d="M166,36.4c0.2,0,0.6-0.1,1-0.2v0.7c-0.1,0.1-0.3,0.3-0.5,0.4c-0.2,0.1-0.4,0.3-0.7,0.4
+			c-0.2,0.1-0.5,0.2-0.7,0.2c-0.2,0.1-0.5,0.1-0.7,0.1c-0.3,0-0.5,0-0.7-0.1c-0.2-0.1-0.3-0.2-0.5-0.3c-0.1-0.1-0.2-0.2-0.3-0.4
+			c-0.1-0.1-0.2-0.3-0.2-0.4c-0.2,0.2-0.5,0.3-0.7,0.5c-0.2,0.2-0.5,0.3-0.7,0.4c-0.3,0.1-0.5,0.2-0.8,0.3c-0.3,0.1-0.6,0.1-0.9,0.1
+			c-0.8,0-1.4-0.2-1.8-0.7c-0.4-0.5-0.7-1.2-0.7-2.2c0-0.5,0.1-1,0.2-1.4c0.1-0.4,0.3-0.7,0.6-1c0.3-0.3,0.7-0.4,1.1-0.6
+			c0.5-0.1,1-0.2,1.7-0.2l1.7,0h2.8v2.8C165.2,35.9,165.5,36.4,166,36.4L166,36.4z M162.5,35.9c0,0,0-0.2,0-0.3c0-0.2,0-0.4,0-0.7
+			c0-0.3,0-0.6,0-0.9c0-0.4,0-0.7,0-1.1c-0.7,0-1.2,0-1.6,0.1c-0.4,0.1-0.6,0.2-0.7,0.3c0,0-0.1,0.1-0.1,0.2c0,0.1,0,0.3-0.1,0.4
+			c0,0.1,0,0.3,0,0.5c0,0.2,0,0.3,0,0.4c0,0.5,0.1,0.8,0.2,1.1s0.3,0.4,0.6,0.4c0.3,0,0.6,0,0.9-0.1C162,36.1,162.2,36,162.5,35.9
+			L162.5,35.9z M162.4,32h2.8c0-0.1,0-0.1,0-0.2c0-0.7-0.1-1.4-0.3-1.9c-0.2-0.5-0.4-1-0.8-1.3c-0.3-0.3-0.7-0.6-1.1-0.7
+			c-0.4-0.1-0.9-0.2-1.4-0.2c-0.7,0-1.4,0.1-1.9,0.4c-0.6,0.2-1.1,0.6-1.6,0.9l0.2,0.6c0.8-0.3,2.3-0.7,3.1-0.4
+			c0.2,0.1,0.4,0.3,0.5,0.5c0.1,0.2,0.3,0.5,0.3,0.9c0.1,0.4,0.1,0.8,0.1,1.3L162.4,32z"/>
+		<path id="XMLID_336_" class="st2" d="M174.9,37.9v-6.7c0-0.6-0.1-1-0.3-1.3c-0.2-0.3-0.5-0.4-1-0.4c-0.2,0-0.3,0-0.5,0.1
+			s-0.4,0.1-0.6,0.2c-0.2,0.1-0.4,0.2-0.6,0.3c-0.2,0.1-0.4,0.2-0.5,0.3v7.5h-2.8v-10h2.5l0.3,1.2h0c0.2-0.1,0.4-0.3,0.7-0.4
+			c0.3-0.2,0.6-0.3,0.9-0.4c0.3-0.1,0.7-0.3,1-0.4c0.3-0.1,0.7-0.1,1-0.1c0.4,0,0.7,0.1,1.1,0.2c0.3,0.1,0.6,0.3,0.9,0.5
+			c0.2,0.2,0.4,0.5,0.6,0.9c0.1,0.4,0.2,0.8,0.2,1.3v7.2H174.9z"/>
+		<polygon id="XMLID_335_" class="st2" points="202.5,22.1 204.3,24 202.5,25.9 200.8,24 		"/>
+		<rect id="XMLID_334_" x="207.2" y="27.9" class="st2" width="2.8" height="2.4"/>
+	</g>
+	<g id="XMLID_69_">
+		<g id="XMLID_70_">
+			<defs>
+				<path id="XMLID_71_" d="M105.9,21c-16.7,4.3-16.9,23-0.1,25.1c-8.1,3.1-15.8-3.1-15.4-11.3C90.7,26.2,97.5,20.8,105.9,21
+					L105.9,21z M102.8,34.1c-1.1,0.5-2.1,0.9-2,2.4c0.4,3,4.8,1.5,3.3-0.4c-0.7-0.8-1.7-0.3-1.7-0.3C101,35.1,102.8,34.1,102.8,34.1
+					L102.8,34.1z M103.3,41c7.2,0,4.3-9-0.3-7c0,0,1.8,0.1,2.6,1.4C107.4,37.8,105.4,40.1,103.3,41L103.3,41z M103.3,30.2
+					c-3.3,0.5-6.6,3.3-5.8,6.9c0.5,2.5,3.2,4.5,6.2,3C98.1,40.2,97,33.4,103.3,30.2L103.3,30.2z M105.5,30.4c6.5,3.1,6.6,8,3.3,13.3
+					c2,1.9,3.6,1.5,3.6,1.5C115.1,39,113.2,30.1,105.5,30.4z"/>
+			</defs>
+			<clipPath id="XMLID_3_">
+				<use xlink:href="#XMLID_71_"  style="overflow:visible;"/>
+			</clipPath>
+			<polygon id="XMLID_332_" class="st3" points="109.1,27.5 137.2,13.3 137.8,14.2 			"/>
+			<polygon id="XMLID_331_" class="st3" points="109.1,27.5 137.7,14.1 138.2,14.9 			"/>
+			<polygon id="XMLID_330_" class="st3" points="109.1,27.5 138.1,14.7 138.5,15.5 			"/>
+			<polygon id="XMLID_329_" class="st3" points="109.1,27.5 138.4,15.4 138.8,16.2 			"/>
+			<polygon id="XMLID_328_" class="st3" points="109.1,27.5 138.8,16 139.2,16.9 			"/>
+			<polygon id="XMLID_327_" class="st3" points="109.1,27.5 139.1,16.7 139.4,17.5 			"/>
+			<polygon id="XMLID_326_" class="st3" points="109.1,27.5 139.4,17.4 139.7,18.2 			"/>
+			<polygon id="XMLID_325_" class="st3" points="109.1,27.5 139.6,18 140,18.9 			"/>
+			<polygon id="XMLID_324_" class="st3" points="109.1,27.5 139.9,18.7 140.2,19.6 			"/>
+			<polygon id="XMLID_323_" class="st4" points="109.1,27.5 140.2,19.4 140.4,20.3 			"/>
+			<polygon id="XMLID_322_" class="st5" points="109.1,27.5 140.4,20.1 140.6,21 			"/>
+			<polygon id="XMLID_321_" class="st6" points="109.1,27.5 140.6,20.8 140.8,21.7 			"/>
+			<polygon id="XMLID_320_" class="st6" points="109.1,27.5 140.8,21.5 141,22.4 			"/>
+			<polygon id="XMLID_319_" class="st6" points="109.1,27.5 140.9,22.2 141.1,23.1 			"/>
+			<polygon id="XMLID_318_" class="st7" points="109.1,27.5 141.1,22.9 141.2,23.8 			"/>
+			<polygon id="XMLID_317_" class="st7" points="109.1,27.5 141.2,23.6 141.3,24.5 			"/>
+			<polygon id="XMLID_316_" class="st7" points="109.1,27.5 141.3,24.4 141.4,25.3 			"/>
+			<polygon id="XMLID_315_" class="st7" points="109.1,27.5 141.4,25.1 141.5,26 			"/>
+			<polygon id="XMLID_314_" class="st8" points="109.1,27.5 141.5,25.8 141.5,26.7 			"/>
+			<polygon id="XMLID_313_" class="st8" points="109.1,27.5 141.5,26.5 141.6,27.4 			"/>
+			<polygon id="XMLID_312_" class="st8" points="109.1,27.5 141.6,27.2 141.6,28.1 			"/>
+			<polygon id="XMLID_311_" class="st9" points="109.1,27.5 141.6,28 141.6,28.9 			"/>
+			<polygon id="XMLID_310_" class="st9" points="109.1,27.5 141.6,28.7 141.5,29.6 			"/>
+			<polygon id="XMLID_309_" class="st10" points="109.1,27.5 141.5,29.4 141.5,30.3 			"/>
+			<polygon id="XMLID_308_" class="st10" points="109.1,27.5 141.5,30.1 141.4,31 			"/>
+			<polygon id="XMLID_307_" class="st10" points="109.1,27.5 141.4,30.8 141.3,31.7 			"/>
+			<polygon id="XMLID_306_" class="st11" points="109.1,27.5 141.3,31.6 141.2,32.5 			"/>
+			<polygon id="XMLID_305_" class="st11" points="109.1,27.5 141.2,32.3 141.1,33.2 			"/>
+			<polygon id="XMLID_304_" class="st12" points="109.1,27.5 141.1,33 140.9,33.9 			"/>
+			<polygon id="XMLID_303_" class="st12" points="109.1,27.5 141,33.7 140.8,34.6 			"/>
+			<polygon id="XMLID_302_" class="st13" points="109.1,27.5 140.8,34.4 140.6,35.3 			"/>
+			<polygon id="XMLID_301_" class="st14" points="109.1,27.5 140.6,35.1 140.4,36 			"/>
+			<polygon id="XMLID_300_" class="st14" points="109.1,27.5 140.4,35.8 140.1,36.7 			"/>
+			<polygon id="XMLID_299_" class="st15" points="109.1,27.5 140.2,36.5 139.9,37.3 			"/>
+			<polygon id="XMLID_298_" class="st16" points="109.1,27.5 140,37.2 139.6,38 			"/>
+			<polygon id="XMLID_297_" class="st17" points="109.1,27.5 139.7,37.8 139.3,38.7 			"/>
+			<polygon id="XMLID_296_" class="st18" points="109.1,27.5 139.4,38.5 139.1,39.3 			"/>
+			<polygon id="XMLID_295_" class="st19" points="109.1,27.5 139.1,39.2 138.7,40 			"/>
+			<polygon id="XMLID_294_" class="st19" points="109.1,27.5 138.8,39.8 138.4,40.7 			"/>
+			<polygon id="XMLID_293_" class="st20" points="109.1,27.5 138.5,40.5 138,41.3 			"/>
+			<polygon id="XMLID_292_" class="st21" points="109.1,27.5 138.1,41.1 137.7,41.9 			"/>
+			<polygon id="XMLID_291_" class="st22" points="109.1,27.5 137.8,41.8 137.3,42.6 			"/>
+			<polygon id="XMLID_290_" class="st22" points="109.1,27.5 137.4,42.4 136.9,43.2 			"/>
+			<polygon id="XMLID_289_" class="st23" points="109.1,27.5 137,43 136.5,43.8 			"/>
+			<polygon id="XMLID_288_" class="st24" points="109.1,27.5 136.6,43.6 136,44.4 			"/>
+			<polygon id="XMLID_287_" class="st25" points="109.1,27.5 136.1,44.2 135.6,45 			"/>
+			<polygon id="XMLID_286_" class="st26" points="109.1,27.5 135.7,44.8 135.1,45.5 			"/>
+			<polygon id="XMLID_285_" class="st27" points="109.1,27.5 135.2,45.4 134.6,46.1 			"/>
+			<polygon id="XMLID_284_" class="st28" points="109.1,27.5 134.7,46 134.1,46.6 			"/>
+			<polygon id="XMLID_283_" class="st29" points="109.1,27.5 134.2,46.5 133.6,47.2 			"/>
+			<polygon id="XMLID_282_" class="st30" points="109.1,27.5 133.7,47.1 133.1,47.7 			"/>
+			<polygon id="XMLID_281_" class="st31" points="109.1,27.5 133.2,47.6 132.5,48.2 			"/>
+			<polygon id="XMLID_280_" class="st32" points="109.1,27.5 132.7,48.1 132,48.7 			"/>
+			<polygon id="XMLID_279_" class="st33" points="109.1,27.5 132.1,48.6 131.4,49.2 			"/>
+			<polygon id="XMLID_278_" class="st34" points="109.1,27.5 131.5,49.1 130.8,49.7 			"/>
+			<polygon id="XMLID_277_" class="st35" points="109.1,27.5 131,49.6 130.2,50.2 			"/>
+			<polygon id="XMLID_276_" class="st36" points="109.1,27.5 130.4,50.1 129.6,50.6 			"/>
+			<polygon id="XMLID_275_" class="st37" points="109.1,27.5 129.8,50.5 129,51.1 			"/>
+			<polygon id="XMLID_274_" class="st38" points="109.1,27.5 129.1,51 128.3,51.5 			"/>
+			<polygon id="XMLID_273_" class="st39" points="109.1,27.5 128.5,51.4 127.7,51.9 			"/>
+			<polygon id="XMLID_272_" class="st40" points="109.1,27.5 127.9,51.8 127,52.3 			"/>
+			<polygon id="XMLID_271_" class="st41" points="109.1,27.5 127.2,52.2 126.4,52.7 			"/>
+			<polygon id="XMLID_270_" class="st42" points="109.1,27.5 126.5,52.6 125.7,53 			"/>
+			<polygon id="XMLID_269_" class="st43" points="109.1,27.5 125.9,53 125,53.4 			"/>
+			<polygon id="XMLID_268_" class="st44" points="109.1,27.5 125.2,53.3 124.3,53.7 			"/>
+			<polygon id="XMLID_267_" class="st45" points="109.1,27.5 124.5,53.6 123.6,54 			"/>
+			<polygon id="XMLID_266_" class="st46" points="109.1,27.5 123.8,54 122.9,54.4 			"/>
+			<polygon id="XMLID_265_" class="st47" points="109.1,27.5 123.1,54.3 122.1,54.6 			"/>
+			<polygon id="XMLID_264_" class="st48" points="109.1,27.5 122.3,54.6 121.4,54.9 			"/>
+			<polygon id="XMLID_263_" class="st49" points="109.1,27.5 121.6,54.8 120.7,55.2 			"/>
+			<polygon id="XMLID_262_" class="st50" points="109.1,27.5 120.9,55.1 119.9,55.4 			"/>
+			<polygon id="XMLID_261_" class="st51" points="109.1,27.5 120.1,55.3 119.2,55.6 			"/>
+			<polygon id="XMLID_260_" class="st52" points="109.1,27.5 119.4,55.6 118.4,55.8 			"/>
+			<polygon id="XMLID_259_" class="st53" points="109.1,27.5 118.6,55.8 117.6,56 			"/>
+			<polygon id="XMLID_258_" class="st54" points="109.1,27.5 117.8,56 116.9,56.2 			"/>
+			<polygon id="XMLID_257_" class="st55" points="109.1,27.5 117.1,56.1 116.1,56.3 			"/>
+			<polygon id="XMLID_256_" class="st56" points="109.1,27.5 116.3,56.3 115.3,56.5 			"/>
+			<polygon id="XMLID_255_" class="st57" points="109.1,27.5 115.5,56.4 114.5,56.6 			"/>
+			<polygon id="XMLID_254_" class="st58" points="109.1,27.5 114.7,56.5 113.7,56.7 			"/>
+			<polygon id="XMLID_253_" class="st59" points="109.1,27.5 113.9,56.7 113,56.8 			"/>
+			<polygon id="XMLID_252_" class="st60" points="109.1,27.5 113.2,56.7 112.2,56.8 			"/>
+			<polygon id="XMLID_251_" class="st61" points="109.1,27.5 112.4,56.8 111.4,56.9 			"/>
+			<polygon id="XMLID_250_" class="st62" points="109.1,27.5 111.6,56.9 110.6,56.9 			"/>
+			<polygon id="XMLID_249_" class="st63" points="109.1,27.5 110.8,56.9 109.8,56.9 			"/>
+			<polygon id="XMLID_248_" class="st64" points="109.1,27.5 110,56.9 109,56.9 			"/>
+			<polygon id="XMLID_247_" class="st65" points="109.1,27.5 109.2,56.9 108.2,56.9 			"/>
+			<polygon id="XMLID_246_" class="st66" points="109.1,27.5 108.4,56.9 107.4,56.8 			"/>
+			<polygon id="XMLID_245_" class="st67" points="109.1,27.5 107.6,56.8 106.6,56.8 			"/>
+			<polygon id="XMLID_244_" class="st68" points="109.1,27.5 106.8,56.8 105.8,56.7 			"/>
+			<polygon id="XMLID_243_" class="st69" points="109.1,27.5 106,56.7 105,56.6 			"/>
+			<polygon id="XMLID_242_" class="st70" points="109.1,27.5 105.2,56.6 104.2,56.5 			"/>
+			<polygon id="XMLID_241_" class="st71" points="109.1,27.5 104.4,56.5 103.4,56.4 			"/>
+			<polygon id="XMLID_240_" class="st72" points="109.1,27.5 103.6,56.4 102.7,56.2 			"/>
+			<polygon id="XMLID_239_" class="st73" points="109.1,27.5 102.9,56.2 101.9,56 			"/>
+			<polygon id="XMLID_238_" class="st74" points="109.1,27.5 102.1,56.1 101.1,55.9 			"/>
+			<polygon id="XMLID_237_" class="st75" points="109.1,27.5 101.3,55.9 100.3,55.7 			"/>
+			<polygon id="XMLID_236_" class="st76" points="109.1,27.5 100.5,55.7 99.6,55.5 			"/>
+			<polygon id="XMLID_235_" class="st77" points="109.1,27.5 99.8,55.5 98.8,55.2 			"/>
+			<polygon id="XMLID_234_" class="st78" points="109.1,27.5 99,55.3 98.1,55 			"/>
+			<polygon id="XMLID_233_" class="st79" points="109.1,27.5 98.2,55 97.3,54.7 			"/>
+			<polygon id="XMLID_232_" class="st80" points="109.1,27.5 97.5,54.8 96.6,54.4 			"/>
+			<polygon id="XMLID_231_" class="st81" points="109.1,27.5 96.8,54.5 95.8,54.1 			"/>
+			<polygon id="XMLID_230_" class="st82" points="109.1,27.5 96,54.2 95.1,53.8 			"/>
+			<polygon id="XMLID_229_" class="st83" points="109.1,27.5 95.3,53.9 94.4,53.5 			"/>
+			<polygon id="XMLID_228_" class="st84" points="109.1,27.5 94.6,53.6 93.7,53.1 			"/>
+			<polygon id="XMLID_227_" class="st85" points="109.1,27.5 93.9,53.2 93,52.8 			"/>
+			<polygon id="XMLID_226_" class="st86" points="109.1,27.5 93.2,52.9 92.3,52.4 			"/>
+			<polygon id="XMLID_225_" class="st87" points="109.1,27.5 92.5,52.5 91.6,52 			"/>
+			<polygon id="XMLID_224_" class="st88" points="109.1,27.5 91.8,52.1 91,51.6 			"/>
+			<polygon id="XMLID_223_" class="st89" points="109.1,27.5 91.1,51.7 90.3,51.2 			"/>
+			<polygon id="XMLID_222_" class="st90" points="109.1,27.5 90.5,51.3 89.7,50.7 			"/>
+			<polygon id="XMLID_221_" class="st91" points="109.1,27.5 89.8,50.8 89,50.3 			"/>
+			<polygon id="XMLID_220_" class="st92" points="109.1,27.5 89.2,50.4 88.4,49.8 			"/>
+			<polygon id="XMLID_219_" class="st93" points="109.1,27.5 88.6,49.9 87.8,49.3 			"/>
+			<polygon id="XMLID_218_" class="st94" points="109.1,27.5 88,49.5 87.2,48.9 			"/>
+			<polygon id="XMLID_217_" class="st95" points="109.1,27.5 87.4,49 86.6,48.4 			"/>
+			<polygon id="XMLID_216_" class="st96" points="109.1,27.5 86.8,48.5 86.1,47.8 			"/>
+			<polygon id="XMLID_215_" class="st97" points="109.1,27.5 86.2,48 85.5,47.3 			"/>
+			<polygon id="XMLID_214_" class="st98" points="109.1,27.5 85.7,47.4 85,46.8 			"/>
+			<polygon id="XMLID_213_" class="st99" points="109.1,27.5 85.1,46.9 84.5,46.2 			"/>
+			<polygon id="XMLID_212_" class="st100" points="109.1,27.5 84.6,46.4 83.9,45.7 			"/>
+			<polygon id="XMLID_211_" class="st101" points="109.1,27.5 84.1,45.8 83.5,45.1 			"/>
+			<polygon id="XMLID_210_" class="st102" points="109.1,27.5 83.6,45.2 83,44.5 			"/>
+			<polygon id="XMLID_209_" class="st102" points="109.1,27.5 83.1,44.7 82.5,43.9 			"/>
+			<polygon id="XMLID_208_" class="st102" points="109.1,27.5 82.6,44.1 82.1,43.3 			"/>
+			<polygon id="XMLID_207_" class="st102" points="109.1,27.5 82.2,43.5 81.6,42.7 			"/>
+			<polygon id="XMLID_206_" class="st102" points="109.1,27.5 81.7,42.8 81.2,42.1 			"/>
+			<polygon id="XMLID_205_" class="st102" points="109.1,27.5 81.3,42.2 80.8,41.4 			"/>
+			<polygon id="XMLID_204_" class="st101" points="109.1,27.5 80.9,41.6 80.4,40.8 			"/>
+			<polygon id="XMLID_203_" class="st103" points="109.1,27.5 80.5,41 80.1,40.2 			"/>
+			<polygon id="XMLID_202_" class="st104" points="109.1,27.5 80.2,40.3 79.7,39.5 			"/>
+			<polygon id="XMLID_201_" class="st105" points="109.1,27.5 79.8,39.7 79.4,38.8 			"/>
+			<polygon id="XMLID_200_" class="st106" points="109.1,27.5 79.5,39 79.1,38.2 			"/>
+			<polygon id="XMLID_199_" class="st107" points="109.1,27.5 79.2,38.3 78.8,37.5 			"/>
+			<polygon id="XMLID_198_" class="st108" points="109.1,27.5 78.9,37.7 78.5,36.8 			"/>
+			<polygon id="XMLID_197_" class="st109" points="109.1,27.5 78.6,37 78.3,36.1 			"/>
+			<polygon id="XMLID_196_" class="st110" points="109.1,27.5 78.3,36.3 78,35.4 			"/>
+			<polygon id="XMLID_195_" class="st111" points="109.1,27.5 78.1,35.6 77.8,34.7 			"/>
+			<polygon id="XMLID_194_" class="st112" points="109.1,27.5 77.9,34.9 77.6,34 			"/>
+			<polygon id="XMLID_193_" class="st113" points="109.1,27.5 77.7,34.2 77.4,33.3 			"/>
+			<polygon id="XMLID_192_" class="st114" points="109.1,27.5 77.5,33.5 77.3,32.6 			"/>
+			<polygon id="XMLID_191_" class="st115" points="109.1,27.5 77.3,32.8 77.1,31.9 			"/>
+			<polygon id="XMLID_190_" class="st116" points="109.1,27.5 77.2,32.1 77,31.2 			"/>
+			<polygon id="XMLID_189_" class="st117" points="109.1,27.5 77,31.4 76.9,30.5 			"/>
+			<polygon id="XMLID_188_" class="st118" points="109.1,27.5 76.9,30.7 76.8,29.8 			"/>
+			<polygon id="XMLID_187_" class="st119" points="109.1,27.5 76.8,29.9 76.7,29 			"/>
+			<polygon id="XMLID_186_" class="st120" points="109.1,27.5 76.8,29.2 76.7,28.3 			"/>
+			<polygon id="XMLID_185_" class="st121" points="109.1,27.5 76.7,28.5 76.7,27.6 			"/>
+			<polygon id="XMLID_184_" class="st122" points="109.1,27.5 76.7,27.8 76.7,26.9 			"/>
+			<polygon id="XMLID_183_" class="st123" points="109.1,27.5 76.7,27.1 76.7,26.2 			"/>
+			<polygon id="XMLID_182_" class="st124" points="109.1,27.5 76.7,26.3 76.7,25.4 			"/>
+			<polygon id="XMLID_181_" class="st125" points="109.1,27.5 76.7,25.6 76.8,24.7 			"/>
+			<polygon id="XMLID_180_" class="st126" points="109.1,27.5 76.7,24.9 76.8,24 			"/>
+			<polygon id="XMLID_179_" class="st127" points="109.1,27.5 76.8,24.2 76.9,23.3 			"/>
+			<polygon id="XMLID_178_" class="st128" points="109.1,27.5 76.9,23.5 77,22.6 			"/>
+			<polygon id="XMLID_177_" class="st129" points="109.1,27.5 77,22.7 77.2,21.9 			"/>
+			<polygon id="XMLID_176_" class="st130" points="109.1,27.5 77.1,22 77.3,21.2 			"/>
+			<polygon id="XMLID_175_" class="st131" points="109.1,27.5 77.3,21.3 77.5,20.4 			"/>
+			<polygon id="XMLID_174_" class="st132" points="109.1,27.5 77.4,20.6 77.7,19.7 			"/>
+			<polygon id="XMLID_173_" class="st133" points="109.1,27.5 77.6,19.9 77.9,19.1 			"/>
+			<polygon id="XMLID_172_" class="st134" points="109.1,27.5 77.8,19.2 78.1,18.4 			"/>
+			<polygon id="XMLID_171_" class="st135" points="109.1,27.5 78,18.5 78.3,17.7 			"/>
+			<polygon id="XMLID_170_" class="st136" points="109.1,27.5 78.3,17.9 78.6,17 			"/>
+			<polygon id="XMLID_169_" class="st137" points="109.1,27.5 78.5,17.2 78.9,16.3 			"/>
+			<polygon id="XMLID_168_" class="st137" points="109.1,27.5 78.8,16.5 79.2,15.7 			"/>
+			<polygon id="XMLID_167_" class="st138" points="109.1,27.5 79.1,15.8 79.5,15 			"/>
+			<polygon id="XMLID_166_" class="st139" points="109.1,27.5 79.4,15.2 79.8,14.4 			"/>
+			<polygon id="XMLID_165_" class="st140" points="109.1,27.5 79.8,14.5 80.2,13.7 			"/>
+			<polygon id="XMLID_164_" class="st141" points="109.1,27.5 80.1,13.9 80.6,13.1 			"/>
+			<polygon id="XMLID_163_" class="st142" points="109.1,27.5 80.5,13.3 80.9,12.5 			"/>
+			<polygon id="XMLID_162_" class="st143" points="109.1,27.5 80.8,12.6 81.3,11.9 			"/>
+			<polygon id="XMLID_161_" class="st144" points="109.1,27.5 81.2,12 81.8,11.2 			"/>
+			<polygon id="XMLID_160_" class="st145" points="109.1,27.5 81.7,11.4 82.2,10.7 			"/>
+			<polygon id="XMLID_159_" class="st146" points="109.1,27.5 82.1,10.8 82.7,10.1 			"/>
+			<polygon id="XMLID_158_" class="st147" points="109.1,27.5 82.5,10.2 83.1,9.5 			"/>
+			<polygon id="XMLID_157_" class="st148" points="109.1,27.5 83,9.6 83.6,8.9 			"/>
+			<polygon id="XMLID_156_" class="st149" points="109.1,27.5 83.5,9.1 84.1,8.4 			"/>
+			<polygon id="XMLID_155_" class="st150" points="109.1,27.5 84,8.5 84.6,7.8 			"/>
+			<polygon id="XMLID_154_" class="st151" points="109.1,27.5 84.5,8 85.2,7.3 			"/>
+			<polygon id="XMLID_153_" class="st152" points="109.1,27.5 85,7.4 85.7,6.8 			"/>
+			<polygon id="XMLID_152_" class="st153" points="109.1,27.5 85.6,6.9 86.3,6.3 			"/>
+			<polygon id="XMLID_151_" class="st154" points="109.1,27.5 86.1,6.4 86.8,5.8 			"/>
+			<polygon id="XMLID_150_" class="st155" points="109.1,27.5 86.7,5.9 87.4,5.3 			"/>
+			<polygon id="XMLID_149_" class="st156" points="109.1,27.5 87.3,5.4 88,4.8 			"/>
+			<polygon id="XMLID_148_" class="st157" points="109.1,27.5 87.9,5 88.6,4.4 			"/>
+			<polygon id="XMLID_147_" class="st158" points="109.1,27.5 88.5,4.5 89.3,3.9 			"/>
+			<polygon id="XMLID_146_" class="st159" points="109.1,27.5 89.1,4.1 89.9,3.5 			"/>
+			<polygon id="XMLID_145_" class="st160" points="109.1,27.5 89.7,3.6 90.5,3.1 			"/>
+			<polygon id="XMLID_144_" class="st161" points="109.1,27.5 90.4,3.2 91.2,2.7 			"/>
+			<polygon id="XMLID_143_" class="st162" points="109.1,27.5 91,2.8 91.9,2.3 			"/>
+			<polygon id="XMLID_142_" class="st163" points="109.1,27.5 91.7,2.4 92.5,2 			"/>
+			<polygon id="XMLID_141_" class="st164" points="109.1,27.5 92.4,2.1 93.2,1.6 			"/>
+			<polygon id="XMLID_140_" class="st165" points="109.1,27.5 93.1,1.7 93.9,1.3 			"/>
+			<polygon id="XMLID_139_" class="st166" points="109.1,27.5 93.8,1.4 94.6,1 			"/>
+			<polygon id="XMLID_138_" class="st167" points="109.1,27.5 94.5,1.1 95.4,0.7 			"/>
+			<polygon id="XMLID_137_" class="st168" points="109.1,27.5 95.2,0.7 96.1,0.4 			"/>
+			<polygon id="XMLID_136_" class="st169" points="109.1,27.5 95.9,0.5 96.8,0.1 			"/>
+			<polygon id="XMLID_135_" class="st170" points="109.1,27.5 96.6,0.2 97.6,-0.1 			"/>
+			<polygon id="XMLID_134_" class="st171" points="109.1,27.5 97.4,-0.1 98.3,-0.4 			"/>
+			<polygon id="XMLID_133_" class="st172" points="109.1,27.5 98.1,-0.3 99.1,-0.6 			"/>
+			<polygon id="XMLID_132_" class="st173" points="109.1,27.5 98.9,-0.5 99.8,-0.8 			"/>
+			<polygon id="XMLID_131_" class="st174" points="109.1,27.5 99.6,-0.8 100.6,-1 			"/>
+			<polygon id="XMLID_130_" class="st175" points="109.1,27.5 100.4,-0.9 101.4,-1.2 			"/>
+			<polygon id="XMLID_129_" class="st176" points="109.1,27.5 101.2,-1.1 102.1,-1.3 			"/>
+			<polygon id="XMLID_128_" class="st177" points="109.1,27.5 101.9,-1.3 102.9,-1.4 			"/>
+			<polygon id="XMLID_127_" class="st178" points="109.1,27.5 102.7,-1.4 103.7,-1.6 			"/>
+			<polygon id="XMLID_126_" class="st179" points="109.1,27.5 103.5,-1.5 104.5,-1.7 			"/>
+			<polygon id="XMLID_125_" class="st180" points="109.1,27.5 104.3,-1.6 105.3,-1.7 			"/>
+			<polygon id="XMLID_124_" class="st181" points="109.1,27.5 105.1,-1.7 106.1,-1.8 			"/>
+			<polygon id="XMLID_123_" class="st182" points="109.1,27.5 105.9,-1.8 106.9,-1.8 			"/>
+			<polygon id="XMLID_122_" class="st183" points="109.1,27.5 106.7,-1.8 107.7,-1.9 			"/>
+			<polygon id="XMLID_121_" class="st184" points="109.1,27.5 107.5,-1.9 108.5,-1.9 			"/>
+			<polygon id="XMLID_120_" class="st185" points="109.1,27.5 108.3,-1.9 109.2,-1.9 			"/>
+			<polygon id="XMLID_119_" class="st186" points="109.1,27.5 109,-1.9 110,-1.9 			"/>
+			<polygon id="XMLID_118_" class="st187" points="109.1,27.5 109.8,-1.9 110.8,-1.8 			"/>
+			<polygon id="XMLID_117_" class="st188" points="109.1,27.5 110.6,-1.8 111.6,-1.8 			"/>
+			<polygon id="XMLID_116_" class="st189" points="109.1,27.5 111.4,-1.8 112.4,-1.7 			"/>
+			<polygon id="XMLID_115_" class="st189" points="109.1,27.5 112.2,-1.7 113.2,-1.6 			"/>
+			<polygon id="XMLID_114_" class="st190" points="109.1,27.5 113,-1.6 114,-1.5 			"/>
+			<polygon id="XMLID_113_" class="st191" points="109.1,27.5 113.8,-1.5 114.8,-1.3 			"/>
+			<polygon id="XMLID_112_" class="st192" points="109.1,27.5 114.6,-1.4 115.6,-1.2 			"/>
+			<polygon id="XMLID_111_" class="st193" points="109.1,27.5 115.4,-1.2 116.4,-1 			"/>
+			<polygon id="XMLID_110_" class="st193" points="109.1,27.5 116.2,-1.1 117.1,-0.8 			"/>
+			<polygon id="XMLID_109_" class="st194" points="109.1,27.5 116.9,-0.9 117.9,-0.6 			"/>
+			<polygon id="XMLID_108_" class="st195" points="109.1,27.5 117.7,-0.7 118.7,-0.4 			"/>
+			<polygon id="XMLID_107_" class="st196" points="109.1,27.5 118.5,-0.5 119.4,-0.2 			"/>
+			<polygon id="XMLID_106_" class="st196" points="109.1,27.5 119.2,-0.3 120.2,0.1 			"/>
+			<polygon id="XMLID_105_" class="st196" points="109.1,27.5 120,0 120.9,0.3 			"/>
+			<polygon id="XMLID_104_" class="st196" points="109.1,27.5 120.7,0.3 121.7,0.6 			"/>
+			<polygon id="XMLID_103_" class="st196" points="109.1,27.5 121.5,0.5 122.4,0.9 			"/>
+			<polygon id="XMLID_102_" class="st196" points="109.1,27.5 122.2,0.8 123.1,1.2 			"/>
+			<polygon id="XMLID_101_" class="st197" points="109.1,27.5 122.9,1.1 123.8,1.5 			"/>
+			<polygon id="XMLID_100_" class="st197" points="109.1,27.5 123.6,1.5 124.5,1.9 			"/>
+			<polygon id="XMLID_99_" class="st197" points="109.1,27.5 124.4,1.8 125.2,2.3 			"/>
+			<polygon id="XMLID_98_" class="st197" points="109.1,27.5 125.1,2.2 125.9,2.6 			"/>
+			<polygon id="XMLID_97_" class="st197" points="109.1,27.5 125.7,2.5 126.6,3 			"/>
+			<polygon id="XMLID_96_" class="st197" points="109.1,27.5 126.4,2.9 127.3,3.4 			"/>
+			<polygon id="XMLID_95_" class="st197" points="109.1,27.5 127.1,3.3 127.9,3.8 			"/>
+			<polygon id="XMLID_94_" class="st196" points="109.1,27.5 127.7,3.7 128.6,4.3 			"/>
+			<polygon id="XMLID_93_" class="st196" points="109.1,27.5 128.4,4.2 129.2,4.7 			"/>
+			<polygon id="XMLID_92_" class="st196" points="109.1,27.5 129,4.6 129.8,5.2 			"/>
+			<polygon id="XMLID_91_" class="st195" points="109.1,27.5 129.7,5.1 130.4,5.7 			"/>
+			<polygon id="XMLID_90_" class="st195" points="109.1,27.5 130.3,5.6 131,6.2 			"/>
+			<polygon id="XMLID_89_" class="st198" points="109.1,27.5 130.9,6 131.6,6.7 			"/>
+			<polygon id="XMLID_88_" class="st198" points="109.1,27.5 131.4,6.5 132.2,7.2 			"/>
+			<polygon id="XMLID_87_" class="st199" points="109.1,27.5 132,7 132.7,7.7 			"/>
+			<polygon id="XMLID_86_" class="st200" points="109.1,27.5 132.6,7.6 133.3,8.2 			"/>
+			<polygon id="XMLID_85_" class="st200" points="109.1,27.5 133.1,8.1 133.8,8.8 			"/>
+			<polygon id="XMLID_84_" class="st201" points="109.1,27.5 133.6,8.7 134.3,9.4 			"/>
+			<polygon id="XMLID_83_" class="st201" points="109.1,27.5 134.2,9.2 134.8,9.9 			"/>
+			<polygon id="XMLID_82_" class="st202" points="109.1,27.5 134.7,9.8 135.3,10.5 			"/>
+			<polygon id="XMLID_81_" class="st202" points="109.1,27.5 135.1,10.4 135.7,11.1 			"/>
+			<polygon id="XMLID_80_" class="st203" points="109.1,27.5 135.6,11 136.2,11.7 			"/>
+			<polygon id="XMLID_79_" class="st203" points="109.1,27.5 136.1,11.6 136.6,12.3 			"/>
+			<polygon id="XMLID_78_" class="st203" points="109.1,27.5 136.5,12.2 137,12.9 			"/>
+			<polygon id="XMLID_77_" class="st3" points="109.1,27.5 136.9,12.8 137.3,13.4 			"/>
+		</g>
+	</g>
+	<path id="XMLID_50_" class="st2" d="M126.8,47.1V42h1l1.2,3.7l0.2,0.8c0.1-0.2,0.2-0.5,0.3-0.8l1.2-3.6h0.9v5.2h-0.7v-4.3l-1.5,4.3
+		H129l-1.5-4.4v4.4H126.8L126.8,47.1z M135.3,44.6c0-0.6,0.1-1.1,0.3-1.5c0.2-0.4,0.5-0.7,0.9-0.9c0.4-0.2,0.8-0.3,1.3-0.3
+		c0.7,0,1.3,0.2,1.8,0.7c0.5,0.5,0.7,1.1,0.7,2c0,0.9-0.2,1.5-0.7,2c-0.5,0.4-1.1,0.7-1.7,0.7c-0.7,0-1.3-0.3-1.8-0.8
+		C135.5,46,135.3,45.3,135.3,44.6L135.3,44.6z M136,44.6c0,0.6,0.2,1.1,0.5,1.4c0.3,0.4,0.7,0.6,1.3,0.6c0.6,0,1-0.2,1.3-0.6
+		c0.3-0.4,0.4-0.9,0.4-1.5c0-0.7-0.2-1.2-0.5-1.6c-0.3-0.4-0.8-0.5-1.3-0.5c-0.6,0-1.1,0.2-1.4,0.6C136.2,43.5,136,44,136,44.6
+		L136,44.6z M143.8,47.1V42h2.3c0.4,0,0.7,0,0.9,0.1c0.2,0.1,0.5,0.2,0.6,0.5c0.2,0.2,0.3,0.5,0.3,0.9c0,0.8-0.5,1.3-1.5,1.4
+		c0.3,0.1,0.7,0.5,1,0.9l0.9,1.4h-0.9l-0.7-1.1c-0.3-0.4-0.5-0.7-0.6-0.8c-0.1-0.2-0.3-0.3-0.4-0.3c-0.1-0.1-0.3-0.1-0.5-0.1h-0.8
+		v2.3H143.8L143.8,47.1z M144.5,44.2h1.5c0.8,0,1.3-0.3,1.3-0.9c0-0.6-0.4-0.8-1.1-0.8h-1.6V44.2L144.5,44.2z M151.7,47.1V42h3.7
+		v0.6h-3.1v1.6h2.9v0.6h-2.9v1.8h3.2v0.6H151.7L151.7,47.1z M165.3,47.1v-4.6h-1.7V42h4.1v0.6h-1.7v4.6H165.3L165.3,47.1z M171,47.1
+		V42h0.7v2.1h2.7V42h0.7v5.2h-0.7v-2.4h-2.7v2.4H171L171,47.1z M178.3,47.1l2-5.2h0.7l2.1,5.2h-0.8l-0.6-1.6h-2.2l-0.6,1.6H178.3
+		L178.3,47.1z M179.8,45h1.8l-0.5-1.4c-0.2-0.4-0.3-0.8-0.4-1.1c-0.1,0.3-0.2,0.7-0.3,1L179.8,45L179.8,45z M186.3,47.1V42h0.7
+		l2.7,4.1V42h0.7v5.2h-0.7l-2.7-4.1v4.1H186.3L186.3,47.1z M199,47.1V42h1.8c0.5,0,1,0.1,1.3,0.2c0.3,0.1,0.6,0.4,0.9,0.8
+		c0.2,0.4,0.4,0.9,0.4,1.6c0,0.8-0.2,1.4-0.6,1.9c-0.4,0.5-1,0.7-1.9,0.7H199L199,47.1z M199.7,46.5h1.1c0.4,0,0.8-0.1,1-0.2
+		c0.2-0.1,0.4-0.3,0.6-0.6c0.1-0.3,0.2-0.7,0.2-1.2c0-0.5-0.1-0.9-0.2-1.2c-0.1-0.3-0.3-0.5-0.6-0.6c-0.2-0.1-0.6-0.2-1-0.2h-1.1
+		V46.5L199.7,46.5z M206.3,47.1l2-5.2h0.7l2.1,5.2h-0.8l-0.6-1.6h-2.2l-0.6,1.6H206.3L206.3,47.1z M207.8,45h1.8l-0.5-1.4
+		c-0.2-0.4-0.3-0.8-0.4-1.1c-0.1,0.3-0.2,0.7-0.3,1L207.8,45L207.8,45z M215.7,47.1v-4.6H214V42h4.1v0.6h-1.7v4.6H215.7L215.7,47.1z
+		 M220.8,47.1l2-5.2h0.7l2.1,5.2h-0.8l-0.6-1.6h-2.2l-0.6,1.6H220.8L220.8,47.1z M222.3,45h1.8l-0.5-1.4c-0.2-0.4-0.3-0.8-0.4-1.1
+		c-0.1,0.3-0.2,0.7-0.3,1L222.3,45z"/>
+</g>
+</svg>

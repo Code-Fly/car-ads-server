@@ -27,7 +27,7 @@ body {
 
 .head-north {
     overflow: hidden;
-    background: #95B8E7 url(../../images/headbg.png) repeat-x;
+    background: #95B8E7 url(../assets/image/headbg.png) repeat-x;
     color: #fff;
     font-family: Verdana
 }
@@ -41,10 +41,10 @@ body {
 }
 
 .head-left {
-    background: url(../theme/images/logo48.png) no-repeat left;
+    background: url(../assets/image/logo1.png) no-repeat left;
     margin-left: 17px;
     width: 310px;
-    height: 64px;
+    height: 100%;
     float: left;
     padding-left: 70px;
 }

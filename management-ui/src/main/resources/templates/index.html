@@ -11,11 +11,13 @@
     <title>Title</title>
     <link rel="stylesheet" type="text/css" th:href="@{assets/js/jquery-easyui/themes/default/easyui.css}"/>
     <link rel="stylesheet" type="text/css" th:href="@{assets/js/jquery-easyui/themes/icon.css}"/>
+    <link rel="stylesheet" type="text/css" th:href="@{assets/icon/icon.css}"/>
     <link rel="stylesheet" type="text/css" th:href="@{assets/css/base.css}"/>
     <link rel="stylesheet" type="text/css" th:href="@{pages/index.css}"/>
 
     <script type="text/javascript" th:src="@{assets/js/jquery/jquery-1.11.3.min.js}"></script>
     <script type="text/javascript" th:src="@{assets/js/jquery-easyui/jquery.easyui.min.js}"></script>
+    <script type="text/javascript" th:src="@{assets/js/jquery-easyui/locale/easyui-lang-zh_CN.js}"></script>
     <script type="text/javascript" th:src="@{pages/index.js}"></script>
     <script th:inline="javascript" type="text/javascript">
         var _appId = [[${appId}]];
@@ -61,32 +63,32 @@
         <div title="用电能耗" data-options="ionCls:'icon-save'">
             <ul>
                 <li><a class="easyui-linkbutton"
-                       data-options="iconCls:'icon-man'"
-                       onclick="addTab('实时用电数据','view/powerdetail/realtime/main.jsp','icon-man')"
+                       data-options="iconCls:'icon-table'"
+                       onclick="addTab('实时用电数据','view/powerdetail/realtime/main.jsp','icon-table')"
                        plain="true" href="javascript:void(0)">实时用电数据</a></li>
                 <li><a class="easyui-linkbutton"
-                       data-options="iconCls:'icon-man'"
-                       onclick="addTab('日用电数据','view/powerdetail/daily/main.jsp','icon-man')"
+                       data-options="iconCls:'icon-table'"
+                       onclick="addTab('日用电数据','view/powerdetail/daily/main.jsp','icon-table')"
                        plain="true" href="javascript:void(0)">日用电数据</a></li>
                 <li><a class="easyui-linkbutton"
-                       data-options="iconCls:'icon-man'"
-                       onclick="addTab('周用电数据','view/powerdetail/weekly/main.jsp','icon-man')"
+                       data-options="iconCls:'icon-table'"
+                       onclick="addTab('周用电数据','view/powerdetail/weekly/main.jsp','icon-table')"
                        plain="true" href="javascript:void(0)">周用电数据</a></li>
                 <li><a class="easyui-linkbutton"
-                       data-options="iconCls:'icon-man'"
-                       onclick="addTab('月用电数据','view/powerdetail/monthly/main.jsp','icon-man')"
+                       data-options="iconCls:'icon-table'"
+                       onclick="addTab('月用电数据','view/powerdetail/monthly/main.jsp','icon-table')"
                        plain="true" href="javascript:void(0)">月用电数据</a></li>
             </ul>
         </div>
         <div title="用电分析" data-options="ionCls:'icon-save'">
             <ul>
                 <li><a class="easyui-linkbutton"
-                       data-options="iconCls:'icon-man'"
-                       onclick="addTab('负荷分析','view/poweranalysis/load/main.jsp','icon-man')"
+                       data-options="iconCls:'icon-table'"
+                       onclick="addTab('负荷分析','view/poweranalysis/load/main.jsp','icon-table')"
                        plain="true" href="javascript:void(0)">负荷分析</a></li>
                 <li><a class="easyui-linkbutton"
-                       data-options="iconCls:'icon-man'"
-                       onclick="addTab('电量分析','view/poweranalysis/electricity/main.jsp','icon-man')"
+                       data-options="iconCls:'icon-table'"
+                       onclick="addTab('电量分析','view/poweranalysis/electricity/main.jsp','icon-table')"
                        plain="true" href="javascript:void(0)">电量分析</a></li>
             </ul>
         </div>
