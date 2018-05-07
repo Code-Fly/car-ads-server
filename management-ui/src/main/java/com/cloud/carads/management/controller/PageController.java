@@ -7,12 +7,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 @Controller
-@RequestMapping(value = "/user")
-public class UserController {
-    @RequestMapping(value = "/{page}", method = RequestMethod.GET)
-    public String login(Model model,
+@RequestMapping(value = "/page")
+public class PageController {
+    @RequestMapping(value = "/{directory}/{page}", method = RequestMethod.GET)
+    public String page(Model model,
+                        @PathVariable String directory,
                         @PathVariable String page) {
-        model.addAttribute("name", "Dear");
-        return "user/" + page;
+        return directory + "/" + page;
     }
 }

@@ -1,0 +1,129 @@
+body {
+    overflow-y: hidden;
+}
+
+#west {
+    border-width: 0 1px;
+}
+
+.tabs-tool {
+    height: auto !important;
+}
+
+.tabs-tool {
+    border-right: 0 !important;
+}
+
+.noscript {
+    position: absolute;
+    z-index: 100000;
+    height: 2046px;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    background: white;
+    text-align: center;
+}
+
+.head-north {
+    overflow: hidden;
+    background: #95B8E7 url(../../images/headbg.png) repeat-x;
+    color: #fff;
+    font-family: Verdana
+}
+
+.head-south {
+    height: 25px;
+    line-height: 25px;
+    background: #95B8E7;
+    overflow: hidden;
+    text-align: center;
+}
+
+.head-left {
+    background: url(../theme/images/logo48.png) no-repeat left;
+    margin-left: 17px;
+    width: 310px;
+    height: 64px;
+    float: left;
+    padding-left: 70px;
+}
+
+.head-right {
+    float: right;
+    padding-right: 10px;
+}
+
+.head-right a {
+    color: white;
+    margin-top: -25px;
+}
+
+.head-right b {
+    font-size: 12px;
+    font-family: Verdana, ����, Tahoma;
+}
+
+.ul_list, .accordion ul {
+    list-style-type: none;
+    margin: 0px;
+    padding: 10px;
+}
+
+.ul_list li, .accordion ul li {
+    padding: 0px;
+    margin-left: 0px;
+}
+
+.ul_list li a, .accordion ul li a {
+    line-height: 24px;
+    cursor: pointer;
+}
+
+.ul_list li div, .accordion ul li div {
+    margin: 2px 0px;
+    padding-left: 10px;
+    padding-top: 2px;
+    border: 1px solid #fff;
+}
+
+.ul_list li.hover, .accordion ul li div.hover {
+    border: 1px dashed #D69C00;
+    background: #FFE88C;
+    cursor: pointer;
+}
+
+.accordion ul li div.hover a {
+    color: #D16C00;
+    text-decoration: none;
+}
+
+.ul_list li.selected, .accordion ul li div.selected {
+    border: 1px solid #D69C00;
+    background: #FFE88C;
+    cursor: default;
+}
+
+.ul_list li.selected a, a.accordion ul li div.selected a {
+    color: #D16C00;
+    font-weight: bold;
+}
+
+.ul_list li {
+    border: 1px solid #fff;
+    margin-bottom: 1px;
+}
+
+.logoBg {
+    display: inline-block;
+    width: 100px;
+    height: 34px;
+    background: url(../theme/images/logoName.png) no-repeat;
+    margin-top: 18px;
+}
+
+.welcome_bg {
+    height: inherit;
+    background: url(../theme/images/welcome.png) no-repeat;
+    background-color: #F4F4F4;
+}

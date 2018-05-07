@@ -3,24 +3,92 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <title>Title</title>
+    <link rel="stylesheet" type="text/css" th:href="@{asserts/js/jquery-easyui/themes/default/easyui.css}"/>
+    <link rel="stylesheet" type="text/css" th:href="@{asserts/js/jquery-easyui/themes/icon.css}"/>
+    <link rel="stylesheet" type="text/css" th:href="@{asserts/css/base.css}"/>
+    <link rel="stylesheet" type="text/css" th:href="@{pages/index.css}"/>
+
+    <script type="text/javascript" th:src="@{asserts/js/jquery/jquery-1.11.3.min.js}"></script>
+    <script type="text/javascript" th:src="@{asserts/js/jquery-easyui/jquery.easyui.min.js}"></script>
+    <script type="text/javascript" th:src="@{pages/index.js}"></script>
+
 </head>
-<body>
-index
-<p th:text="'Hello！, ' + ${name} + '!'">3333</p>
-<p th:text=" ${appId} ">3333</p>
-<p th:text=" ${appSecret} ">3333</p>
-<p th:text=" ${token} ">3333</p>
-<p th:text=" ${logoutUri} ">3333</p>
-<p th:text=" ${localLogoutUri} ">3333</p>
+<body class="easyui-layout">
+<div data-options="region:'north'" style="height: 8%;overflow: hidden;" class="head-north">
+    north
+</div>
+<div data-options="region:'west'" style="width:15%;">
+    <div class="easyui-accordion" data-options="fit:true,border:false">
+        <div title="用电能耗" data-options="ionCls:'icon-save'">
+            <ul>
+                <li><a class="easyui-linkbutton"
+                       data-options="iconCls:'icon-man'"
+                       onclick="addTab('实时用电数据','view/powerdetail/realtime/main.jsp','icon-man')"
+                       plain="true" href="javascript:void(0)">实时用电数据</a></li>
+                <li><a class="easyui-linkbutton"
+                       data-options="iconCls:'icon-man'"
+                       onclick="addTab('日用电数据','view/powerdetail/daily/main.jsp','icon-man')"
+                       plain="true" href="javascript:void(0)">日用电数据</a></li>
+                <li><a class="easyui-linkbutton"
+                       data-options="iconCls:'icon-man'"
+                       onclick="addTab('周用电数据','view/powerdetail/weekly/main.jsp','icon-man')"
+                       plain="true" href="javascript:void(0)">周用电数据</a></li>
+                <li><a class="easyui-linkbutton"
+                       data-options="iconCls:'icon-man'"
+                       onclick="addTab('月用电数据','view/powerdetail/monthly/main.jsp','icon-man')"
+                       plain="true" href="javascript:void(0)">月用电数据</a></li>
+            </ul>
+        </div>
+        <div title="用电分析" data-options="ionCls:'icon-save'">
+            <ul>
+                <li><a class="easyui-linkbutton"
+                       data-options="iconCls:'icon-man'"
+                       onclick="addTab('负荷分析','view/poweranalysis/load/main.jsp','icon-man')"
+                       plain="true" href="javascript:void(0)">负荷分析</a></li>
+                <li><a class="easyui-linkbutton"
+                       data-options="iconCls:'icon-man'"
+                       onclick="addTab('电量分析','view/poweranalysis/electricity/main.jsp','icon-man')"
+                       plain="true" href="javascript:void(0)">电量分析</a></li>
+            </ul>
+        </div>
+        <div title="系统管理" data-options="ionCls:'icon-save'">
+            <ul id="nav-sys">
+                <li><a class="easyui-linkbutton"
+                       data-options="iconCls:'icon-user'"
+                       onclick="addTab('用户管理','view/system/userinfo/usermanager.jsp','icon-user')"
+                       plain="true" href="javascript:void(0)">用户管理</a></li>
+                <li><a class="easyui-linkbutton"
+                       data-options="iconCls:'icon-users'"
+                       onclick="addTab('角色管理','view/system/userinfo/rolemanager.jsp','icon-users')"
+                       plain="true" href="javascript:void(0)">角色管理</a></li>
+                <li><a class="easyui-linkbutton"
+                       data-options="iconCls:'icon-building'"
+                       onclick="addTab('菜单管理','view/system/deviceinfo/menu.jsp','icon-building')"
+                       plain="true" href="javascript:void(0)">菜单管理</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div data-options="region:'center'">
+    <p th:text="'Hello！, ' + ${name} + '!'">3333</p>
+    <p th:text=" ${appId} ">3333</p>
+    <p th:text=" ${appSecret} ">3333</p>
+    <p th:text=" ${token} ">3333</p>
+    <p th:text=" ${logoutUri} ">3333</p>
+    <p th:text=" ${localLogoutUri} ">3333</p>
 
-<form th:action="@{/logout}" method="post">
-    <button type="submit">logout1</button>
-</form>
-<!--<form th:action="${logout_uri}+'?access_token='+ ${access_token}" method="get">-->
-<!--<button type="submit">logout2</button>-->
-<!--</form>-->
-<!--<a th:href="${logoutUri}+'?token='+ ${token} + '&redirect='+ ${localLogoutUri}">logout2</a>-->
+    <form th:action="@{/logout}" method="post">
+        <button type="submit">logout1</button>
+    </form>
+    <!--<form th:action="${logout_uri}+'?access_token='+ ${access_token}" method="get">-->
+    <!--<button type="submit">logout2</button>-->
+    <!--</form>-->
+    <!--<a th:href="${logoutUri}+'?token='+ ${token} + '&redirect='+ ${localLogoutUri}">logout2</a>-->
 
-<a th:href="${logoutUri}+'?token='+ ${token} + '&amp;redirect='+ ${localLogoutUri}">logout2</a>
+    <a th:href="${logoutUri}+'?token='+ ${token} + '&amp;redirect='+ ${localLogoutUri}">logout2</a>
+</div>
+<div data-options="region:'south'" style="height: 5%;" class="head-south">
+    <a href="http://www.miitbeian.gov.cn/" style="color: black;text-decoration: none">xxxxxxxxxxxxxxx</a>
+</div>
 </body>
 </html>
