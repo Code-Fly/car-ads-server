@@ -21,6 +21,9 @@ public class LoginController {
     @Value("${wechat.setting.appsecret}")
     public String WECHAT_SETTING_APP_SECRET;
 
+    @Value("${security.oauth2.client.user-logout-uri}")
+    public String USER_LOGOUT_URI;
+
     @RequestMapping(value = "/", method = RequestMethod.GET)
     public String home() {
 
@@ -40,7 +43,7 @@ public class LoginController {
 
         model.addAttribute("name", principal.getName());
         model.addAttribute("access_token", details.getTokenValue());
-
+        model.addAttribute("logout_uri", USER_LOGOUT_URI);
         model.addAttribute("appId", WECHAT_SETTING_APP_ID);
         model.addAttribute("appSecret", WECHAT_SETTING_APP_SECRET);
 

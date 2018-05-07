@@ -5,6 +5,7 @@ import org.springframework.security.oauth2.common.OAuth2AccessToken;
 import org.springframework.security.oauth2.provider.token.TokenStore;
 import org.springframework.security.web.authentication.logout.SecurityContextLogoutHandler;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
@@ -37,6 +38,7 @@ public class LogoutController {
     @RequestMapping("/logout")
     public String logout(HttpServletRequest request,
                          HttpServletResponse response,
+                         Model model,
                          @RequestParam String access_token
     ) {
         OAuth2AccessToken accessToken = tokenStore.readAccessToken(access_token);
@@ -59,6 +61,7 @@ public class LogoutController {
         cookie.setPath("/");
 
         response.addCookie(cookie);
+        model.addAttribute("referer_uri", request.getHeader("referer"));
 //        try {
 //            //sending back to client app
 ////            response.sendRedirect(request.getHeader("referer"));
@@ -72,7 +75,9 @@ public class LogoutController {
 
     @RequestMapping("/exit")
     public void exit(HttpServletRequest request,
-                     HttpServletResponse response
+                     HttpServletResponse response,
+                     Model model,
+                     @RequestParam String referer_uri
     ) {
         new SecurityContextLogoutHandler().logout(request, null, null);
         Cookie cookie = new Cookie("sessionId", null);
@@ -84,6 +89,7 @@ public class LogoutController {
             //sending back to client app
 //            response.sendRedirect(request.getHeader("referer"));
             response.sendRedirect("http://127.0.0.1:8080/logout");
+//            response.sendRedirect(referer_uri);
         } catch (IOException e) {
             e.printStackTrace();
         }

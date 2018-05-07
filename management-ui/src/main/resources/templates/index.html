@@ -13,8 +13,9 @@ index
 <form th:action="@{/logout}" method="post">
     <button type="submit">logout1</button>
 </form>
-<form th:action="'http://127.0.0.1:8000/oauth/logout?access_token='+ ${access_token}" method="post">
-    <button type="submit">logout2</button>
-</form>
+<!--<form th:action="${logout_uri}+'?access_token='+ ${access_token}" method="get">-->
+<!--<button type="submit">logout2</button>-->
+<!--</form>-->
+<a th:href="${logout_uri}+'?access_token='+ ${access_token}">logout2</a>
 </body>
 </html>
