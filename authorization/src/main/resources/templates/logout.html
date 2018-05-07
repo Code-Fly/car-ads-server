@@ -5,9 +5,9 @@
     <title>Title</title>
 </head>
 <body>
-<p th:text="${referer_uri}"></p>
+<p th:text="${refererUri}"></p>
 <form th:action="@{/oauth/exit}" method="post">
-    <input type="hidden" name="referer_uri" th:value="${referer_uri}">
+    <input type="hidden" name="refererUri" th:value="${refererUri}">
     <button type="submit">submit</button>
 </form>
 <!--<a th:href="@{/oauth/exit} +'?referer_uri='+ ${access_token}">exit</a>-->

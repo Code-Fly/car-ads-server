@@ -42,8 +42,8 @@ public class LoginController {
 
 
         model.addAttribute("name", principal.getName());
-        model.addAttribute("access_token", details.getTokenValue());
-        model.addAttribute("logout_uri", USER_LOGOUT_URI);
+        model.addAttribute("token", details.getTokenValue());
+        model.addAttribute("logoutUri", USER_LOGOUT_URI);
         model.addAttribute("appId", WECHAT_SETTING_APP_ID);
         model.addAttribute("appSecret", WECHAT_SETTING_APP_SECRET);
 

@@ -39,9 +39,9 @@ public class LogoutController {
     public String logout(HttpServletRequest request,
                          HttpServletResponse response,
                          Model model,
-                         @RequestParam String access_token
+                         @RequestParam String token
     ) {
-        OAuth2AccessToken accessToken = tokenStore.readAccessToken(access_token);
+        OAuth2AccessToken accessToken = tokenStore.readAccessToken(token);
         if (null != accessToken) {
             tokenStore.removeAccessToken(accessToken);
         }
@@ -61,7 +61,7 @@ public class LogoutController {
         cookie.setPath("/");
 
         response.addCookie(cookie);
-        model.addAttribute("referer_uri", request.getHeader("referer"));
+        model.addAttribute("refererUri", request.getHeader("referer"));
 //        try {
 //            //sending back to client app
 ////            response.sendRedirect(request.getHeader("referer"));
@@ -77,7 +77,7 @@ public class LogoutController {
     public void exit(HttpServletRequest request,
                      HttpServletResponse response,
                      Model model,
-                     @RequestParam String referer_uri
+                     @RequestParam String refererUri
     ) {
         new SecurityContextLogoutHandler().logout(request, null, null);
         Cookie cookie = new Cookie("sessionId", null);
