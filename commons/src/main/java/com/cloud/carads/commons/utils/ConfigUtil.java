@@ -100,17 +100,21 @@ public class ConfigUtil {
      * @param request
      * @return
      */
-    public String getServerUrl(HttpServletRequest request) {
-        String path = request.getContextPath() + "/";
-//        int port = request.getServerPort();
-//        String basePath = null;
-//        if (80 == port) {
-//            basePath = request.getScheme() + "://" + request.getServerName() + path;
-//        } else {
-//            basePath = request.getScheme() + "://" + request.getServerName() + ":" + request.getServerPort() + path;
-//        }
+    public static String getServerUrl(HttpServletRequest request, boolean isFullPath) {
+        String path = request.getContextPath();
 
-        return path;
+        if (isFullPath) {
+            int port = request.getServerPort();
+            String basePath = null;
+            if (80 == port) {
+                basePath = request.getScheme() + "://" + request.getServerName() + path;
+            } else {
+                basePath = request.getScheme() + "://" + request.getServerName() + ":" + request.getServerPort() + path;
+            }
+            return basePath;
+        } else {
+            return path;
+        }
     }
 
     /**

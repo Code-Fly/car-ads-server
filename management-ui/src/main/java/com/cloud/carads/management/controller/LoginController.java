@@ -1,5 +1,6 @@
 package com.cloud.carads.management.controller;
 
+import com.cloud.carads.commons.utils.ConfigUtil;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.core.context.SecurityContext;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -9,6 +10,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import java.security.Principal;
 
 @Controller
@@ -36,14 +39,19 @@ public class LoginController {
 //    }
 
     @RequestMapping(value = "/index", method = RequestMethod.GET)
-    public String index(Model model, Principal principal) {
+    public String index(HttpServletRequest request,
+                        HttpServletResponse response,
+                        Model model,
+                        Principal principal) {
         SecurityContext context = SecurityContextHolder.getContext();
         OAuth2AuthenticationDetails details = (OAuth2AuthenticationDetails) context.getAuthentication().getDetails();
 
+        String localLogoutUri = ConfigUtil.getServerUrl(request, true) + "/logout";
 
         model.addAttribute("name", principal.getName());
         model.addAttribute("token", details.getTokenValue());
         model.addAttribute("logoutUri", USER_LOGOUT_URI);
+        model.addAttribute("localLogoutUri", localLogoutUri);
         model.addAttribute("appId", WECHAT_SETTING_APP_ID);
         model.addAttribute("appSecret", WECHAT_SETTING_APP_SECRET);
 

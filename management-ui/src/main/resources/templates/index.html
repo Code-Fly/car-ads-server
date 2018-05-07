@@ -8,14 +8,19 @@
 index
 <p th:text="'Hello！, ' + ${name} + '!'">3333</p>
 <p th:text=" ${appId} ">3333</p>
-<p th:text=" ${token} ">3333</p>
 <p th:text=" ${appSecret} ">3333</p>
+<p th:text=" ${token} ">3333</p>
+<p th:text=" ${logoutUri} ">3333</p>
+<p th:text=" ${localLogoutUri} ">3333</p>
+
 <form th:action="@{/logout}" method="post">
     <button type="submit">logout1</button>
 </form>
 <!--<form th:action="${logout_uri}+'?access_token='+ ${access_token}" method="get">-->
 <!--<button type="submit">logout2</button>-->
 <!--</form>-->
-<a th:href="${logoutUri}+'?token='+ ${token}">logout2</a>
+<!--<a th:href="${logoutUri}+'?token='+ ${token} + '&redirect='+ ${localLogoutUri}">logout2</a>-->
+
+<a th:href="${logoutUri}+'?token='+ ${token} + '&amp;redirect='+ ${localLogoutUri}">logout2</a>
 </body>
 </html>
