@@ -19,6 +19,7 @@ public class OAuthWebSecurityConfiguration extends WebSecurityConfigurerAdapter 
                 .antMatcher("/**") // 捕捉所有路由
                 .authorizeRequests()
                 .antMatchers("/oauth/**").permitAll()
+                .antMatchers("/assets/**").permitAll()
 //                .antMatchers("/oauth/logout").permitAll()
 //                .antMatchers("/oauth/exit").permitAll()
 
