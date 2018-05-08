@@ -2,10 +2,9 @@ $(document).ready(function () {
     var error = GetQueryString("error");
     if (error == "1") {
         $.messager.alert("信息提示", "无效用户或用户名密码错误！", "warning");
-    }
-    else if (error == "2") {
+    } else if (error == "2") {
         $.messager.alert("信息提示", "Session 已过期，请重新登陆！", "warning");
-    } else {
+    } else if (error == "3" || error == "4") {
         $.messager.alert("信息提示", "Session 无效，请重新登陆！", "warning");
     }
 
