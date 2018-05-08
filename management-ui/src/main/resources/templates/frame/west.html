@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<body>
+<div class="easyui-accordion" data-options="fit:true,border:false">
+    <div title="用电能耗" data-options="ionCls:'icon-save'">
+        <ul>
+            <li><a class="easyui-linkbutton"
+                   data-options="iconCls:'icon-table'"
+                   onclick="addTab('实时用电数据','view/powerdetail/realtime/main.jsp','icon-table')"
+                   plain="true" href="javascript:void(0)">实时用电数据</a></li>
+            <li><a class="easyui-linkbutton"
+                   data-options="iconCls:'icon-table'"
+                   onclick="addTab('日用电数据','view/powerdetail/daily/main.jsp','icon-table')"
+                   plain="true" href="javascript:void(0)">日用电数据</a></li>
+            <li><a class="easyui-linkbutton"
+                   data-options="iconCls:'icon-table'"
+                   onclick="addTab('周用电数据','view/powerdetail/weekly/main.jsp','icon-table')"
+                   plain="true" href="javascript:void(0)">周用电数据</a></li>
+            <li><a class="easyui-linkbutton"
+                   data-options="iconCls:'icon-table'"
+                   onclick="addTab('月用电数据','view/powerdetail/monthly/main.jsp','icon-table')"
+                   plain="true" href="javascript:void(0)">月用电数据</a></li>
+        </ul>
+    </div>
+    <div title="用电分析" data-options="ionCls:'icon-save'">
+        <ul>
+            <li><a class="easyui-linkbutton"
+                   data-options="iconCls:'icon-table'"
+                   onclick="addTab('负荷分析','view/poweranalysis/load/main.jsp','icon-table')"
+                   plain="true" href="javascript:void(0)">负荷分析</a></li>
+            <li><a class="easyui-linkbutton"
+                   data-options="iconCls:'icon-table'"
+                   onclick="addTab('电量分析','view/poweranalysis/electricity/main.jsp','icon-table')"
+                   plain="true" href="javascript:void(0)">电量分析</a></li>
+        </ul>
+    </div>
+    <div title="系统管理" data-options="ionCls:'icon-save'">
+        <ul id="nav-sys">
+            <li><a class="easyui-linkbutton"
+                   data-options="iconCls:'icon-user'"
+                   onclick="addTab('用户管理','view/system/userinfo/usermanager.jsp','icon-user')"
+                   plain="true" href="javascript:void(0)">用户管理</a></li>
+            <li><a class="easyui-linkbutton"
+                   data-options="iconCls:'icon-users'"
+                   onclick="addTab('角色管理','view/system/userinfo/rolemanager.jsp','icon-users')"
+                   plain="true" href="javascript:void(0)">角色管理</a></li>
+            <li><a class="easyui-linkbutton"
+                   data-options="iconCls:'icon-building'"
+                   onclick="addTab('菜单管理','view/system/deviceinfo/menu.jsp','icon-building')"
+                   plain="true" href="javascript:void(0)">菜单管理</a></li>
+        </ul>
+    </div>
+</div>
+</body>
+</html>

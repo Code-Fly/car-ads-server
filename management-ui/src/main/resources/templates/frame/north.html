@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<body>
+<div class="easyui-layout" data-options="fit:true,border:false">
+    <div data-options="region:'center',border:false" class="head-north">
+        <span class="head-left"></span>
+    </div>
+    <div data-options="region:'east',border:false" class="head-north" style="width: 200px;padding-top: 15px;">
+        <a id="user" href="javascript:void(0)" class="easyui-menubutton" style="color:whitesmoke;"
+           data-options="menu:'#mm_user'" th:text="'您好，'+${name}"></a>
+        <div id="mm_user" style="width: 150px;">
+            <form id="form-logout" method="post" style="display: none">
+            </form>
+            <div data-options="iconCls:'icon-user_go'" class="loginOut" id="logout">安全退出</div>
+        </div>
+
+        <!--<p th:text=" ${appId} ">3333</p>-->
+        <!--<p th:text=" ${appSecret} ">3333</p>-->
+        <!--<p th:text=" ${token} ">3333</p>-->
+        <!--<p th:text=" ${logoutUri} ">3333</p>-->
+        <!--<p th:text=" ${localLogoutUri} ">3333</p>-->
+
+        <!--<form th:action="@{/logout}" method="post">-->
+        <!--<button type="submit">logout1</button>-->
+        <!--</form>-->
+
+        <!--<a th:href="${logoutUri}+'?token='+ ${token} + '&amp;redirect='+ ${localLogoutUri}">logout2</a>-->
+    </div>
+</div>
+</body>
+</html>
