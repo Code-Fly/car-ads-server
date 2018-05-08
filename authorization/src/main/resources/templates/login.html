@@ -10,9 +10,18 @@
     <meta name="format-detection" content="telephone=no"/>
     <base href="/"/>
     <title>Title</title>
+    <link rel="stylesheet" type="text/css" th:href="@{assets/js/jquery-easyui/themes/default/easyui.css}"/>
+    <link rel="stylesheet" type="text/css" th:href="@{assets/js/jquery-easyui/themes/icon.css}"/>
+    <link rel="stylesheet" type="text/css" th:href="@{assets/icon/icon.css}"/>
     <link rel="stylesheet" type="text/css" th:href="@{assets/css/base.css}"/>
+    <link rel="stylesheet" type="text/css" th:href="@{assets/pages/login.css}"/>
 
     <script type="text/javascript" th:src="@{assets/js/jquery/jquery-1.11.3.min.js}"></script>
+    <script type="text/javascript" th:src="@{assets/js/jquery-easyui/jquery.easyui.min.js}"></script>
+    <script type="text/javascript" th:src="@{assets/js/jquery-easyui/locale/easyui-lang-zh_CN.js}"></script>
+    <script type="text/javascript" th:src="@{assets/pages/login.js}"></script>
+    <script type="text/javascript" th:src="@{assets/pages/cloud.js}"></script>
+
     <script th:inline="javascript" type="text/javascript">
         var _redirect = [[${redirect}]];
         if (null != _redirect) {
@@ -21,10 +30,42 @@
     </script>
 </head>
 <body>
-<form th:action="@{/oauth/login}" method="post">
-    <input type="text" name="username"/>
-    <input type="password" name="password"/>
-    <button type="submit">login</button>
-</form>
+<div id="mainBody">
+    <div id="cloud1" class="cloud"></div>
+    <div id="cloud2" class="cloud"></div>
+</div>
+<div class="logintop">
+    <span>欢迎登录</span>
+</div>
+<div class="loginbody">
+    <span class="systemlogo"></span>
+    <div class="loginbox" style="position: absolute;margin: auto; left: 0; right: 0;">
+        <form id="form-login" th:action="@{/oauth/login}" method="post">
+            <ul>
+                <li>
+                    <input id="userName" name="username" class="easyui-textbox"
+                           style="width:343px;height:40px;padding:12px"
+                           data-options="prompt:'用户名',iconCls:'icon-man',iconWidth:38"/>
+                </li>
+                <li>
+                    <input id="password" name="password" class="easyui-passwordbox" prompt="密码" iconWidth="38"
+                           style="width:343px;height:40px;padding:12px"/>
+                </li>
+                <li>
+                    <input id="btnLogin" name="" type="submit" class="loginbtn" value="登录"/>
+                    <!--<label>-->
+                    <!--<input type="checkbox" name="remember-me" value="true"/>记住密码-->
+                    <!--</label>-->
+                    <!--<label>-->
+                    <!--<a href="#">忘记密码？</a>-->
+                    <!--</label>-->
+                </li>
+            </ul>
+        </form>
+    </div>
+</div>
+<div class="loginbm">
+    ${sessionScope.areaLocal.name} <a href="http://www.miitbeian.gov.cn/">${sessionScope.areaLocal.icp}</a>
+</div>
 </body>
 </html>
