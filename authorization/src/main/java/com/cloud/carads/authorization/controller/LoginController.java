@@ -1,7 +1,7 @@
 package com.cloud.carads.authorization.controller;
 
+import com.cloud.carads.commons.controller.BaseController;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.oauth2.common.OAuth2AccessToken;
 import org.springframework.security.oauth2.provider.token.TokenStore;
 import org.springframework.security.web.authentication.logout.SecurityContextLogoutHandler;
@@ -19,7 +19,7 @@ import java.io.IOException;
 
 @Controller
 @RequestMapping(value = "/oauth")
-public class LoginController {
+public class LoginController extends BaseController {
 
     @GetMapping(value = "/login")
     public String index(Model model) {

@@ -1,8 +1,14 @@
 package com.cloud.carads.authorization.controller;
 
+import com.cloud.carads.commons.controller.BaseController;
+import com.cloud.carads.commons.exception.AuthorizationNotFoundException;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.User;
+import org.springframework.security.oauth2.common.OAuth2AccessToken;
+import org.springframework.security.oauth2.provider.OAuth2Authentication;
+import org.springframework.security.oauth2.provider.token.TokenStore;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -13,64 +19,22 @@ import java.util.List;
 
 @RestController
 @RequestMapping(value = "/oauth")
-public class UserController {
+public class UserController extends BaseController {
+    @Autowired
+    private TokenStore tokenStore;
+
     @RequestMapping("/user")
-    public User user(HttpServletRequest request) {
-        System.out.println(request.getHeader("Authorization"));
-
-        User principal = new User("test037", "Pass1234", true, true, true, true, createAuthorityList(new ArrayList<>()));
-
-
-//        String param = "{\n" +
-//                "\t\"firstname\": \"test037\",\n" +
-//                "\t\"lastname\": \"test037\",\n" +
-//                "\t\"loginname\": \"test037\",\n" +
-//                "\t\"tenant\": \"DEFAULT\",\n" +
-//                "\t\"username\": \"test037\",\n" +
-//                "\t\"authorities\": [" +
-//                "{\n" +
-//                "\t\t\"role\": \"CREATE_REPOSITORY\"\n" +
-//                "\t}, {\n" +
-//                "\t\t\"role\": \"CREATE_ROLLOUT\"\n" +
-//                "\t}, {\n" +
-//                "\t\t\"role\": \"CREATE_TARGET\"\n" +
-//                "\t}, {\n" +
-//                "\t\t\"role\": \"DELETE_REPOSITORY\"\n" +
-//                "\t}, {\n" +
-//                "\t\t\"role\": \"DELETE_ROLLOUT\"\n" +
-//                "\t}, {\n" +
-//                "\t\t\"role\": \"DELETE_TARGET\"\n" +
-//                "\t}, {\n" +
-//                "\t\t\"role\": \"DOWNLOAD_REPOSITORY_ARTIFACT\"\n" +
-//                "\t}, {\n" +
-//                "\t\t\"role\": \"HANDLE_ROLLOUT\"\n" +
-//                "\t}, {\n" +
-//                "\t\t\"role\": \"READ_REPOSITORY\"\n" +
-//                "\t}, {\n" +
-//                "\t\t\"role\": \"READ_ROLLOUT\"\n" +
-//                "\t}, {\n" +
-//                "\t\t\"role\": \"READ_TARGET\"\n" +
-//                "\t}, {\n" +
-//                "\t\t\"role\": \"READ_TARGET_SECURITY_TOKEN\"\n" +
-//                "\t}, {\n" +
-//                "\t\t\"role\": \"SYSTEM_ADMIN\"\n" +
-//                "\t}, {\n" +
-//                "\t\t\"role\": \"TENANT_CONFIGURATION\"\n" +
-//                "\t}, {\n" +
-//                "\t\t\"role\": \"UPDATE_REPOSITORY\"\n" +
-//                "\t}, {\n" +
-//                "\t\t\"role\": \"UPDATE_ROLLOUT\"\n" +
-//                "\t}, {\n" +
-//                "\t\t\"role\": \"UPDATE_TARGET\"\n" +
-//                "\t}" +
-//                "],\n" +
-//                "\t\"accountNonExpired\": true,\n" +
-//                "\t\"accountNonLocked\": true,\n" +
-//                "\t\"credentialsNonExpired\": true,\n" +
-//                "\t\"enabled\": true\n" +
-//                "}";
-//        return JSONObject.fromObject(param);
-        return principal;
+    public User user(HttpServletRequest request) throws AuthorizationNotFoundException {
+        String authHeader = request.getHeader("Authorization");
+        logger.info("Authorization: " + authHeader);
+        if (authHeader != null) {
+            String tokenValue = authHeader.toLowerCase().replace("bearer", "").trim();
+            OAuth2AccessToken accessToken = tokenStore.readAccessToken(tokenValue);
+            OAuth2Authentication authentication = tokenStore.readAuthentication(accessToken);
+            return (User) authentication.getPrincipal();
+        } else {
+            throw new AuthorizationNotFoundException();
+        }
     }
 
     /**
