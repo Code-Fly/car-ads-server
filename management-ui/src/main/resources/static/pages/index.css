@@ -27,7 +27,8 @@ body {
 
 .head-north {
     overflow: hidden;
-    background: #95B8E7 url(../assets/image/headbg.png) repeat-x;
+    background: #95B8E7 url(../assets/image/headbg.png);
+    background-attachment: fixed;
     color: #fff;
     font-family: Verdana
 }

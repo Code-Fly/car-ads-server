@@ -29,8 +29,8 @@
 
 </head>
 <body class="easyui-layout">
-<div data-options="region:'north'" style="height: 8%;overflow: hidden;" class="head-north">
-    <div class="easyui-layout head-north" data-options="fit:true,border:false">
+<div data-options="region:'north'" style="height: 8%;overflow: hidden;">
+    <div class="easyui-layout" data-options="fit:true,border:false">
         <div data-options="region:'center',border:false" class="head-north">
             <span class="head-left"></span>
         </div>
@@ -58,7 +58,7 @@
     </div>
 
 </div>
-<div data-options="region:'west'" style="width:15%;">
+<div data-options="region:'west',split:true" title="导航菜单" style="width:15%;">
     <div class="easyui-accordion" data-options="fit:true,border:false">
         <div title="用电能耗" data-options="ionCls:'icon-save'">
             <ul>
