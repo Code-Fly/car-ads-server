@@ -27,7 +27,7 @@ body {
 
 .head-north {
     overflow: hidden;
-    background: #95B8E7 url(../assets/image/headbg.png);
+    background: #95B8E7 url(../image/headbg.png);
     background-attachment: fixed;
     color: #fff;
     font-family: Verdana
@@ -42,7 +42,7 @@ body {
 }
 
 .head-left {
-    background: url(../assets/image/logo1.png) no-repeat left;
+    background: url(../image/logo1.png) no-repeat left;
     margin-left: 17px;
     width: 310px;
     height: 100%;
