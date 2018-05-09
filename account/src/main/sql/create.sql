@@ -5,10 +5,10 @@ drop table if exists c_account_info;
 /*==============================================================*/
 create table c_account_info
 (
-   id                   bigint not null auto_increment,
+      id                   bigint not null auto_increment,
    user_name            varchar(30) comment '用户名',
    password             varchar(64) not null comment '密码',
-   father_id            bigint comment '一级推荐人',
+   father_id            bigint not null comment '一级推荐人',
    grand_id             bigint comment '二级推荐人',
    ggrand_id            bigint comment '三级推荐人',
    mobile_no            varchar(13) not null comment '手机号',
@@ -27,7 +27,7 @@ create table c_account_info
    province_code        varchar(10),
    city_code            varchar(10),
    area_code            varchar(10),
-   old_address          varchar(256) comment '源地址',
+   old_address          varchar(256) comment '原地址',
    village              varchar(30) comment '小区',
    car_brand            varchar(10) comment '车辆品牌',
    car_model            varchar(10) comment '车辆型号',
@@ -38,5 +38,7 @@ create table c_account_info
    flag                 int(1) not null default 0 comment '0待审核 1审核通过2审核未通过 5已删除',
    create_time          datetime not null default CURRENT_TIMESTAMP comment '创建时间',
    update_time          datetime comment '修改时间',
+   lgt                  double(13,7) comment '经度',
+   lat                  double(13,7) comment '纬度',
    primary key (id)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8  comment 'c端（车主）账户信息';
