@@ -43,7 +43,6 @@ create table c_account_info
    primary key (id)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8_general_ci  comment 'c端（车主）账户信息';
 
-
 drop table if exists t_dictionary;
 
 /*==============================================================*/
@@ -51,18 +50,16 @@ drop table if exists t_dictionary;
 /*==============================================================*/
 create table t_dictionary
 (
-   id                   bigint not null auto_increment,
-   dic_code             varchar(20) not null comment '字典编码',
+   dic_code             int not null comment '字典编码',
    create_time          datetime default CURRENT_TIMESTAMP,
    update_time          datetime,
    flag                 int(1) not null default 1 comment '1有效 0 无效',
-   primary key (id)
+   primary key (dic_code)
 )
 ENGINE = InnoDB
 COLLATE = utf8_general_ci;
 
 alter table t_dictionary comment '字典表';
-
 
 
 drop table if exists t_dictionary_attr;
