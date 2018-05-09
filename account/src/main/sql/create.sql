@@ -41,4 +41,48 @@ create table c_account_info
    lgt                  double(13,7) comment '经度',
    lat                  double(13,7) comment '纬度',
    primary key (id)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8  comment 'c端（车主）账户信息';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8_general_ci  comment 'c端（车主）账户信息';
+
+
+drop table if exists t_dictionary;
+
+/*==============================================================*/
+/* Table: t_dictionary                                          */
+/*==============================================================*/
+create table t_dictionary
+(
+   id                   bigint not null auto_increment,
+   dic_code             varchar(20) not null comment '字典编码',
+   create_time          datetime default CURRENT_TIMESTAMP,
+   update_time          datetime,
+   flag                 int(1) not null default 1 comment '1有效 0 无效',
+   primary key (id)
+)
+ENGINE = InnoDB
+COLLATE = utf8_general_ci;
+
+alter table t_dictionary comment '字典表';
+
+
+
+drop table if exists t_dictionary_attr;
+
+/*==============================================================*/
+/* Table: t_dictionary_attr                                     */
+/*==============================================================*/
+create table t_dictionary_attr
+(
+   id                   bigint not null auto_increment,
+   dic_code             varchar(20) not null comment '字典code',
+   attr_code            varchar(20) not null comment '属性code',
+   attr_value           varchar(20) comment '属性值',
+   crate_time           datetime default CURRENT_TIMESTAMP,
+   update_time          datetime,
+   flag                 int(1) not null default 1 comment '1有效 0无效',
+   primary key (id)
+)
+ENGINE = InnoDB
+COLLATE = utf8_general_ci;
+
+alter table t_dictionary_attr comment '数据字典属性值表';
+
