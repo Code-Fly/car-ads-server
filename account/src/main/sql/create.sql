@@ -8,7 +8,7 @@ create table c_account_info
    id                   bigint not null auto_increment,
    user_name            varchar(30) comment '用户名',
    password             varchar(64) not null comment '密码',
-   father_id            bigint not null comment '一级推荐人',
+   father_id            bigint comment '一级推荐人',
    grand_id             bigint comment '二级推荐人',
    ggrand_id            bigint comment '三级推荐人',
    mobile_no            varchar(13) not null comment '手机号',
