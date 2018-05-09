@@ -39,7 +39,4 @@ create table c_account_info
    create_time          datetime not null default CURRENT_TIMESTAMP comment '创建时间',
    update_time          datetime comment '修改时间',
    primary key (id)
-)
-auto_increment = 1;
-
-alter table c_account_info comment 'c端（车主）账户信息';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8  comment 'c端（车主）账户信息';
