@@ -18,7 +18,7 @@ create table c_account_info
    car_header_img       varchar(256) comment '车头照片',
    real_name            varchar(10) comment '真实姓名',
    identity_no          varchar(30) comment '身份证号',
-   borth_date           varchar(30) comment '出生日期',
+   borth_date           varchar(10) comment '出生日期',
    plate_no             varchar(10) not null comment '车牌号',
    detail_address       varchar(256) comment '详细地址',
    province             varchar(10) comment '省',
