@@ -70,7 +70,7 @@ CREATE TABLE `t_dictionary_attr` (
 	`attr_value` VARCHAR(32) NULL DEFAULT NULL COMMENT '属性值',
 	`attr_desc` VARCHAR(50) NOT NULL COMMENT '属性描述',
 	`crate_time` DATETIME NULL DEFAULT CURRENT_TIMESTAMP,
-	`update_time` DATETIME NOT NULL,
+	`update_time` DATETIME  NULL,
 	`flag` INT(1) NOT NULL DEFAULT '1' COMMENT '1有效 0无效',
 	PRIMARY KEY (`id`)
 )
