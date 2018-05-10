@@ -54,7 +54,7 @@ CREATE TABLE `t_dictionary` (
 	`dic_code` VARCHAR(32) NOT NULL COMMENT '字典编码',
 	`dic_desc` VARCHAR(50) NOT NULL COMMENT '字典描述',
 	`create_time` DATETIME NULL DEFAULT CURRENT_TIMESTAMP,
-	`update_time` DATETIME NOT NULL,
+	`update_time` DATETIME NULL,
 	`flag` INT(1) NOT NULL DEFAULT '1' COMMENT '1有效 0 无效',
 	PRIMARY KEY (`dic_code`)
 )
