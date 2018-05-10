@@ -2,7 +2,7 @@
 <!DOCTYPE generatorConfiguration PUBLIC    "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
         "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
 <generatorConfiguration>
-    <properties resource="bootstrap-native.properties"/>
+    <!--<properties resource="bootstrap-native.properties"/>-->
     <!--
         context:生成一组对象的环境
         id:必选，上下文id，用于在生成错误时提示
@@ -41,10 +41,10 @@
         <commentGenerator>
             <property name="suppressAllComments" value="false"/>
         </commentGenerator>
-        <jdbcConnection driverClass="${spring.datasource.driver-class-name}"
-                        connectionURL="${spring.datasource.url}"
-                        userId="${spring.datasource.username}"
-                        password="${spring.datasource.password}">
+        <jdbcConnection driverClass="com.mysql.jdbc.Driver"
+                        connectionURL="jdbc:mysql://127.0.0.1:3306/oauth?characterEncoding=UTF-8"
+                        userId="root"
+                        password="root">
         </jdbcConnection>
         <!--
             java类型处理器
