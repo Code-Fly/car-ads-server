@@ -41,7 +41,9 @@ create table c_account_info
    lgt                  double(13,7) comment '经度',
    lat                  double(13,7) comment '纬度',
    primary key (id)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8_general_ci  comment 'c端（车主）账户信息';
+)
+ENGINE = InnoDB
+COLLATE = utf8_general_ci;
 
 drop table if exists t_dictionary;
 
@@ -82,4 +84,15 @@ ENGINE = InnoDB
 COLLATE = utf8_general_ci;
 
 alter table t_dictionary_attr comment '数据字典属性值表';
+
+--
+CREATE TABLE `t_d_areainfo` (
+  `id` int(11) NOT NULL,
+  `name` varchar(48) NOT NULL DEFAULT '' COMMENT '名称',
+  `arealevel` tinyint(2) NOT NULL DEFAULT '0' COMMENT '层级标识： 1  省份， 2  市， 3  区县',
+  `parent_id` int(11) DEFAULT NULL COMMENT '父节点',
+  PRIMARY KEY (`id`)
+)
+ENGINE = InnoDB
+COLLATE = utf8_general_ci;
 

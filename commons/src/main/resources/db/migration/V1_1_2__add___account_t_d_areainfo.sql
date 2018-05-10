@@ -1,10 +1,4 @@
-CREATE TABLE `t_d_areainfo` (
-  `id` int(11) NOT NULL,
-  `name` varchar(48) NOT NULL DEFAULT '' COMMENT '名称',
-  `arealevel` tinyint(2) NOT NULL DEFAULT '0' COMMENT '层级标识： 1  省份， 2  市， 3  区县',
-  `parent_id` int(11) DEFAULT NULL COMMENT '父节点',
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='区县行政编码字典表';
+
 
 
 INSERT INTO `t_d_areainfo` (`id`, `name`, `arealevel`, `parent_id`) VALUES ('110000', '北京市', '1', NULL);
