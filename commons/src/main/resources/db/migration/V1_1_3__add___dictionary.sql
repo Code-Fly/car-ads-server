@@ -1,0 +1,4 @@
+INSERT INTO `t_dictionary` (`dic_code`, `dic_desc`, `create_time`, `update_time`, `flag`) VALUES ('C_SHARE_PROFIT_PERCENT', '车主分享收益率', '2018-05-10 11:31:37', '2018-05-10 11:30:40', 1);
+INSERT INTO `t_dictionary_attr` (`dic_code`, `attr_code`, `attr_value`, `attr_desc`, `crate_time`, `update_time`, `flag`) VALUES ('C_SHARE_PROFIT_PERCENT', 'FATHER_PERCENT_CODE', '0.05', '一级推荐人推荐收益率', '2018-05-10 11:33:25', NULL, 1);
+INSERT INTO `t_dictionary_attr` (`dic_code`, `attr_code`, `attr_value`, `attr_desc`, `crate_time`, `update_time`, `flag`) VALUES ('C_SHARE_PROFIT_PERCENT', 'GRANT_PERCENT_CODE', '0.05', '二级推荐人推荐收益率', '2018-05-10 11:37:05', NULL, 1);
+INSERT INTO `t_dictionary_attr` (`dic_code`, `attr_code`, `attr_value`, `attr_desc`, `crate_time`, `update_time`, `flag`) VALUES ('C_SHARE_PROFIT_PERCENT', 'GGRANT_PERCENT_CODE', '0.05', '三级推荐人推荐收益率', '2018-05-10 11:37:35', NULL, 1);
