@@ -50,40 +50,33 @@ drop table if exists t_dictionary;
 /*==============================================================*/
 /* Table: t_dictionary                                          */
 /*==============================================================*/
-create table t_dictionary
-(
-   dic_code             int not null comment '字典编码',
-   create_time          datetime default CURRENT_TIMESTAMP,
-   update_time          datetime,
-   flag                 int(1) not null default 1 comment '1有效 0 无效',
-   primary key (dic_code)
+CREATE TABLE `t_dictionary` (
+	`dic_code` VARCHAR(32) NOT NULL COMMENT '字典编码',
+	`dic_desc` VARCHAR(50) NOT NULL COMMENT '字典描述',
+	`create_time` DATETIME NULL DEFAULT CURRENT_TIMESTAMP,
+	`update_time` DATETIME NOT NULL,
+	`flag` INT(1) NOT NULL DEFAULT '1' COMMENT '1有效 0 无效',
+	PRIMARY KEY (`dic_code`)
 )
-ENGINE = InnoDB
-COLLATE = utf8_general_ci;
-
-alter table t_dictionary comment '字典表';
-
+COMMENT='字典表'
+COLLATE='utf8_general_ci'
+ENGINE=InnoDB;
 
 drop table if exists t_dictionary_attr;
 
-/*==============================================================*/
-/* Table: t_dictionary_attr                                     */
-/*==============================================================*/
-create table t_dictionary_attr
-(
-   id                   bigint not null auto_increment,
-   dic_code             varchar(20) not null comment '字典code',
-   attr_code            varchar(20) not null comment '属性code',
-   attr_value           varchar(20) comment '属性值',
-   crate_time           datetime default CURRENT_TIMESTAMP,
-   update_time          datetime,
-   flag                 int(1) not null default 1 comment '1有效 0无效',
-   primary key (id)
+CREATE TABLE `t_dictionary_attr` (
+	`id` BIGINT(20) NOT NULL AUTO_INCREMENT,
+	`dic_code` VARCHAR(32) NOT NULL COMMENT '字典code',
+	`attr_value` VARCHAR(32) NULL DEFAULT NULL COMMENT '属性值',
+	`attr_desc` VARCHAR(50) NOT NULL COMMENT '属性描述',
+	`crate_time` DATETIME NULL DEFAULT CURRENT_TIMESTAMP,
+	`update_time` DATETIME NOT NULL,
+	`flag` INT(1) NOT NULL DEFAULT '1' COMMENT '1有效 0无效',
+	PRIMARY KEY (`id`)
 )
-ENGINE = InnoDB
-COLLATE = utf8_general_ci;
-
-alter table t_dictionary_attr comment '数据字典属性值表';
+COMMENT='数据字典属性值表'
+COLLATE='utf8_general_ci'
+ENGINE=InnoDB;
 
 --
 CREATE TABLE `t_d_areainfo` (
