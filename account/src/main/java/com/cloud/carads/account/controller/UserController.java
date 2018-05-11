@@ -3,6 +3,7 @@
  */
 package com.cloud.carads.account.controller;
 
+import com.cloud.carads.account.entity.CAccountInfo;
 import com.cloud.carads.account.service.IUserService;
 import com.cloud.carads.commons.controller.BaseController;
 import com.cloud.carads.commons.entity.Error;
@@ -21,6 +22,7 @@ import org.springframework.web.bind.annotation.RestController;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.UnsupportedEncodingException;
+import java.util.Date;
 
 /**
  * @author Barrie
@@ -58,5 +60,25 @@ public class UserController extends BaseController {
         return new ErrorMsg(Error.SUCCESS, "success", 111);
     }
 
+    @GetMapping(value = "/register", produces = MediaType.APPLICATION_FORM_URLENCODED_VALUE)
+    @ApiOperation(value = "用户注册")
+    public ErrorMsg register (@ApiParam(value = "起始openId，0为第一个")
+                                      @RequestParam(required = true)CAccountInfo info
+                              ) {
+        userService.addCAccount(info);
+        return new ErrorMsg(Error.SUCCESS, "success", 111);
+    }
+
+    @GetMapping(value = "/complete", produces = MediaType.APPLICATION_FORM_URLENCODED_VALUE)
+    @ApiOperation(value = "用户完善信息")
+    public ErrorMsg complete (@ApiParam(value = "起始openId，0为第一个")
+                              @RequestParam(required = true)CAccountInfo info
+    ) {
+        info.setUpdateTime(new Date());
+        // 待审核
+        info.setFlag(0);
+        userService.updateCAccountByID(info);
+        return new ErrorMsg(Error.SUCCESS, "success");
+    }
 
 }
