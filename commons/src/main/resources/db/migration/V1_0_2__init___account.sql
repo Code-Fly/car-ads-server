@@ -35,7 +35,7 @@ create table c_account_info
    bank_car_no          varchar(30) comment '银行卡号',
    open_bank            varchar(30) comment '开户行',
    net_car              int(1) comment '是否为网约车1是0否',
-   flag                 int(1) not null default 0 comment '0待审核 1审核通过2审核未通过 5已删除 9草稿未完善信息',
+   flag                 int(1) not null default 9 comment '0待审核 1审核通过2审核未通过 5已删除 9草稿未完善信息',
    create_time          datetime not null default CURRENT_TIMESTAMP comment '创建时间',
    update_time          datetime comment '修改时间',
    lgt                  double(13,7) comment '经度',
