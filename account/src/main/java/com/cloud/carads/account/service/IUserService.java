@@ -11,5 +11,6 @@ import com.cloud.carads.account.entity.CAccountInfo;
 public interface IUserService {
     int addCAccount(CAccountInfo cAccountInfo);
     int updateCAccountByID(CAccountInfo cAccountInfo);
+    CAccountInfo selectByPrimaryKey(Long id);
 
 }

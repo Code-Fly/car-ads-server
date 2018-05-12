@@ -14,14 +14,10 @@ import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.io.UnsupportedEncodingException;
 import java.util.Date;
 
 /**
@@ -29,49 +25,30 @@ import java.util.Date;
  */
 @RestController
 @RequestMapping(value = "/account")
-@Api(description = "用户管理接口")
+@Api(description = "车主管理接口")
 public class UserController extends BaseController {
     @Autowired
     private IUserService userService;
 
-
-    /**
-     * 获取用户列表
-     *
-     * @param request    request
-     * @param response   response
-     * @param nextOpenId nextOpenId
-     * @return
-     * @throws ConnectionFailedException
-     */
-    @GetMapping(value = "/user", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
-    @ApiOperation(value = "用户列表")
-    public ErrorMsg getWeChatUserList(HttpServletRequest request,
-                                      HttpServletResponse response,
-                                      @ApiParam(value = "起始openId，0为第一个")
-                                      @RequestParam(required = false, defaultValue = "0") String nextOpenId
-    ) throws ConnectionFailedException, UnsupportedEncodingException {
-
-        if ("0".equals(nextOpenId)) {
-            nextOpenId = null;
-        }
-
-//        JsonObject result = userService.getWeChatUserList(nextOpenId);
-        return new ErrorMsg(Error.SUCCESS, "success", 111);
+    @GetMapping(value = "/get", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
+    @ApiOperation(value = "根据id获取车主基本信息")
+    public ErrorMsg getCAccountInfo(@ApiParam(value = "车主的id")
+                                    @RequestParam(required = true)Long id){
+        return new ErrorMsg(Error.SUCCESS, "success",userService.selectByPrimaryKey(id));
     }
 
-    @GetMapping(value = "/register", produces = MediaType.APPLICATION_FORM_URLENCODED_VALUE)
-    @ApiOperation(value = "用户注册")
-    public ErrorMsg register (@ApiParam(value = "起始openId，0为第一个")
-                                      @RequestParam(required = true)CAccountInfo info
+    @PostMapping(value = "/register", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
+    @ApiOperation(value = "车主注册")
+    public ErrorMsg register (@ApiParam(value = "车主的基本信息")
+                                      @RequestBody(required = true)CAccountInfo accountInfo
                               ) {
-        userService.addCAccount(info);
-        return new ErrorMsg(Error.SUCCESS, "success", 111);
+        userService.addCAccount(accountInfo);
+        return new ErrorMsg(Error.SUCCESS, "success",accountInfo.getId());
     }
 
-    @GetMapping(value = "/complete", produces = MediaType.APPLICATION_FORM_URLENCODED_VALUE)
-    @ApiOperation(value = "用户完善信息")
-    public ErrorMsg complete (@ApiParam(value = "起始openId，0为第一个")
+    @PostMapping(value = "/complete", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
+    @ApiOperation(value = "车主完善信息")
+    public ErrorMsg complete (@ApiParam(value = "车主的全部信息")
                               @RequestParam(required = true)CAccountInfo info
     ) {
         info.setUpdateTime(new Date());

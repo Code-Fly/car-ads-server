@@ -17,19 +17,28 @@ import org.springframework.stereotype.Service;
  */
 @Service
 public class UserServiceImpl extends BaseService implements IUserService {
+
  @Autowired
- private CAccountInfoMapper accountInfoMapper;
+ private CAccountInfoMapper cAccountInfoMapper;
 
 
 
     @Override
     public int addCAccount(CAccountInfo cAccountInfo) {
         cAccountInfo.setPassword(MD5Util.MD5Encode(SystemConstant.PREFIX_MD5+cAccountInfo.getPassword(),"UTF-8"));
-        return accountInfoMapper.insertSelective(cAccountInfo);
+        return cAccountInfoMapper.insertSelective(cAccountInfo);
     }
 
     @Override
     public int updateCAccountByID(CAccountInfo cAccountInfo) {
-        return accountInfoMapper.updateByPrimaryKey(cAccountInfo);
+        return cAccountInfoMapper.updateByPrimaryKey(cAccountInfo);
+
     }
+
+    @Override
+    public CAccountInfo selectByPrimaryKey(Long id) {
+        return cAccountInfoMapper.selectByPrimaryKey(id);
+    }
+
+
 }
