@@ -38,10 +38,12 @@ public class UserController extends BaseController {
     }
 
     @PostMapping(value = "/register", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
-    @ApiOperation(value = "车主注册")
+    @ApiOperation(value = "车主注册 返回车主的id")
     public ErrorMsg register (@ApiParam(value = "车主的基本信息")
                                       @RequestBody(required = true)CAccountInfo accountInfo
                               ) {
+        // 草稿未完善信息
+        accountInfo.setFlag(9);
         userService.addCAccount(accountInfo);
         return new ErrorMsg(Error.SUCCESS, "success",accountInfo.getId());
     }
