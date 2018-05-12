@@ -91,3 +91,17 @@ CREATE TABLE `t_d_areainfo` (
 ENGINE = InnoDB
 COLLATE = utf8_general_ci;
 
+
+DROP TABLE IF EXISTS `t_sms_log`;
+CREATE TABLE `t_sms_log` (
+  `id` int(11) NOT NULL AUTO_INCREMENT COMMENT '序号',
+  `phone_no` varchar(30) DEFAULT NULL COMMENT '发送手机号码',
+  `content` varchar(255) DEFAULT NULL COMMENT '发送短信内容',
+  `from_ip` varchar(30) DEFAULT NULL COMMENT '来源IP',
+  `return_value` varchar(2000) DEFAULT NULL COMMENT '返回值',
+  `receiver_time` datetime DEFAULT NULL COMMENT '接收时间',
+  `response_time` datetime DEFAULT NULL COMMENT '响应时间',
+  `channel` varchar(30) DEFAULT NULL COMMENT '短信通道',
+  `status` varchar(30) DEFAULT NULL COMMENT '发送状态',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8 COMMENT='短信发送日志信息';
