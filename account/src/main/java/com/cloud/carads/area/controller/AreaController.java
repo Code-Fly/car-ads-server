@@ -31,7 +31,7 @@ public class AreaController {
      * @param parentid
      * @return
      */
-    @GetMapping(value = "/get", produces = MediaType.APPLICATION_FORM_URLENCODED_VALUE)
+    @GetMapping(value = "/get", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
     @ApiOperation(value = "获取区域信息")
     public ErrorMsg getAreas(
             @ApiParam(value = "层级 1省 2市 3区/县")
