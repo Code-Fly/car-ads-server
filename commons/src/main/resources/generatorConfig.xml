@@ -69,7 +69,7 @@
             targetPackage：生成的类要放的包，真实的包受enableSubPackages属性控制；
             targetProject：目标项目，指定一个存在的目录下，生成的内容会放到指定目录中，如果目录不存在，MBG不会自动建目录
         -->
-        <javaModelGenerator targetPackage="com.cloud.carads.sms.entity" targetProject="src/main/java">
+        <javaModelGenerator targetPackage="com.cloud.carads.capp.entity" targetProject="src/main/java">
             <!-- 在targetPackage的基础上，根据数据库的schema再生成一层package，最终生成的类放在这个package下，默认为false -->
             <property name="enableSubPackages" value="true"/>
             <!-- 设置是否在getter方法中，对String类型字段调用trim()方法 -->
@@ -81,7 +81,7 @@
             或者只使用Mapper接口+Annotation，所以，如果 javaClientGenerator配置中配置了需要生成XML的话，这个元素就必须配置
             targetPackage/targetProject:同javaModelGenerator
         -->
-        <sqlMapGenerator targetPackage="com.cloud.carads.sms.mapper" targetProject="src/main/java">
+        <sqlMapGenerator targetPackage="com.cloud.carads.capp.mapper" targetProject="src/main/java">
             <!-- 在targetPackage的基础上，根据数据库的schema再生成一层package，最终生成的类放在这个package下，默认为false -->
             <property name="enableSubPackages" value="true"/>
         </sqlMapGenerator>
@@ -94,7 +94,7 @@
                 3，XMLMAPPER：会生成Mapper接口，接口完全依赖XML；
             注意，如果context是MyBatis3Simple：只支持ANNOTATEDMAPPER和XMLMAPPER
         -->
-        <javaClientGenerator targetPackage="com.cloud.carads.sms.mapper" targetProject="src/main/java"
+        <javaClientGenerator targetPackage="com.cloud.carads.capp.mapper" targetProject="src/main/java"
                              type="XMLMAPPER">
             <!-- 在targetPackage的基础上，根据数据库的schema再生成一层package，最终生成的类放在这个package下，默认为false -->
             <property name="enableSubPackages" value="true"/>
@@ -135,7 +135,7 @@
             15，delimitAllColumns：设置是否所有生成的SQL中的列名都使用标识符引起来。默认为false，delimitIdentifiers参考context的属性
             注意，table里面很多参数都是对javaModelGenerator，context等元素的默认属性的一个复写；
         -->
-        <table tableName="t_sms_log" domainObjectName="SmsLog">
+        <table tableName="c_app_version" domainObjectName="CAppVersion">
             <generatedKey column="id" sqlStatement="MySql" identity="true"/>
         </table>
 
