@@ -4,12 +4,14 @@ import com.aliyuncs.dysmsapi.model.v20170525.SendSmsResponse;
 import com.aliyuncs.exceptions.ClientException;
 import com.cloud.carads.commons.utils.SMSUtil;
 import com.cloud.carads.sms.entity.SmsLog;
+import com.cloud.carads.sms.entity.SmsLogExample;
 import com.cloud.carads.sms.mapper.SmsLogMapper;
 import com.cloud.carads.sms.service.SMSService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.Date;
+import java.util.List;
 
 @Service
 public class SMSServiceImpl implements SMSService {
@@ -24,7 +26,7 @@ public class SMSServiceImpl implements SMSService {
      * @throws ClientException
      */
     @Override
-    public int smsCode(String phoneNo,String fromIp) throws ClientException {
+    public int smsCode(String phoneNo, String fromIp) throws ClientException {
         /**
          * 生成六位数的随机验证码
          */
@@ -45,6 +47,27 @@ public class SMSServiceImpl implements SMSService {
             return shortCode;
         }
         return 0;
+    }
+
+
+    /**
+     * 查询该手机号最后一次发送的短信内容
+     * @param phoneNo
+     * @return
+     */
+    @Override
+    public  SmsLog queryLastSMSByPhone(String phoneNo){
+        SmsLogExample example = new SmsLogExample();
+        SmsLogExample.Criteria criteria = example.createCriteria();
+        criteria.andPhoneNoEqualTo(phoneNo);
+        example.setOrderByClause(" order by receiver_time desc ");
+        List<SmsLog> smsLogs = logMapper.selectByExample(example);
+        if(smsLogs.size()>0){
+            return smsLogs.get(0);
+        }else{
+            return new SmsLog();
+        }
+
     }
 
 }
