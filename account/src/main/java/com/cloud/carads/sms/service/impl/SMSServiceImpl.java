@@ -37,7 +37,6 @@ public class SMSServiceImpl implements SMSService {
 
         // 插入发送记录 返回logid
         logMapper.insertSelective(record);
-        int id = record.getId();
         SendSmsResponse response = SMSUtil.sendSms(phoneNo,String.valueOf(shortCode));
         record.setResponseTime(new Date());
         record.setStatus(response.getCode());

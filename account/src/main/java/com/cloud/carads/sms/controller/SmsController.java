@@ -27,6 +27,13 @@ public class SmsController {
     @Autowired
     private SMSService smsService;
 
+    /**
+     * 发送手机号
+     * 记录发送来源ip
+     * @param request
+     * @param phoneNo
+     * @return
+     */
     @GetMapping(value = "/send/shortcode", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
     @ApiOperation(value = "发送验证码")
     public ErrorMsg getCAccountInfo(
