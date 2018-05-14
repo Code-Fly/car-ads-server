@@ -39,13 +39,13 @@ public class SMSServiceImpl implements SMSService {
 
         // 插入发送记录 返回logid
         logMapper.insertSelective(record);
-        SendSmsResponse response = SMSUtil.sendSms(phoneNo,String.valueOf(shortCode));
+       /* SendSmsResponse response = SMSUtil.sendSms(phoneNo,String.valueOf(shortCode));
         record.setResponseTime(new Date());
         record.setStatus(response.getCode());
         logMapper.updateByPrimaryKey(record);
         if ("OK".equals(response.getCode())){
             return shortCode;
-        }
+        }*/
         return 0;
     }
 

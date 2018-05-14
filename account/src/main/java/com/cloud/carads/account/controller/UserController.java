@@ -5,6 +5,7 @@ package com.cloud.carads.account.controller;
 
 import com.cloud.carads.account.entity.CAccountInfo;
 import com.cloud.carads.account.entity.CAccountInfoDto;
+import com.cloud.carads.account.entity.CAccountInfoExample;
 import com.cloud.carads.account.service.IUserService;
 import com.cloud.carads.commons.controller.BaseController;
 import com.cloud.carads.commons.entity.Error;
@@ -12,6 +13,7 @@ import com.cloud.carads.commons.entity.ErrorMsg;
 import com.cloud.carads.commons.exception.ConnectionFailedException;
 import com.cloud.carads.sms.entity.SmsLog;
 import com.cloud.carads.sms.service.SMSService;
+import com.google.gson.JsonObject;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
@@ -20,6 +22,7 @@ import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Date;
+import java.util.List;
 
 /**
  * @author Barrie
@@ -48,9 +51,10 @@ public class UserController extends BaseController {
                               ) {
         // 校验验证码
         SmsLog smsLog = smsService.queryLastSMSByPhone(accountInfo.getMobileNo());
-        if (!accountInfo.getShortCode().equals(smsLog.getContent())){
+        //ToDO
+       /* if (!accountInfo.getShortCode().equals(smsLog.getContent())){
             return new ErrorMsg(Error.SMS_SHORTCODE_ERROR, "验证码错误。");
-        }
+        }*/
         // 草稿未完善信息
         accountInfo.setFlag(9);
         userService.addCAccount(accountInfo);
@@ -69,4 +73,21 @@ public class UserController extends BaseController {
         return new ErrorMsg(Error.SUCCESS, "success");
     }
 
+    @PostMapping(value = "/login", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
+    @ApiOperation(value = "登陆")
+    public ErrorMsg complete (@ApiParam(value = "用户名密码{\"userName\":\"zhangsan\",\"password\":\"adc3333\"}")
+                              @RequestBody(required = true)JsonObject userInfo
+
+    ) {
+        CAccountInfoExample example = new CAccountInfoExample();
+        example.createCriteria().andUserNameEqualTo(userInfo.get("userName").toString()).andPasswordEqualTo(userInfo.get("userName").toString());
+
+        List<CAccountInfo> infos = userService.selectByExample(example);
+        if(infos.size()==0){
+            return new ErrorMsg(Error.LOGIN_PASSWORD_ERROR, "用户名密码错误");
+        }else{
+            return new ErrorMsg(Error.SUCCESS, "登陆成功",infos.get(0));
+        }
+
+    }
 }

@@ -33,4 +33,7 @@ public abstract class Error {
 
     public static Integer SMS_SEND_ERROR= 20001;
     public static Integer SMS_SHORTCODE_ERROR= 20002;
+
+    public static Integer LOGIN_PASSWORD_ERROR= 30001;
+    public static Integer LOGIN_SYSTEM_ERROR= 30002;
 }

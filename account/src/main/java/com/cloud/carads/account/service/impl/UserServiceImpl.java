@@ -4,6 +4,7 @@
 package com.cloud.carads.account.service.impl;
 
 import com.cloud.carads.account.entity.CAccountInfo;
+import com.cloud.carads.account.entity.CAccountInfoExample;
 import com.cloud.carads.account.mapper.CAccountInfoMapper;
 import com.cloud.carads.account.service.IUserService;
 import com.cloud.carads.commons.service.BaseService;
@@ -11,6 +12,8 @@ import com.cloud.carads.commons.utils.MD5Util;
 import com.cloud.carads.constant.SystemConstant;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 /**
  * @author Barrie
@@ -33,6 +36,11 @@ public class UserServiceImpl extends BaseService implements IUserService {
     public int updateCAccountByID(CAccountInfo cAccountInfo) {
         return cAccountInfoMapper.updateByPrimaryKey(cAccountInfo);
 
+    }
+
+    @Override
+    public List<CAccountInfo> selectByExample(CAccountInfoExample example) {
+        return cAccountInfoMapper.selectByExample(example);
     }
 
     @Override
