@@ -11,6 +11,8 @@ import com.cloud.carads.commons.controller.BaseController;
 import com.cloud.carads.commons.entity.Error;
 import com.cloud.carads.commons.entity.ErrorMsg;
 import com.cloud.carads.commons.exception.ConnectionFailedException;
+import com.cloud.carads.commons.utils.MD5Util;
+import com.cloud.carads.constant.SystemConstant;
 import com.cloud.carads.sms.entity.SmsLog;
 import com.cloud.carads.sms.service.SMSService;
 import com.google.gson.JsonObject;
@@ -73,14 +75,16 @@ public class UserController extends BaseController {
         return new ErrorMsg(Error.SUCCESS, "success");
     }
 
-    @PostMapping(value = "/login", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
+    @PostMapping(value = "/login", produces = MediaType.APPLICATION_FORM_URLENCODED_VALUE)
     @ApiOperation(value = "登陆")
-    public ErrorMsg complete (@ApiParam(value = "用户名密码{\"userName\":\"zhangsan\",\"password\":\"adc3333\"}")
-                              @RequestBody(required = true)JsonObject userInfo
+    public ErrorMsg complete (@ApiParam(value = "用户名")
+                              @RequestParam(required = true) String userName,
+                              @ApiParam(value = "密码")
+                              @RequestParam(required = true) String password
 
     ) {
         CAccountInfoExample example = new CAccountInfoExample();
-        example.createCriteria().andUserNameEqualTo(userInfo.get("userName").toString()).andPasswordEqualTo(userInfo.get("userName").toString());
+        example.createCriteria().andUserNameEqualTo(userName).andPasswordEqualTo(MD5Util.MD5Encode(SystemConstant.PREFIX_MD5+password,"UTF-8"));
 
         List<CAccountInfo> infos = userService.selectByExample(example);
         if(infos.size()==0){
