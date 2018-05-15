@@ -40,7 +40,7 @@ public class UserController extends BaseController {
     private SMSService smsService;
 
     @GetMapping(value = "/get", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
-    @ApiOperation(value = "根据id获取车主基本信息")
+    @ApiOperation(value = "根据id获取车主信息")
     public ErrorMsg getCAccountInfo(@ApiParam(value = "车主的id")
                                     @RequestParam(required = true)Long id){
         return new ErrorMsg(Error.SUCCESS, "success",userService.selectByPrimaryKey(id));
