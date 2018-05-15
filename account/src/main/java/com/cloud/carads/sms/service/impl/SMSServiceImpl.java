@@ -46,7 +46,7 @@ public class SMSServiceImpl implements SMSService {
         if ("OK".equals(response.getCode())){
             return shortCode;
         }*/
-        return 0;
+        return shortCode;
     }
 
 
@@ -60,7 +60,7 @@ public class SMSServiceImpl implements SMSService {
         SmsLogExample example = new SmsLogExample();
         SmsLogExample.Criteria criteria = example.createCriteria();
         criteria.andPhoneNoEqualTo(phoneNo);
-        example.setOrderByClause(" order by receiver_time desc ");
+        example.setOrderByClause("  receiver_time desc ");
         List<SmsLog> smsLogs = logMapper.selectByExample(example);
         if(smsLogs.size()>0){
             return smsLogs.get(0);

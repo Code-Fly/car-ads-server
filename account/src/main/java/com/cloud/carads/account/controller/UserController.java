@@ -66,7 +66,7 @@ public class UserController extends BaseController {
     @PostMapping(value = "/complete", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
     @ApiOperation(value = "车主完善信息")
     public ErrorMsg complete (@ApiParam(value = "车主的全部信息")
-                              @RequestParam(required = true)CAccountInfo info
+                              @RequestBody(required = true)CAccountInfo info
     ) {
         info.setUpdateTime(new Date());
         // 待审核
