@@ -25,4 +25,9 @@ public class DictionaryServiceImpl implements DictionaryService {
         example.createCriteria().andDicCodeEqualTo(dicCode);
         return tdictionaryAttrMapper.selectByExample(example);
     }
+
+    @Override
+    public List<TdictionaryAttr> selectByExample(TdictionaryAttrExample example) {
+        return tdictionaryAttrMapper.selectByExample(example);
+    }
 }
