@@ -19,7 +19,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping(value = "/capp")
-@Api(description = "数据字典接口")
+@Api(description = "车主app接口")
 public class CAppController{
     @Autowired
     private CAppService cAppService;
