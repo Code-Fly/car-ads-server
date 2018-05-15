@@ -1,6 +1,7 @@
 package com.cloud.carads.commons.utils;
 
 import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.Date;
 
 public class DateUtil {
@@ -24,5 +25,12 @@ public class DateUtil {
             e.printStackTrace();       // 打印异常信息
         }
         return sdf2.format(d);
+    }
+
+    public static Date addMinute(Date date, int minute) {
+        Calendar calendar = Calendar.getInstance();
+        calendar.setTime(date);
+        calendar.add(Calendar.MINUTE,minute);
+        return calendar.getTime();
     }
 }

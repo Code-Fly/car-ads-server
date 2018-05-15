@@ -2,6 +2,7 @@ package com.cloud.carads.sms.service.impl;
 
 import com.aliyuncs.dysmsapi.model.v20170525.SendSmsResponse;
 import com.aliyuncs.exceptions.ClientException;
+import com.cloud.carads.commons.utils.DateUtil;
 import com.cloud.carads.commons.utils.SMSUtil;
 import com.cloud.carads.sms.entity.SmsLog;
 import com.cloud.carads.sms.entity.SmsLogExample;
@@ -59,7 +60,10 @@ public class SMSServiceImpl implements SMSService {
     public  SmsLog queryLastSMSByPhone(String phoneNo){
         SmsLogExample example = new SmsLogExample();
         SmsLogExample.Criteria criteria = example.createCriteria();
-        criteria.andPhoneNoEqualTo(phoneNo);
+        /**
+         * 一分钟内有效
+         */
+        criteria.andPhoneNoEqualTo(phoneNo).andReceiverTimeGreaterThan(DateUtil.addMinute(new Date(),-1));
         example.setOrderByClause("  receiver_time desc ");
         List<SmsLog> smsLogs = logMapper.selectByExample(example);
         if(smsLogs.size()>0){
