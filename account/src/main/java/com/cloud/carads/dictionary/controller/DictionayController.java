@@ -1,6 +1,5 @@
 package com.cloud.carads.dictionary.controller;
 
-import com.cloud.carads.area.entity.TAreainfoExample;
 import com.cloud.carads.commons.entity.Error;
 import com.cloud.carads.commons.entity.ErrorMsg;
 import com.cloud.carads.dictionary.entity.TdictionaryAttrExample;
@@ -28,7 +27,7 @@ public class DictionayController {
     private DictionaryService dictionaryService;
     @GetMapping(value = "/get", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
     @ApiOperation(value = "根据字典code查询所有属性和对应的值")
-    public ErrorMsg getCAccountInfo(@ApiParam(value = "数据字典code，请看t_dictionary.dic_code")
+    public ErrorMsg getCAccountInfo(@ApiParam(value = "数据字典code，请看t_dictionary.dic_code", required = true)
                                     @RequestParam(required = true)String dicCode,
                                     @ApiParam(value = "属性值，t_dictionary_attr.attr_value模糊查询")
                                     @RequestParam(required = false)String attrValue){

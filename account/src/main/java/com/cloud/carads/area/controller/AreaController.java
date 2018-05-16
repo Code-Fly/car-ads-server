@@ -34,7 +34,7 @@ public class AreaController {
     @GetMapping(value = "/get", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
     @ApiOperation(value = "获取区域信息")
     public ErrorMsg getAreas(
-            @ApiParam(value = "层级 1省 2市 3区/县")
+            @ApiParam(value = "层级 1省 2市 3区/县", required = true)
             @RequestParam(required = true) Byte areaLevel,
             @ApiParam(value = "父节点的id")
             @RequestParam(required = false) Integer parentid){

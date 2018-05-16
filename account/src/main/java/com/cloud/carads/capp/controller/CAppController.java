@@ -9,7 +9,6 @@ import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -26,7 +25,7 @@ public class CAppController{
     @GetMapping(value = "/version/latest")
     @ApiOperation(value = "获取最新版本的车主app信息,返回的字段说明请看c_app_version表")
     public ErrorMsg getAPPVsersion(
-            @ApiParam(value = "android,ios")
+            @ApiParam(value = "android,ios", required = true)
             @RequestParam(required = true) String os
                                                ){
         CAppVersionExample example = new CAppVersionExample();
