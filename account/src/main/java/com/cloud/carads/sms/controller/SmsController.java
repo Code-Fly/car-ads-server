@@ -38,7 +38,7 @@ public class SmsController {
     @ApiOperation(value = "发送验证码")
     public ErrorMsg getCAccountInfo(
             HttpServletRequest request,
-            @ApiParam(value = "手机号")
+            @ApiParam(value = "手机号", required = true)
                                     @RequestParam(required = true)String phoneNo){
        int shortCode = 0;
         try {
