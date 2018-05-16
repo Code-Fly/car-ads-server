@@ -1,8 +1,11 @@
 package com.cloud.carads.account.entity;
 
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
+
 import java.util.Date;
 
-@ApiModel(description = "车主信息表")
+@ApiModel(description = "车主信息表，不包含验证码字段")
 public class CAccountInfo {
     /**
      *
@@ -11,7 +14,7 @@ public class CAccountInfo {
      *
      * @mbg.generated Tue May 15 22:44:53 CST 2018
      */
-    @ApiModelProperty(value = "车主id，后台自动生成，完善信息时必输，注册时非必输", example = 1,position = 1)
+    @ApiModelProperty(value = "车主id，后台自动生成，完善信息时必输，注册时非必输", example = "1", position = 1)
     private Long id;
 
     /**
@@ -69,7 +72,7 @@ public class CAccountInfo {
      *
      * @mbg.generated Tue May 15 22:44:53 CST 2018
      */
-    @ApiModelProperty(value = "手机号,注册时必输", example = '15951903466',position = 5)
+    @ApiModelProperty(value = "手机号,注册时必输", example = "15951903466", position = 5)
     private String mobileNo;
 
     /**
@@ -79,7 +82,7 @@ public class CAccountInfo {
      *
      * @mbg.generated Tue May 15 22:44:53 CST 2018
      */
-    @ApiModelProperty(value = "身份证图片地址", example = 'http://oss.aliyun.com/temo.gif',position = 6)
+    @ApiModelProperty(value = "身份证图片地址", example = "http://oss.aliyun.com/temo.gif", position = 6)
     private String identityCard;
 
     /**
@@ -89,7 +92,7 @@ public class CAccountInfo {
      *
      * @mbg.generated Tue May 15 22:44:53 CST 2018
      */
-    @ApiModelProperty(value = "行驶证图片地址", example = 'http://oss.aliyun.com/temo.gif',position = 7)
+    @ApiModelProperty(value = "行驶证图片地址", example = "http://oss.aliyun.com/temo.gif", position = 7)
     private String drivingCard;
 
     /**
@@ -99,7 +102,7 @@ public class CAccountInfo {
      *
      * @mbg.generated Tue May 15 22:44:53 CST 2018
      */
-    @ApiModelProperty(value = "车辆侧面图片地址", example = 'http://oss.aliyun.com/temo.gif',position = 8)
+    @ApiModelProperty(value = "车辆侧面图片地址", example = "http://oss.aliyun.com/temo.gif", position = 8)
     private String carSideImg;
 
     /**
@@ -109,7 +112,7 @@ public class CAccountInfo {
      *
      * @mbg.generated Tue May 15 22:44:53 CST 2018
      */
-    @ApiModelProperty(value = "车辆头部图片地址", example = 'http://oss.aliyun.com/temo.gif',position = 9)
+    @ApiModelProperty(value = "车辆头部图片地址", example = "http://oss.aliyun.com/temo.gif", position = 9)
     private String carHeaderImg;
 
     /**
@@ -119,7 +122,7 @@ public class CAccountInfo {
      *
      * @mbg.generated Tue May 15 22:44:53 CST 2018
      */
-     @ApiModelProperty(value = "真实姓名", example = '王东方',position = 10)
+    @ApiModelProperty(value = "真实姓名", example = "王东方", position = 10)
     private String realName;
 
     /**
@@ -129,7 +132,7 @@ public class CAccountInfo {
      *
      * @mbg.generated Tue May 15 22:44:53 CST 2018
      */
-     @ApiModelProperty(value = "身份证号", example = '322410211212121021',position = 11)
+    @ApiModelProperty(value = "身份证号", example = "322410211212121021", position = 11)
     private String identityNo;
 
     /**
@@ -139,7 +142,7 @@ public class CAccountInfo {
      *
      * @mbg.generated Tue May 15 22:44:53 CST 2018
      */
-    @ApiModelProperty(value = "出生日期", example = '2018-01-02',position = 12)
+    @ApiModelProperty(value = "出生日期", example = "2018-01-02", position = 12)
     private String borthDate;
 
     /**
@@ -149,7 +152,7 @@ public class CAccountInfo {
      *
      * @mbg.generated Tue May 15 22:44:53 CST 2018
      */
-    @ApiModelProperty(value = "车牌号", example = '浙B0101D',position = 13)
+    @ApiModelProperty(value = "车牌号", example = "浙B0101D", position = 13)
     private String plateNo;
 
     /**
@@ -159,7 +162,7 @@ public class CAccountInfo {
      *
      * @mbg.generated Tue May 15 22:44:53 CST 2018
      */
-    @ApiModelProperty(value = "详细地址", example = '熙春路3号春江新村3栋三单元302',position = 14)
+    @ApiModelProperty(value = "详细地址", example = "熙春路3号春江新村3栋三单元302", position = 14)
     private String detailAddress;
 
     /**
@@ -169,7 +172,7 @@ public class CAccountInfo {
      *
      * @mbg.generated Tue May 15 22:44:53 CST 2018
      */
-     @ApiModelProperty(value = "省", example = '浙江省',position = 15)
+    @ApiModelProperty(value = "省", example = "浙江省", position = 15)
     private String province;
 
     /**
@@ -179,7 +182,7 @@ public class CAccountInfo {
      *
      * @mbg.generated Tue May 15 22:44:53 CST 2018
      */
-     @ApiModelProperty(value = "市", example = '杭州市',position = 16)
+    @ApiModelProperty(value = "市", example = "杭州市", position = 16)
     private String city;
 
     /**
@@ -189,7 +192,7 @@ public class CAccountInfo {
      *
      * @mbg.generated Tue May 15 22:44:53 CST 2018
      */
-     @ApiModelProperty(value = "区", example = '余杭区',position = 17)
+    @ApiModelProperty(value = "区", example = "余杭区", position = 17)
     private String area;
 
     /**
@@ -199,7 +202,7 @@ public class CAccountInfo {
      *
      * @mbg.generated Tue May 15 22:44:53 CST 2018
      */
-    @ApiModelProperty(value = "省编码", example = '330000',position = 18)
+    @ApiModelProperty(value = "省编码", example = "330000", position = 18)
     private String provinceCode;
 
     /**
@@ -209,7 +212,7 @@ public class CAccountInfo {
      *
      * @mbg.generated Tue May 15 22:44:53 CST 2018
      */
-     @ApiModelProperty(value = "市编码", example = '330100',position = 19)
+    @ApiModelProperty(value = "市编码", example = "330100", position = 19)
     private String cityCode;
 
     /**
@@ -219,7 +222,7 @@ public class CAccountInfo {
      *
      * @mbg.generated Tue May 15 22:44:53 CST 2018
      */
-    @ApiModelProperty(value = "区编码", example = '330110',position = 20)
+    @ApiModelProperty(value = "区编码", example = "330110", position = 20)
     private String areaCode;
 
     /**
@@ -229,7 +232,7 @@ public class CAccountInfo {
      *
      * @mbg.generated Tue May 15 22:44:53 CST 2018
      */
-    @ApiModelProperty(value = "原地址", example = '江苏省南京市玄武区玄武大道11号樱铁村3栋2单元101',position = 21)
+    @ApiModelProperty(value = "原地址", example = "江苏省南京市玄武区玄武大道11号樱铁村3栋2单元101", position = 21)
     private String oldAddress;
 
     /**
@@ -239,7 +242,7 @@ public class CAccountInfo {
      *
      * @mbg.generated Tue May 15 22:44:53 CST 2018
      */
-    @ApiModelProperty(value = "小区，用户输入小区名称调用百度地图模糊查询小区然后用户选择具体的小区", example = '奥体花园',position = 22)
+    @ApiModelProperty(value = "小区，用户输入小区名称调用百度地图模糊查询小区然后用户选择具体的小区", example = "奥体花园", position = 22)
     private String village;
 
     /**
@@ -249,7 +252,7 @@ public class CAccountInfo {
      *
      * @mbg.generated Tue May 15 22:44:53 CST 2018
      */
-    @ApiModelProperty(value = "车辆品牌,查询数据字典 传值T_CAR_BRAND", example = '奥迪',position = 23)
+    @ApiModelProperty(value = "车辆品牌,查询数据字典 传值T_CAR_BRAND", example = "奥迪", position = 23)
     private String carBrand;
 
     /**
@@ -259,7 +262,7 @@ public class CAccountInfo {
      *
      * @mbg.generated Tue May 15 22:44:53 CST 2018
      */
-     @ApiModelProperty(value = "查询数据字典  例如上面选择时AODI_CAR 传值AODI_CAR", example = 'A4',position = 24)
+    @ApiModelProperty(value = "查询数据字典  例如上面选择时AODI_CAR 传值AODI_CAR", example = "A4", position = 24)
     private String carModel;
 
     /**
@@ -269,7 +272,7 @@ public class CAccountInfo {
      *
      * @mbg.generated Tue May 15 22:44:53 CST 2018
      */
-     @ApiModelProperty(value = "性别，1男 0女", example = '0',position = 25)
+    @ApiModelProperty(value = "性别，1男 0女", example = "0", position = 25)
     private Integer sex;
 
     /**
@@ -279,7 +282,7 @@ public class CAccountInfo {
      *
      * @mbg.generated Tue May 15 22:44:53 CST 2018
      */
-     @ApiModelProperty(value = "银行卡号", example = '62260210202416201',position = 26)
+    @ApiModelProperty(value = "银行卡号", example = "62260210202416201", position = 26)
     private String bankCarNo;
 
     /**
@@ -289,7 +292,7 @@ public class CAccountInfo {
      *
      * @mbg.generated Tue May 15 22:44:53 CST 2018
      */
-      @ApiModelProperty(value = "开户行，数据字典T_BANK_CODE", example = 'BANK_ICBC',position =27)
+    @ApiModelProperty(value = "开户行，数据字典T_BANK_CODE", example = "BANK_ICBC", position = 27)
     private String openBank;
 
     /**
@@ -299,7 +302,7 @@ public class CAccountInfo {
      *
      * @mbg.generated Tue May 15 22:44:53 CST 2018
      */
-     @ApiModelProperty(value = "信息来源，数据字典C_INFO_FROM", example = 'COMMUNITY_ADS',position = 28)
+    @ApiModelProperty(value = "信息来源，数据字典C_INFO_FROM", example = "COMMUNITY_ADS", position = 28)
     private String infoFrom;
 
     /**
@@ -309,7 +312,7 @@ public class CAccountInfo {
      *
      * @mbg.generated Tue May 15 22:44:53 CST 2018
      */
-     @ApiModelProperty(value = "是否为网约车1是0否", example = 1,position = 29)
+    @ApiModelProperty(value = "是否为网约车1是0否", example = "1", position = 29)
     private Integer netCar;
 
     /**
@@ -319,7 +322,7 @@ public class CAccountInfo {
      *
      * @mbg.generated Tue May 15 22:44:53 CST 2018
      */
-    @ApiModelProperty(value = "审核状态，0待审核 1审核通过2审核未通过 5已删除 9草稿未完善信息", example = 0,position = 30)
+    @ApiModelProperty(value = "审核状态，0待审核 1审核通过2审核未通过 5已删除 9草稿未完善信息", example = "0", position = 30)
     private Integer flag;
 
     /**
@@ -347,7 +350,7 @@ public class CAccountInfo {
      *
      * @mbg.generated Tue May 15 22:44:53 CST 2018
      */
-    @ApiModelProperty(value = "车主所在小区经度", example = 12.33101,position = 31)
+    @ApiModelProperty(value = "车主所在小区经度", example = "12.33101", position = 31)
     private Double lgt;
 
     /**
@@ -357,7 +360,7 @@ public class CAccountInfo {
      *
      * @mbg.generated Tue May 15 22:44:53 CST 2018
      */
-       @ApiModelProperty(value = "车主所在小区纬度", example = 112.43101,position = 32)
+    @ApiModelProperty(value = "车主所在小区纬度", example = "112.43101", position = 32)
     private Double lat;
 
     /**

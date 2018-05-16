@@ -1,5 +1,8 @@
 package com.cloud.carads.account.entity;
 
+import io.swagger.annotations.ApiModel;
+
+@ApiModel(description = "车主信息表,包含验证码字段")
 public class CAccountInfoDto extends CAccountInfo {
     private  String shortCode;
 

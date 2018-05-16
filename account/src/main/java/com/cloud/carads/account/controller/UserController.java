@@ -10,12 +10,10 @@ import com.cloud.carads.account.service.IUserService;
 import com.cloud.carads.commons.controller.BaseController;
 import com.cloud.carads.commons.entity.Error;
 import com.cloud.carads.commons.entity.ErrorMsg;
-import com.cloud.carads.commons.exception.ConnectionFailedException;
 import com.cloud.carads.commons.utils.MD5Util;
 import com.cloud.carads.constant.SystemConstant;
 import com.cloud.carads.sms.entity.SmsLog;
 import com.cloud.carads.sms.service.SMSService;
-import com.google.gson.JsonObject;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
@@ -39,7 +37,7 @@ public class UserController extends BaseController {
     @Autowired
     private SMSService smsService;
 
-    @GetMapping(value = "/get", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
+    @GetMapping(value = "/querybyid", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
     @ApiOperation(value = "根据id获取车主信息")
     public ErrorMsg getCAccountInfo(@ApiParam(value = "车主的id",required = true)
                                     @RequestParam(required = true)Long id){
@@ -93,5 +91,15 @@ public class UserController extends BaseController {
             return new ErrorMsg(Error.SUCCESS, "登陆成功",infos.get(0));
         }
 
+    }
+
+    @GetMapping(value = "/querybyname", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
+    @ApiOperation(value = "根据用户名或者手机号获取车主信息")
+    public ErrorMsg getCAccountInfoByname(@ApiParam(value = "车主的用户名/手机号", required = true)
+                                          @RequestParam(required = true) String userName) {
+        CAccountInfoExample example = new CAccountInfoExample();
+        CAccountInfoExample.Criteria criteria = example.createCriteria().andUserNameEqualTo(userName).andFlagEqualTo(1);
+        example.or(criteria.andMobileNoEqualTo(userName).andFlagEqualTo(1));
+        return new ErrorMsg(Error.SUCCESS, "success", userService.selectByExample(example).get(0));
     }
 }
