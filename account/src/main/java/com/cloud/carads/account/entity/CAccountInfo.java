@@ -41,7 +41,7 @@ public class CAccountInfo {
      *
      * @mbg.generated Tue May 15 22:44:53 CST 2018
      */
-    @ApiModelProperty(value = "推荐人id,车主注册时输入推荐人用户名，调用后台接口判断用户是否存在如果存在则返回该用户的id", example = 1111,position = 4)
+    @ApiModelProperty(value = "推荐人id,车主注册时输入推荐人用户名，调用后台接口判断用户是否存在如果存在则返回该用户的id", example = "111",position = 4)
     private Long fatherId;
 
     /**
@@ -129,7 +129,7 @@ public class CAccountInfo {
      *
      * @mbg.generated Tue May 15 22:44:53 CST 2018
      */
-     @ApiModelProperty(value = "真实姓名", example = 'http://oss.aliyun.com/temo.gif',position = 11)
+     @ApiModelProperty(value = "身份证号", example = '322410211212121021',position = 11)
     private String identityNo;
 
     /**
@@ -239,7 +239,7 @@ public class CAccountInfo {
      *
      * @mbg.generated Tue May 15 22:44:53 CST 2018
      */
-    @ApiModelProperty(value = "小区", example = '用户输入小区名称调用百度地图模糊查询小区然后用户选择具体的小区',position = 22)
+    @ApiModelProperty(value = "小区，用户输入小区名称调用百度地图模糊查询小区然后用户选择具体的小区", example = '奥体花园',position = 22)
     private String village;
 
     /**
@@ -269,7 +269,7 @@ public class CAccountInfo {
      *
      * @mbg.generated Tue May 15 22:44:53 CST 2018
      */
-     @ApiModelProperty(value = "性别", example = '1男 0女',position = 25)
+     @ApiModelProperty(value = "性别，1男 0女", example = '0',position = 25)
     private Integer sex;
 
     /**
