@@ -41,14 +41,14 @@ public class UserController extends BaseController {
 
     @GetMapping(value = "/get", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
     @ApiOperation(value = "根据id获取车主信息")
-    public ErrorMsg getCAccountInfo(@ApiParam(value = "车主的id")
+    public ErrorMsg getCAccountInfo(@ApiParam(value = "车主的id",required = true)
                                     @RequestParam(required = true)Long id){
         return new ErrorMsg(Error.SUCCESS, "success",userService.selectByPrimaryKey(id));
     }
 
     @PostMapping(value = "/register", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
     @ApiOperation(value = "车主注册 返回车主的id")
-    public ErrorMsg register (@ApiParam(value = "车主的基本信息")
+    public ErrorMsg register (@ApiParam(value = "车主的基本信息" ,required = true)
                                       @RequestBody(required = true)CAccountInfoDto accountInfo
                               ) {
         // 校验验证码
@@ -65,7 +65,7 @@ public class UserController extends BaseController {
 
     @PostMapping(value = "/complete", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
     @ApiOperation(value = "车主完善信息")
-    public ErrorMsg complete (@ApiParam(value = "车主的全部信息")
+    public ErrorMsg complete (@ApiParam(value = "车主的全部信息",required = true)
                               @RequestBody(required = true)CAccountInfo info
     ) {
         info.setUpdateTime(new Date());
@@ -77,9 +77,9 @@ public class UserController extends BaseController {
 
     @PostMapping(value = "/login", produces = MediaType.APPLICATION_FORM_URLENCODED_VALUE)
     @ApiOperation(value = "登陆")
-    public ErrorMsg complete (@ApiParam(value = "用户名")
+    public ErrorMsg complete (@ApiParam(value = "用户名",required = true)
                               @RequestParam(required = true) String userName,
-                              @ApiParam(value = "密码")
+                              @ApiParam(value = "密码",required = true)
                               @RequestParam(required = true) String password
 
     ) {
