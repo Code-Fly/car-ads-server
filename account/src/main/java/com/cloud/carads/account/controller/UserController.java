@@ -57,6 +57,15 @@ public class UserController extends BaseController {
         }*/
         // 草稿未完善信息
         accountInfo.setFlag(9);
+        // 查询二级或者三级推荐人
+        if(null != accountInfo.getFatherId() && accountInfo.getFatherId()>0){
+           CAccountInfo info = userService.selectByPrimaryKey(accountInfo.getFatherId());
+           if (null!=info){
+               accountInfo.setGrandId(info.getFatherId());
+               accountInfo.setGgrandId(info.getGgrandId());
+           }
+
+        }
         userService.addCAccount(accountInfo);
         return new ErrorMsg(Error.SUCCESS, "success",accountInfo.getId());
     }
