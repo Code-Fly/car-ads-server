@@ -29,7 +29,7 @@ public abstract class Error {
     public static Integer INSTANTIANTION_EXCEPTION = 10023;
     public static Integer NO_SUCH_FIELD_EXCEPTION = 10024;
     public static Integer TIME_OUT_EXCEPTION = 10025;
-
+    public static Integer AUTHORIZATION_FAILED_EXCEPTION = 10026;
 
     public static Integer SMS_SEND_ERROR= 20001;
     public static Integer SMS_SHORTCODE_ERROR= 20002;

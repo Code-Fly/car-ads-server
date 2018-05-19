@@ -3,10 +3,7 @@ package com.cloud.carads.account.config;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import springfox.documentation.builders.ApiInfoBuilder;
-import springfox.documentation.builders.AuthorizationCodeGrantBuilder;
-import springfox.documentation.builders.OAuthBuilder;
-import springfox.documentation.builders.PathSelectors;
+import springfox.documentation.builders.*;
 import springfox.documentation.service.*;
 import springfox.documentation.spi.DocumentationType;
 import springfox.documentation.spi.service.contexts.SecurityContext;
@@ -68,48 +65,48 @@ public class RestApiConfig {
     @Bean
     public Docket configSpringfoxDocketForApiUser() {
         return new Docket(DocumentationType.SWAGGER_2)
-                .groupName("Account management")
                 .apiInfo(apiInfo())
                 .forCodeGeneration(true)
                 .select()
-                .paths(PathSelectors.regex("/account/.*"))
+                .apis(RequestHandlerSelectors.basePackage("com.cloud.carads.account"))
+                .paths(PathSelectors.any())
                 .build();
 //                .securitySchemes(Arrays.asList(securityScheme()))
 //                .securityContexts(Arrays.asList(securityContext()));
     }
 
-    @Bean
-    public Docket configSpringfoxDocketForApiArea() {
-        return new Docket(DocumentationType.SWAGGER_2)
-                .groupName("area management")
-                .apiInfo(apiInfo())
-                .forCodeGeneration(true)
-                .select()
-                .paths(PathSelectors.regex("/area/.*"))
-                .build();
-    }
-
-    @Bean
-    public Docket configSpringfoxDocketForApiCapp() {
-        return new Docket(DocumentationType.SWAGGER_2)
-                .groupName("dictionary")
-                .apiInfo(apiInfo())
-                .forCodeGeneration(true)
-                .select()
-                .paths(PathSelectors.regex("/capp/.*"))
-                .build();
-    }
-
-    @Bean
-    public Docket configSpringfoxDocketForApiSms() {
-        return new Docket(DocumentationType.SWAGGER_2)
-                .groupName("sms")
-                .apiInfo(apiInfo())
-                .forCodeGeneration(true)
-                .select()
-                .paths(PathSelectors.regex("/sms/.*"))
-                .build();
-    }
+//    @Bean
+//    public Docket configSpringfoxDocketForApiArea() {
+//        return new Docket(DocumentationType.SWAGGER_2)
+//                .groupName("area management")
+//                .apiInfo(apiInfo())
+//                .forCodeGeneration(true)
+//                .select()
+//                .paths(PathSelectors.regex("/area/.*"))
+//                .build();
+//    }
+//
+//    @Bean
+//    public Docket configSpringfoxDocketForApiCapp() {
+//        return new Docket(DocumentationType.SWAGGER_2)
+//                .groupName("dictionary")
+//                .apiInfo(apiInfo())
+//                .forCodeGeneration(true)
+//                .select()
+//                .paths(PathSelectors.regex("/capp/.*"))
+//                .build();
+//    }
+//
+//    @Bean
+//    public Docket configSpringfoxDocketForApiSms() {
+//        return new Docket(DocumentationType.SWAGGER_2)
+//                .groupName("sms")
+//                .apiInfo(apiInfo())
+//                .forCodeGeneration(true)
+//                .select()
+//                .paths(PathSelectors.regex("/sms/.*"))
+//                .build();
+//    }
 
 
     private ApiInfo apiInfo() {
