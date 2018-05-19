@@ -1,6 +1,6 @@
 package com.cloud.carads.authorization.config;
 
-import com.cloud.carads.authorization.service.UserService;
+import com.cloud.carads.authorization.service.IUserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -33,7 +33,7 @@ public class OAuthAuthorizationServerConfig extends AuthorizationServerConfigure
      * 获取用户信息
      */
     @Autowired
-    private UserService userService;
+    private IUserService userService;
 
     /**
      * 加密方式
@@ -91,6 +91,7 @@ public class OAuthAuthorizationServerConfig extends AuthorizationServerConfigure
 //        oauthServer.allowFormAuthenticationForClients();
         security.realm(REALM);
 //        security.passwordEncoder(passwordEncoder);
+        security.checkTokenAccess("permitAll()");
         security.allowFormAuthenticationForClients();
         security.tokenKeyAccess("permitAll()");
         security.checkTokenAccess("isAuthenticated()");
