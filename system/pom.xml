@@ -10,7 +10,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.cloud.carads</groupId>
-    <artifactId>account</artifactId>
+    <artifactId>system</artifactId>
     <packaging>jar</packaging>
 
     <dependencies>
@@ -38,10 +38,6 @@
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-eureka</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-feign</artifactId>
         </dependency>
         <dependency>
             <groupId>org.springframework.cloud</groupId>
@@ -90,4 +86,6 @@
             </plugin>
         </plugins>
     </build>
+
+
 </project>

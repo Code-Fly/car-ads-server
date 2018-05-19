@@ -15,6 +15,7 @@
         <module>zuul-gateway</module>
         <module>authorization</module>
         <module>account</module>
+        <module>system</module>
         <module>management-ui</module>
     </modules>
 

@@ -1,0 +1,75 @@
+package com.cloud.carads.system.sms.service.impl;
+
+import com.aliyuncs.exceptions.ClientException;
+import com.cloud.carads.commons.utils.DateUtil;
+import com.cloud.carads.system.sms.entity.SmsLog;
+import com.cloud.carads.system.sms.entity.SmsLogExample;
+import com.cloud.carads.system.sms.mapper.SmsLogMapper;
+import com.cloud.carads.system.sms.service.ISMSService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import java.util.Date;
+import java.util.List;
+
+@Service
+public class SMSServiceImpl implements ISMSService {
+    @Autowired
+    private SmsLogMapper logMapper;
+
+    /**
+     * 返回成功
+     * @param phoneNo
+     * @param fromIp
+     * @return
+     * @throws ClientException
+     */
+    @Override
+    public int smsCode(String phoneNo, String fromIp) throws ClientException {
+        /**
+         * 生成六位数的随机验证码
+         */
+         int shortCode = (int)((Math.random()*9+1)*100000);
+        SmsLog record = new SmsLog();
+        record.setPhoneNo(phoneNo);
+        record.setChannel("aliyun");
+        record.setFromIp(fromIp);
+        record.setContent(String.valueOf(shortCode));
+
+        // 插入发送记录 返回logid
+        logMapper.insertSelective(record);
+       /* SendSmsResponse response = SMSUtil.sendSms(phoneNo,String.valueOf(shortCode));
+        record.setResponseTime(new Date());
+        record.setStatus(response.getCode());
+        logMapper.updateByPrimaryKey(record);
+        if ("OK".equals(response.getCode())){
+            return shortCode;
+        }*/
+        return shortCode;
+    }
+
+
+    /**
+     * 查询该手机号最后一次发送的短信内容
+     * @param phoneNo
+     * @return
+     */
+    @Override
+    public  SmsLog queryLastSMSByPhone(String phoneNo){
+        SmsLogExample example = new SmsLogExample();
+        SmsLogExample.Criteria criteria = example.createCriteria();
+        /**
+         * 一分钟内有效
+         */
+        criteria.andPhoneNoEqualTo(phoneNo).andReceiverTimeGreaterThan(DateUtil.addMinute(new Date(),-1));
+        example.setOrderByClause("  receiver_time desc ");
+        List<SmsLog> smsLogs = logMapper.selectByExample(example);
+        if(smsLogs.size()>0){
+            return smsLogs.get(0);
+        }else{
+            return new SmsLog();
+        }
+
+    }
+
+}

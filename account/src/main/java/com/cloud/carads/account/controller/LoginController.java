@@ -20,7 +20,7 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 @RestController
-@Api(value = "车主登录接口", tags = "登录")
+@Api(description = "车主登录接口", tags = "登录")
 public class LoginController extends BaseController {
     @Autowired
     private IAccountService accountService;
