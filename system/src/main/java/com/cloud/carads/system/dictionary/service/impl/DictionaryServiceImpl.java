@@ -3,14 +3,14 @@ package com.cloud.carads.system.dictionary.service.impl;
 import com.cloud.carads.system.dictionary.entity.TdictionaryAttr;
 import com.cloud.carads.system.dictionary.entity.TdictionaryAttrExample;
 import com.cloud.carads.system.dictionary.mapper.TdictionaryAttrMapper;
-import com.cloud.carads.system.dictionary.service.DictionaryService;
+import com.cloud.carads.system.dictionary.service.IDictionaryService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @Service
-public class DictionaryServiceImpl implements DictionaryService {
+public class DictionaryServiceImpl implements IDictionaryService {
     @Autowired
     private TdictionaryAttrMapper tdictionaryAttrMapper;
 

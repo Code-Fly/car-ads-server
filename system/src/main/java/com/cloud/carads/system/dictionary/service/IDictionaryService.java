@@ -5,7 +5,7 @@ import com.cloud.carads.system.dictionary.entity.TdictionaryAttrExample;
 
 import java.util.List;
 
-public interface DictionaryService {
+public interface IDictionaryService {
     List<TdictionaryAttr> queryDictionaryAttrByCode(String dicCode);
     List<TdictionaryAttr> selectByExample(TdictionaryAttrExample example);
 

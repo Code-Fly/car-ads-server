@@ -5,6 +5,6 @@ import com.cloud.carads.system.capp.entity.CAppVersionExample;
 
 import java.util.List;
 
-public interface CAppService {
+public interface ICAppService {
     List<CAppVersion> selectByExample(CAppVersionExample example);
 }

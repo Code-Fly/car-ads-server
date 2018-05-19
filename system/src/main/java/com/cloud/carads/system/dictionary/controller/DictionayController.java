@@ -4,7 +4,7 @@ import com.cloud.carads.commons.controller.BaseController;
 import com.cloud.carads.commons.entity.Error;
 import com.cloud.carads.commons.entity.ErrorMsg;
 import com.cloud.carads.system.dictionary.entity.TdictionaryAttrExample;
-import com.cloud.carads.system.dictionary.service.DictionaryService;
+import com.cloud.carads.system.dictionary.service.IDictionaryService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
@@ -23,7 +23,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class DictionayController extends BaseController {
 
     @Autowired
-    private DictionaryService dictionaryService;
+    private IDictionaryService dictionaryService;
 
     @GetMapping(value = "/dictionary", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
     @ApiOperation(value = "根据字典code查询所有属性和对应的值")

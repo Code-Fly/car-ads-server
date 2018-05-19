@@ -5,7 +5,7 @@ import com.cloud.carads.commons.entity.Error;
 import com.cloud.carads.commons.entity.ErrorMsg;
 import com.cloud.carads.system.capp.entity.CAppVersion;
 import com.cloud.carads.system.capp.entity.CAppVersionExample;
-import com.cloud.carads.system.capp.service.CAppService;
+import com.cloud.carads.system.capp.service.ICAppService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
@@ -20,7 +20,7 @@ import java.util.List;
 @Api(description = "车主app接口", tags = "车主app")
 public class CAppController extends BaseController {
     @Autowired
-    private CAppService cAppService;
+    private ICAppService cAppService;
 
     @GetMapping(value = "/capp/version/latest")
     @ApiOperation(value = "获取最新版本的车主app信息,返回的字段说明请看c_app_version表")
