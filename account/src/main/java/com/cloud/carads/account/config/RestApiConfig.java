@@ -11,8 +11,8 @@ import springfox.documentation.service.*;
 import springfox.documentation.spi.DocumentationType;
 import springfox.documentation.spi.service.contexts.SecurityContext;
 import springfox.documentation.spring.web.plugins.Docket;
-import springfox.documentation.swagger.web.ApiKeyVehicle;
 import springfox.documentation.swagger.web.SecurityConfiguration;
+import springfox.documentation.swagger.web.SecurityConfigurationBuilder;
 import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 import java.util.Arrays;
@@ -43,27 +43,27 @@ public class RestApiConfig {
     @Value("${security.oauth2.client.user-authorization-uri}")
     public String USER_AUTHORIZATION_URI;
 
-    @Bean
-    public SecurityConfiguration security() {
-        return new SecurityConfiguration(CLIENT_ID,
-                CLIENT_SECRET,
-                "realm", "OAUTH_REALM",
-                "apiKey", ApiKeyVehicle.HEADER, "api_key", "");
-    }
-
-
 //    @Bean
 //    public SecurityConfiguration security() {
-//
-//
-//        return SecurityConfigurationBuilder.builder()
-//                .clientId(CLIENT_ID)
-//                .clientSecret(CLIENT_SECRET)
-//                .scopeSeparator(" ")
-//                .useBasicAuthenticationWithAccessCodeGrant(true)
-//                .realm("OAUTH_REALM")
-//                .build();
+//        return new SecurityConfiguration(CLIENT_ID,
+//                CLIENT_SECRET,
+//                "realm", "OAUTH_REALM",
+//                "apiKey", ApiKeyVehicle.HEADER, "api_key", "");
 //    }
+
+
+    @Bean
+    public SecurityConfiguration security() {
+
+
+        return SecurityConfigurationBuilder.builder()
+                .clientId(CLIENT_ID)
+                .clientSecret(CLIENT_SECRET)
+                .scopeSeparator(" ")
+                .useBasicAuthenticationWithAccessCodeGrant(true)
+                .realm("OAUTH_REALM")
+                .build();
+    }
 
     @Bean
     public Docket configSpringfoxDocketForApiUser() {
@@ -73,9 +73,9 @@ public class RestApiConfig {
                 .forCodeGeneration(true)
                 .select()
                 .paths(PathSelectors.regex("/account/.*"))
-                .build()
-                .securitySchemes(Arrays.asList(securityScheme()))
-                .securityContexts(Arrays.asList(securityContext()));
+                .build();
+//                .securitySchemes(Arrays.asList(securityScheme()))
+//                .securityContexts(Arrays.asList(securityContext()));
     }
 
     @Bean

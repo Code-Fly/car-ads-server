@@ -11,7 +11,7 @@ import java.util.List;
 /**
  * @author Barrie
  */
-public interface IUserService {
+public interface IAccountService {
     int addCAccount(CAccountInfo cAccountInfo);
     int updateCAccountByID(CAccountInfo cAccountInfo);
     List<CAccountInfo> selectByExample(CAccountInfoExample example);

@@ -6,7 +6,7 @@ package com.cloud.carads.account.service.impl;
 import com.cloud.carads.account.entity.CAccountInfo;
 import com.cloud.carads.account.entity.CAccountInfoExample;
 import com.cloud.carads.account.mapper.CAccountInfoMapper;
-import com.cloud.carads.account.service.IUserService;
+import com.cloud.carads.account.service.IAccountService;
 import com.cloud.carads.commons.service.BaseService;
 import com.cloud.carads.commons.utils.MD5Util;
 import com.cloud.carads.constant.SystemConstant;
@@ -19,7 +19,7 @@ import java.util.List;
  * @author Barrie
  */
 @Service
-public class UserServiceImpl extends BaseService implements IUserService {
+public class AccountServiceImpl extends BaseService implements IAccountService {
 
  @Autowired
  private CAccountInfoMapper cAccountInfoMapper;

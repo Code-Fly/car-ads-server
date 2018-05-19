@@ -6,7 +6,7 @@ package com.cloud.carads.account.controller;
 import com.cloud.carads.account.entity.CAccountInfo;
 import com.cloud.carads.account.entity.CAccountInfoDto;
 import com.cloud.carads.account.entity.CAccountInfoExample;
-import com.cloud.carads.account.service.IUserService;
+import com.cloud.carads.account.service.IAccountService;
 import com.cloud.carads.commons.controller.BaseController;
 import com.cloud.carads.commons.entity.Error;
 import com.cloud.carads.commons.entity.ErrorMsg;
@@ -32,7 +32,7 @@ import java.util.List;
 @Api(description = "车主管理接口")
 public class UserController extends BaseController {
     @Autowired
-    private IUserService userService;
+    private IAccountService accountService;
 
     @Autowired
     private SMSService smsService;
@@ -41,7 +41,7 @@ public class UserController extends BaseController {
     @ApiOperation(value = "根据id获取车主信息")
     public ErrorMsg getCAccountInfo(@ApiParam(value = "车主的id",required = true)
                                     @RequestParam(required = true)Long id){
-        return new ErrorMsg(Error.SUCCESS, "success",userService.selectByPrimaryKey(id));
+        return new ErrorMsg(Error.SUCCESS, "success", accountService.selectByPrimaryKey(id));
     }
 
     @PostMapping(value = "/register", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
@@ -59,14 +59,14 @@ public class UserController extends BaseController {
         accountInfo.setFlag(9);
         // 查询二级或者三级推荐人
         if(null != accountInfo.getFatherId() && accountInfo.getFatherId()>0){
-           CAccountInfo info = userService.selectByPrimaryKey(accountInfo.getFatherId());
+            CAccountInfo info = accountService.selectByPrimaryKey(accountInfo.getFatherId());
            if (null!=info){
                accountInfo.setGrandId(info.getFatherId());
                accountInfo.setGgrandId(info.getGgrandId());
            }
 
         }
-        userService.addCAccount(accountInfo);
+        accountService.addCAccount(accountInfo);
         return new ErrorMsg(Error.SUCCESS, "success",accountInfo.getId());
     }
 
@@ -78,7 +78,7 @@ public class UserController extends BaseController {
         info.setUpdateTime(new Date());
         // 待审核
         info.setFlag(0);
-        userService.updateCAccountByID(info);
+        accountService.updateCAccountByID(info);
         return new ErrorMsg(Error.SUCCESS, "success");
     }
 
@@ -93,7 +93,7 @@ public class UserController extends BaseController {
         CAccountInfoExample example = new CAccountInfoExample();
         example.createCriteria().andUserNameEqualTo(userName).andPasswordEqualTo(MD5Util.MD5Encode(SystemConstant.PREFIX_MD5+password,"UTF-8"));
 
-        List<CAccountInfo> infos = userService.selectByExample(example);
+        List<CAccountInfo> infos = accountService.selectByExample(example);
         if(infos.size()==0){
             return new ErrorMsg(Error.LOGIN_PASSWORD_ERROR, "用户名密码错误");
         }else{
@@ -109,6 +109,6 @@ public class UserController extends BaseController {
         CAccountInfoExample example = new CAccountInfoExample();
         CAccountInfoExample.Criteria criteria = example.createCriteria().andUserNameEqualTo(userName).andFlagEqualTo(1);
         example.or(criteria.andMobileNoEqualTo(userName).andFlagEqualTo(1));
-        return new ErrorMsg(Error.SUCCESS, "success", userService.selectByExample(example).get(0));
+        return new ErrorMsg(Error.SUCCESS, "success", accountService.selectByExample(example).get(0));
     }
 }
