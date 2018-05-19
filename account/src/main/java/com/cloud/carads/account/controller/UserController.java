@@ -41,7 +41,13 @@ public class UserController extends BaseController {
     @ApiOperation(value = "根据id获取车主信息")
     public ErrorMsg getCAccountInfo(@ApiParam(value = "车主的id",required = true)
                                     @RequestParam(required = true)Long id){
-        return new ErrorMsg(Error.SUCCESS, "success",userService.selectByPrimaryKey(id));
+        CAccountInfo cAccountInfo = userService.selectByPrimaryKey(id);
+        if (null == cAccountInfo){
+            return new ErrorMsg(Error.C_NOT_EXITS, "车主不存在");
+        }else {
+            return new ErrorMsg(Error.SUCCESS, "SUCCESS",cAccountInfo);
+        }
+
     }
 
     @PostMapping(value = "/register", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
@@ -103,12 +109,17 @@ public class UserController extends BaseController {
     }
 
     @GetMapping(value = "/querybyname", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
-    @ApiOperation(value = "根据用户名或者手机号获取车主信息")
+    @ApiOperation(value = "根据用户名或者手机号获取已经审核通过（flag=1）的车主信息")
     public ErrorMsg getCAccountInfoByname(@ApiParam(value = "车主的用户名/手机号", required = true)
                                           @RequestParam(required = true) String userName) {
         CAccountInfoExample example = new CAccountInfoExample();
         CAccountInfoExample.Criteria criteria = example.createCriteria().andUserNameEqualTo(userName).andFlagEqualTo(1);
         example.or(criteria.andMobileNoEqualTo(userName).andFlagEqualTo(1));
-        return new ErrorMsg(Error.SUCCESS, "success", userService.selectByExample(example).get(0));
+        List<CAccountInfo> cAccountInfos = userService.selectByExample(example);
+        if (null == cAccountInfos){
+            return new ErrorMsg(Error.C_NOT_EXITS, "车主不存在,或未审核通过");
+        }else {
+            return new ErrorMsg(Error.SUCCESS, "SUCCESS",cAccountInfos.get(0));
+        }
     }
 }
