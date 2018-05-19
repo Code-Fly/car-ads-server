@@ -16,12 +16,10 @@ import org.springframework.security.oauth2.provider.approval.JdbcApprovalStore;
 import org.springframework.security.oauth2.provider.client.JdbcClientDetailsService;
 import org.springframework.security.oauth2.provider.code.AuthorizationCodeServices;
 import org.springframework.security.oauth2.provider.code.JdbcAuthorizationCodeServices;
-import org.springframework.security.oauth2.provider.token.DefaultTokenServices;
 import org.springframework.security.oauth2.provider.token.TokenStore;
 import org.springframework.security.oauth2.provider.token.store.JdbcTokenStore;
 
 import javax.sql.DataSource;
-import java.util.concurrent.TimeUnit;
 
 @Configuration
 @EnableAuthorizationServer
@@ -66,6 +64,7 @@ public class OAuthAuthorizationServerConfig extends AuthorizationServerConfigure
         return new JdbcApprovalStore(dataSource);
     }
 
+
     /**
      * 配置授权（authorization）以及令牌（token）的访问端点和令牌服务(token services)
      *
@@ -74,36 +73,9 @@ public class OAuthAuthorizationServerConfig extends AuthorizationServerConfigure
      */
     @Override
     public void configure(AuthorizationServerEndpointsConfigurer endpoints) {
-//        endpoints.authenticationManager(authenticationManager);
-//        endpoints.tokenStore(tokenStore());
-//
-//        // 配置TokenServices参数
-//        DefaultTokenServices tokenServices = new DefaultTokenServices();
-//        tokenServices.setTokenStore(endpoints.getTokenStore());
-//        tokenServices.setSupportRefreshToken(false);
-//        tokenServices.setClientDetailsService(endpoints.getClientDetailsService());
-//        tokenServices.setTokenEnhancer(endpoints.getTokenEnhancer());
-//        tokenServices.setAccessTokenValiditySeconds((int) TimeUnit.DAYS.toSeconds(30)); // 30天
-//        endpoints.tokenServices(tokenServices);
-
         endpoints.authenticationManager(authenticationManager);
         endpoints.tokenStore(tokenStore());
         endpoints.userDetailsService(userService);
-//        endpoints.pathMapping("/oauth/confirm_access", "/extenal/oauth/confirm_access");
-//        endpoints.authorizationCodeServices(authorizationCodeServices());
-//        endpoints.approvalStore(approvalStore());
-
-        // 为解决获取token并发问题
-        DefaultTokenServices tokenServices = new DefaultTokenServices();
-        tokenServices.setTokenStore(endpoints.getTokenStore());
-        tokenServices.setSupportRefreshToken(true);
-        tokenServices.setClientDetailsService(endpoints.getClientDetailsService());
-        tokenServices.setTokenEnhancer(endpoints.getTokenEnhancer());
-        tokenServices.setAccessTokenValiditySeconds((int) TimeUnit.DAYS.toSeconds(1)); // 1天
-
-
-        endpoints.tokenServices(tokenServices);
-
     }
 
     /**
