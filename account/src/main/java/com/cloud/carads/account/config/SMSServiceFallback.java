@@ -9,6 +9,6 @@ import org.springframework.stereotype.Component;
 public class SMSServiceFallback implements ISMSService {
     @Override
     public ErrorMsg queryLastSMSByPhone(String phoneNo) {
-        return new ErrorMsg(Integer.valueOf(HttpStatus.SERVICE_UNAVAILABLE.toString()), "Service Unavailable");
+        return new ErrorMsg(HttpStatus.SERVICE_UNAVAILABLE.value(), HttpStatus.SERVICE_UNAVAILABLE.getReasonPhrase());
     }
 }

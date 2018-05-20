@@ -72,7 +72,7 @@ public class AccountController extends BaseController {
 
         List<CAccountInfo> list = accountService.getList(template, page, rows);
 
-        return new ErrorMsg(Error.SUCCESS, "success", accountService.removePassword(list));
+        return new ErrorMsg(Error.SUCCESS, "success", list);
     }
 
     @GetMapping(value = "/user/{id}", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
@@ -86,7 +86,7 @@ public class AccountController extends BaseController {
 
         List<CAccountInfo> list = accountService.getList(template, 0, 0);
 
-        return new ErrorMsg(Error.SUCCESS, "success", accountService.removePassword(list));
+        return new ErrorMsg(Error.SUCCESS, "success", list);
     }
 
     @PostMapping(value = "/user/{id}", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
