@@ -21,4 +21,6 @@ public interface IAccountService {
 
     int delete(List<Long> ids);
 
+    List<CAccountInfo> removePassword(List<CAccountInfo> list);
+
 }
