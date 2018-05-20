@@ -21,6 +21,9 @@ public class OAuthWebSecurityConfig extends WebSecurityConfigurerAdapter {
     @Autowired
     private IUserService userService;
 
+    @Autowired
+    private OAuthPasswordEncoder passwordEncoder;
+
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http
@@ -34,6 +37,7 @@ public class OAuthWebSecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
         auth.userDetailsService(userService)
+                .passwordEncoder(passwordEncoder)
                 .and()
                 .jdbcAuthentication()
                 .dataSource(dataSource)
