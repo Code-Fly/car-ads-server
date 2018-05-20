@@ -17,6 +17,7 @@ import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
+import org.springframework.security.crypto.password.StandardPasswordEncoder;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Arrays;
@@ -101,8 +102,12 @@ public class AccountController extends BaseController {
 
     ) {
         accountInfo.setId(id);
+        if (null != accountInfo.getPassword()) {
+            accountInfo.setPassword(new StandardPasswordEncoder().encode(accountInfo.getPassword()));
+        }
         accountInfo.setCreateTime(new Date());
-        return new ErrorMsg(Error.SUCCESS, "success", accountService.add(accountInfo));
+        accountService.add(accountInfo);
+        return new ErrorMsg(Error.SUCCESS, "success", accountInfo);
     }
 
     @PutMapping(value = "/user/{id}", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
@@ -115,8 +120,12 @@ public class AccountController extends BaseController {
 
     ) {
         accountInfo.setId(id);
+        if (null != accountInfo.getPassword()) {
+            accountInfo.setPassword(new StandardPasswordEncoder().encode(accountInfo.getPassword()));
+        }
         accountInfo.setUpdateTime(new Date());
-        return new ErrorMsg(Error.SUCCESS, "success", accountService.update(accountInfo));
+        accountService.update(accountInfo);
+        return new ErrorMsg(Error.SUCCESS, "success", accountInfo);
     }
 
     @DeleteMapping(value = "/user/{id}", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
@@ -160,7 +169,7 @@ public class AccountController extends BaseController {
                 accountInfo.setGgrandId(infos.get(0).getGgrandId());
             }
         }
-        accountInfo.setPassword(MD5Util.MD5Encode(SystemConstant.PREFIX_MD5+accountInfo.getPassword(),"UTF-8"));
+        accountInfo.setPassword(MD5Util.MD5Encode(SystemConstant.PREFIX_MD5 + accountInfo.getPassword(), "UTF-8"));
         accountService.add(accountInfo);
         return new ErrorMsg(Error.SUCCESS, "success", accountInfo.getId());
     }
