@@ -64,6 +64,6 @@ public class PasswordController extends BaseController {
             accountService.update(template);
             return new ErrorMsg(Error.SUCCESS, "success", password);
         }
-        return new ErrorMsg(Error.LOGIN_PASSWORD_ERROR, "Username incorrect");
+        return new ErrorMsg(Error.USER_NOT_FOUND_ERROR, "Username incorrect");
     }
 }

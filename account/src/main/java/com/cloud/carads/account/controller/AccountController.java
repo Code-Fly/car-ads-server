@@ -102,12 +102,25 @@ public class AccountController extends BaseController {
 
     ) {
         accountInfo.setId(id);
+
+        List<CAccountInfo> users;
+        CAccountInfo tUserId = new CAccountInfo();
+        tUserId.setId(id);
+        users = accountService.getList(tUserId, 0, 0);
+        if (users.size() >= 0) {
+            return new ErrorMsg(Error.USER_ALREADY_EXIST_ERROR, "UserId already exist");
+        }
+        CAccountInfo tUserName = new CAccountInfo();
+        tUserName.setUserName(accountInfo.getUserName());
+        users = accountService.getList(tUserName, 0, 0);
+        if (users.size() >= 0) {
+            return new ErrorMsg(Error.USER_ALREADY_EXIST_ERROR, "UserName already exist");
+        }
         if (null != accountInfo.getPassword()) {
             accountInfo.setPassword(new StandardPasswordEncoder().encode(accountInfo.getPassword()));
         }
         accountInfo.setCreateTime(new Date());
-        accountService.add(accountInfo);
-        return new ErrorMsg(Error.SUCCESS, "success", accountInfo);
+        return new ErrorMsg(Error.SUCCESS, "success", accountService.add(accountInfo));
     }
 
     @PutMapping(value = "/user/{id}", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
@@ -124,8 +137,7 @@ public class AccountController extends BaseController {
             accountInfo.setPassword(new StandardPasswordEncoder().encode(accountInfo.getPassword()));
         }
         accountInfo.setUpdateTime(new Date());
-        accountService.update(accountInfo);
-        return new ErrorMsg(Error.SUCCESS, "success", accountInfo);
+        return new ErrorMsg(Error.SUCCESS, "success", accountService.update(accountInfo));
     }
 
     @DeleteMapping(value = "/user/{id}", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
