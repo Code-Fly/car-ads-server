@@ -44,7 +44,7 @@ public class AreaController extends BaseController {
             criteria.andParentIdEqualTo(parentid);
         }
         List<TAreainfo> areainfos = areaService.selectByExample(example);
-        return new ErrorMsg(Error.SUCCESS, "success", areainfos);
+        return new ErrorMsg(Error.SUCCESS.getValue(), Error.SUCCESS.getReasonPhrase(), areainfos);
     }
 
 }

@@ -40,10 +40,10 @@ public class PasswordController extends BaseController {
         if (users.size() == 1) {
             CAccountInfo user = users.get(0);
             if (new StandardPasswordEncoder().matches(password, user.getPassword())) {
-                return new ErrorMsg(Error.SUCCESS, "success", user);
+                return new ErrorMsg(Error.SUCCESS.getValue(), Error.SUCCESS.getReasonPhrase(), user);
             }
         }
-        return new ErrorMsg(Error.LOGIN_PASSWORD_ERROR, "Username or password incorrect");
+        return new ErrorMsg(Error.LOGIN_PASSWORD_ERROR.getValue(), Error.LOGIN_PASSWORD_ERROR.getReasonPhrase());
     }
 
     @PostMapping(value = "/user/password/reset", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
@@ -62,8 +62,8 @@ public class PasswordController extends BaseController {
             template.setId(user.getId());
             template.setPassword(new StandardPasswordEncoder().encode(password));
             accountService.update(template);
-            return new ErrorMsg(Error.SUCCESS, "success", password);
+            return new ErrorMsg(Error.SUCCESS.getValue(), Error.SUCCESS.getReasonPhrase(), password);
         }
-        return new ErrorMsg(Error.USER_NOT_FOUND_ERROR, "Username incorrect");
+        return new ErrorMsg(Error.USER_NOT_FOUND_ERROR.getValue(), Error.USER_NOT_FOUND_ERROR.getReasonPhrase());
     }
 }

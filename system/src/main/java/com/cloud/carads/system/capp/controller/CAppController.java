@@ -33,7 +33,7 @@ public class CAppController extends BaseController {
         criteria.andOsEqualTo(os);
         example.setOrderByClause(" version_code desc limit 1");
         List<CAppVersion> versions = cAppService.selectByExample(example);
-        return new ErrorMsg(Error.SUCCESS, "success", versions.get(0));
+        return new ErrorMsg(Error.SUCCESS.getValue(), Error.SUCCESS.getReasonPhrase(), versions.get(0));
     }
 
 }

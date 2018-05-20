@@ -28,16 +28,16 @@ public class DictionayController extends BaseController {
     @GetMapping(value = "/dictionary", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
     @ApiOperation(value = "根据字典code查询所有属性和对应的值")
     public ErrorMsg getCAccountInfo(@ApiParam(value = "数据字典code，请看t_dictionary.dic_code", required = true)
-                                    @RequestParam(required = true)String dicCode,
+                                    @RequestParam(required = true) String dicCode,
                                     @ApiParam(value = "属性值，t_dictionary_attr.attr_value模糊查询")
-                                    @RequestParam(required = false)String attrValue){
+                                    @RequestParam(required = false) String attrValue) {
 
         TdictionaryAttrExample example = new TdictionaryAttrExample();
         TdictionaryAttrExample.Criteria criteria = example.createCriteria();
         criteria.andDicCodeEqualTo(dicCode);
-        if(StringUtils.isNotBlank(attrValue)){
+        if (StringUtils.isNotBlank(attrValue)) {
             criteria.andAttrValueLike(attrValue);
         }
-        return new ErrorMsg(Error.SUCCESS, "success",dictionaryService.selectByExample(example));
+        return new ErrorMsg(Error.SUCCESS.getValue(), Error.SUCCESS.getReasonPhrase(), dictionaryService.selectByExample(example));
     }
 }

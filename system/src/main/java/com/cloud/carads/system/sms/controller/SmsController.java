@@ -45,9 +45,9 @@ public class SmsController extends BaseController {
             logger.error("验证码发送失败", e);
         }
         if (shortCode == 0) {
-            return new ErrorMsg(Error.SMS_SEND_ERROR, "发送失败，请重发！");
+            return new ErrorMsg(Error.SMS_SEND_ERROR.getValue(), Error.SUCCESS.getReasonPhrase());
         } else {
-            return new ErrorMsg(Error.SUCCESS, "发送成功", shortCode);
+            return new ErrorMsg(Error.SUCCESS.getValue(), Error.SUCCESS.getReasonPhrase(), shortCode);
         }
 
     }
@@ -59,6 +59,6 @@ public class SmsController extends BaseController {
             @ApiParam(value = "手机号", required = true)
             @PathVariable String phoneNo) {
         SmsLog smsLog = smsService.queryLastSMSByPhone(phoneNo);
-        return new ErrorMsg(Error.SUCCESS, "请求成功", smsLog);
+        return new ErrorMsg(Error.SUCCESS.getValue(), Error.SUCCESS.getReasonPhrase(), smsLog);
     }
 }

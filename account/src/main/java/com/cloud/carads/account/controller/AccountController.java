@@ -75,7 +75,7 @@ public class AccountController extends BaseController {
 
         List<CAccountInfo> list = accountService.getList(template, page, rows);
 
-        return new ErrorMsg(Error.SUCCESS, "success", list);
+        return new ErrorMsg(Error.SUCCESS.getValue(), Error.SUCCESS.getReasonPhrase(), list);
     }
 
     @GetMapping(value = "/user/{id}", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
@@ -89,7 +89,7 @@ public class AccountController extends BaseController {
 
         List<CAccountInfo> list = accountService.getList(template, 0, 0);
 
-        return new ErrorMsg(Error.SUCCESS, "success", list);
+        return new ErrorMsg(Error.SUCCESS.getValue(), Error.SUCCESS.getReasonPhrase(), list);
     }
 
     @PostMapping(value = "/user/{id}", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
@@ -108,19 +108,19 @@ public class AccountController extends BaseController {
         tUserId.setId(id);
         users = accountService.getList(tUserId, 0, 0);
         if (users.size() >= 0) {
-            return new ErrorMsg(Error.USER_ALREADY_EXIST_ERROR, "UserId already exist");
+            return new ErrorMsg(Error.USER_ALREADY_EXIST_ERROR.getValue(), Error.USER_ALREADY_EXIST_ERROR.getReasonPhrase());
         }
         CAccountInfo tUserName = new CAccountInfo();
         tUserName.setUserName(accountInfo.getUserName());
         users = accountService.getList(tUserName, 0, 0);
         if (users.size() >= 0) {
-            return new ErrorMsg(Error.USER_ALREADY_EXIST_ERROR, "UserName already exist");
+            return new ErrorMsg(Error.USER_ALREADY_EXIST_ERROR.getValue(), Error.USER_ALREADY_EXIST_ERROR.getReasonPhrase());
         }
         if (null != accountInfo.getPassword()) {
             accountInfo.setPassword(new StandardPasswordEncoder().encode(accountInfo.getPassword()));
         }
         accountInfo.setCreateTime(new Date());
-        return new ErrorMsg(Error.SUCCESS, "success", accountService.add(accountInfo));
+        return new ErrorMsg(Error.SUCCESS.getValue(), Error.SUCCESS.getReasonPhrase(), accountService.add(accountInfo));
     }
 
     @PutMapping(value = "/user/{id}", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
@@ -137,7 +137,7 @@ public class AccountController extends BaseController {
             accountInfo.setPassword(new StandardPasswordEncoder().encode(accountInfo.getPassword()));
         }
         accountInfo.setUpdateTime(new Date());
-        return new ErrorMsg(Error.SUCCESS, "success", accountService.update(accountInfo));
+        return new ErrorMsg(Error.SUCCESS.getValue(), Error.SUCCESS.getReasonPhrase(), accountService.update(accountInfo));
     }
 
     @DeleteMapping(value = "/user/{id}", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
@@ -145,7 +145,7 @@ public class AccountController extends BaseController {
     public ErrorMsg update(@ApiParam(value = "车主id")
                            @PathVariable Long id
     ) {
-        return new ErrorMsg(Error.SUCCESS, "success", accountService.delete(Arrays.asList(id)));
+        return new ErrorMsg(Error.SUCCESS.getValue(), Error.SUCCESS.getReasonPhrase(), accountService.delete(Arrays.asList(id)));
     }
 
     @DeleteMapping(value = "/user", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
@@ -153,7 +153,7 @@ public class AccountController extends BaseController {
     public ErrorMsg update(@ApiParam(value = "车主ids")
                            @RequestBody List<Long> ids
     ) {
-        return new ErrorMsg(Error.SUCCESS, "success", accountService.delete(ids));
+        return new ErrorMsg(Error.SUCCESS.getValue(), Error.SUCCESS.getReasonPhrase(), accountService.delete(ids));
     }
 
 
@@ -183,6 +183,6 @@ public class AccountController extends BaseController {
         }
         accountInfo.setPassword(MD5Util.MD5Encode(SystemConstant.PREFIX_MD5 + accountInfo.getPassword(), "UTF-8"));
         accountService.add(accountInfo);
-        return new ErrorMsg(Error.SUCCESS, "success", accountInfo.getId());
+        return new ErrorMsg(Error.SUCCESS.getValue(), Error.SUCCESS.getReasonPhrase(), accountInfo.getId());
     }
 }
