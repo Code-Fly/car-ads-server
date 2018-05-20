@@ -18,8 +18,8 @@ public class ExceptionController extends BaseController {
     @RequestMapping(value = "/400")
     @ResponseStatus(value = HttpStatus.BAD_REQUEST)
     public String BadRequest() {
-        logger.error("Bad Request");
-        ErrorMsg errMsg = new ErrorMsg(Integer.valueOf(HttpStatus.BAD_REQUEST.toString()), "Bad Request");
+        logger.error(HttpStatus.BAD_REQUEST.getReasonPhrase());
+        ErrorMsg errMsg = new ErrorMsg(HttpStatus.BAD_REQUEST.value(), HttpStatus.BAD_REQUEST.getReasonPhrase());
         return new Gson().toJson(errMsg);
     }
 
@@ -27,24 +27,24 @@ public class ExceptionController extends BaseController {
     @RequestMapping(value = "/401")
     @ResponseStatus(value = HttpStatus.UNAUTHORIZED)
     public String missingLogin() {
-        logger.warn("Missing login");
-        ErrorMsg errMsg = new ErrorMsg(Integer.valueOf(HttpStatus.UNAUTHORIZED.toString()), "Missing login");
+        logger.warn(HttpStatus.UNAUTHORIZED.getReasonPhrase());
+        ErrorMsg errMsg = new ErrorMsg(HttpStatus.UNAUTHORIZED.value(), HttpStatus.UNAUTHORIZED.getReasonPhrase());
         return new Gson().toJson(errMsg);
     }
 
     @RequestMapping(value = "/403")
     @ResponseStatus(value = HttpStatus.FORBIDDEN)
     public String forbiddenDirectoryListing() {
-        logger.warn("Forbidden directory listing");
-        ErrorMsg errMsg = new ErrorMsg(Integer.valueOf(HttpStatus.FORBIDDEN.toString()), "Forbidden directory listing");
+        logger.warn(HttpStatus.FORBIDDEN.getReasonPhrase());
+        ErrorMsg errMsg = new ErrorMsg(HttpStatus.FORBIDDEN.value(), HttpStatus.FORBIDDEN.getReasonPhrase());
         return new Gson().toJson(errMsg);
     }
 
     @RequestMapping(value = "/404")
     @ResponseStatus(value = HttpStatus.NOT_FOUND)
     public ErrorMsg missingResource() {
-        logger.warn("Missing resource");
-        return new ErrorMsg(Integer.valueOf(HttpStatus.NOT_FOUND.toString()), "Missing resource");
+        logger.warn(HttpStatus.NOT_FOUND.getReasonPhrase());
+        return new ErrorMsg(HttpStatus.NOT_FOUND.value(), HttpStatus.NOT_FOUND.getReasonPhrase());
     }
 
     @RequestMapping(value = "/500")
@@ -57,15 +57,15 @@ public class ExceptionController extends BaseController {
 
         Exception ex = (Exception) request.getAttribute("javax.servlet.error.exception");
 
-        logger.error("Uncaught exception", ex);
-        return new ErrorMsg(Integer.valueOf(HttpStatus.INTERNAL_SERVER_ERROR.toString()), ex.getMessage());
+        logger.error(HttpStatus.INTERNAL_SERVER_ERROR.getReasonPhrase(), ex);
+        return new ErrorMsg(HttpStatus.INTERNAL_SERVER_ERROR.value(), ex.getMessage());
     }
 
     @RequestMapping(value = "/503")
     @ResponseStatus(value = HttpStatus.SERVICE_UNAVAILABLE)
     public ErrorMsg unsupportedServletMethod() {
-        logger.warn("Unsupported servlet method");
-        return new ErrorMsg(Integer.valueOf(HttpStatus.SERVICE_UNAVAILABLE.toString()), "Unsupported servlet method");
+        logger.warn(HttpStatus.SERVICE_UNAVAILABLE.getReasonPhrase());
+        return new ErrorMsg(HttpStatus.SERVICE_UNAVAILABLE.value(), HttpStatus.SERVICE_UNAVAILABLE.getReasonPhrase());
     }
 
 
