@@ -25,7 +25,7 @@ public class LoginController extends BaseController {
     @Autowired
     private IAccountService accountService;
 
-    @PostMapping(value = "/user/login", produces = MediaType.APPLICATION_FORM_URLENCODED_VALUE)
+    @PostMapping(value = "/user/login", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
     @ApiOperation(value = "登陆")
     public ErrorMsg complete(@ApiParam(value = "用户名", required = true)
                              @RequestParam(required = true) String userName,

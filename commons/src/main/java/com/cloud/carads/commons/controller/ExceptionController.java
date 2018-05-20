@@ -1,8 +1,9 @@
 package com.cloud.carads.commons.controller;
 
 import com.cloud.carads.commons.entity.ErrorMsg;
-import com.google.gson.Gson;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
@@ -15,39 +16,36 @@ import javax.servlet.http.HttpServletRequest;
 @RestController
 @RequestMapping(value = "/error")
 public class ExceptionController extends BaseController {
-    @RequestMapping(value = "/400")
+    @GetMapping(value = "/400", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
     @ResponseStatus(value = HttpStatus.BAD_REQUEST)
-    public String BadRequest() {
+    public ErrorMsg BadRequest() {
         logger.error(HttpStatus.BAD_REQUEST.getReasonPhrase());
-        ErrorMsg errMsg = new ErrorMsg(HttpStatus.BAD_REQUEST.value(), HttpStatus.BAD_REQUEST.getReasonPhrase());
-        return new Gson().toJson(errMsg);
+        return new ErrorMsg(HttpStatus.BAD_REQUEST.value(), HttpStatus.BAD_REQUEST.getReasonPhrase());
     }
 
 
-    @RequestMapping(value = "/401")
+    @GetMapping(value = "/401", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
     @ResponseStatus(value = HttpStatus.UNAUTHORIZED)
-    public String missingLogin() {
+    public ErrorMsg missingLogin() {
         logger.warn(HttpStatus.UNAUTHORIZED.getReasonPhrase());
-        ErrorMsg errMsg = new ErrorMsg(HttpStatus.UNAUTHORIZED.value(), HttpStatus.UNAUTHORIZED.getReasonPhrase());
-        return new Gson().toJson(errMsg);
+        return new ErrorMsg(HttpStatus.UNAUTHORIZED.value(), HttpStatus.UNAUTHORIZED.getReasonPhrase());
     }
 
-    @RequestMapping(value = "/403")
+    @GetMapping(value = "/403", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
     @ResponseStatus(value = HttpStatus.FORBIDDEN)
-    public String forbiddenDirectoryListing() {
+    public ErrorMsg forbiddenDirectoryListing() {
         logger.warn(HttpStatus.FORBIDDEN.getReasonPhrase());
-        ErrorMsg errMsg = new ErrorMsg(HttpStatus.FORBIDDEN.value(), HttpStatus.FORBIDDEN.getReasonPhrase());
-        return new Gson().toJson(errMsg);
+        return new ErrorMsg(HttpStatus.FORBIDDEN.value(), HttpStatus.FORBIDDEN.getReasonPhrase());
     }
 
-    @RequestMapping(value = "/404")
+    @GetMapping(value = "/404", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
     @ResponseStatus(value = HttpStatus.NOT_FOUND)
     public ErrorMsg missingResource() {
         logger.warn(HttpStatus.NOT_FOUND.getReasonPhrase());
         return new ErrorMsg(HttpStatus.NOT_FOUND.value(), HttpStatus.NOT_FOUND.getReasonPhrase());
     }
 
-    @RequestMapping(value = "/500")
+    @GetMapping(value = "/500", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
     @ResponseStatus(value = HttpStatus.INTERNAL_SERVER_ERROR)
     public ErrorMsg uncaughtException(HttpServletRequest request) {
         // retrieve some useful information from the request
@@ -61,7 +59,7 @@ public class ExceptionController extends BaseController {
         return new ErrorMsg(HttpStatus.INTERNAL_SERVER_ERROR.value(), ex.getMessage());
     }
 
-    @RequestMapping(value = "/503")
+    @GetMapping(value = "/503", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
     @ResponseStatus(value = HttpStatus.SERVICE_UNAVAILABLE)
     public ErrorMsg unsupportedServletMethod() {
         logger.warn(HttpStatus.SERVICE_UNAVAILABLE.getReasonPhrase());

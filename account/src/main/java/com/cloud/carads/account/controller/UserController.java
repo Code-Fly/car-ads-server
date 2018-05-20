@@ -6,7 +6,6 @@ package com.cloud.carads.account.controller;
 import com.cloud.carads.account.entity.CAccountInfo;
 import com.cloud.carads.account.entity.CAccountInfoDto;
 import com.cloud.carads.account.entity.CAccountInfoExample;
-import com.cloud.carads.account.entity.SmsLog;
 import com.cloud.carads.account.service.IAccountService;
 import com.cloud.carads.account.service.ISMSService;
 import com.cloud.carads.commons.controller.BaseController;
@@ -82,7 +81,7 @@ public class UserController extends BaseController {
         return new ErrorMsg(Error.SUCCESS, "success");
     }
 
-    @PostMapping(value = "/login", produces = MediaType.APPLICATION_FORM_URLENCODED_VALUE)
+    @PostMapping(value = "/login", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
     @ApiOperation(value = "登陆")
     public ErrorMsg complete (@ApiParam(value = "用户名",required = true)
                               @RequestParam(required = true) String userName,
