@@ -27,6 +27,6 @@ public abstract class BaseController {
     @ResponseBody
     public ErrorMsg handleConnectionFailedException(ConnectionFailedException ex) {
         logger.error("Connection Failed", ex);
-        return new ErrorMsg(Integer.valueOf(HttpStatus.SERVICE_UNAVAILABLE.toString()), "Connection Failed");
+        return new ErrorMsg(Integer.valueOf(HttpStatus.SERVICE_UNAVAILABLE.value()), HttpStatus.SERVICE_UNAVAILABLE.getReasonPhrase());
     }
 }
