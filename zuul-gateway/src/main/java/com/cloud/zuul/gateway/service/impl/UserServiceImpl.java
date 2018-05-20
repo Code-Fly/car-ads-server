@@ -36,7 +36,7 @@ public class UserServiceImpl extends BaseService implements IUserService {
             logger.error("Get user failed", e);
             throw e;
         }
-        if (!response.getErrcode().equals(Error.SUCCESS)) {
+        if (!response.getErrcode().equals(Error.SUCCESS.getValue())) {
             logger.error(response.getErrmsg());
             throw new UsernameNotFoundException(response.getErrmsg());
         } else {
