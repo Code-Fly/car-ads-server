@@ -1,5 +1,6 @@
 package com.cloud.carads.commons.controller;
 
+import com.cloud.carads.commons.entity.Error;
 import com.cloud.carads.commons.entity.ErrorMsg;
 import com.cloud.carads.commons.exception.ConnectionFailedException;
 import com.cloud.carads.commons.service.ConstService;
@@ -26,7 +27,7 @@ public abstract class BaseController {
     @ResponseStatus(value = HttpStatus.SERVICE_UNAVAILABLE)
     @ResponseBody
     public ErrorMsg handleConnectionFailedException(ConnectionFailedException ex) {
-        logger.error("Connection Failed", ex);
-        return new ErrorMsg(Integer.valueOf(HttpStatus.SERVICE_UNAVAILABLE.value()), HttpStatus.SERVICE_UNAVAILABLE.getReasonPhrase());
+        logger.error(Error.CONNECTION_FAILED_EXCEPTION.getReasonPhrase(), ex);
+        return new ErrorMsg(Error.CONNECTION_FAILED_EXCEPTION.getValue(), Error.CONNECTION_FAILED_EXCEPTION.getReasonPhrase());
     }
 }
