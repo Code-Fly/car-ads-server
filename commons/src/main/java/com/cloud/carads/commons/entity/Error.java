@@ -22,7 +22,7 @@ public enum Error {
     DUPLICATE_KEY_EXCEPTION(10020, "duplicate key exception"),
     INVALID_DATA_EXCEPTION(10021, "invalid data exception"),
     ILLEGAL_ACCESS_EXCEPTION(10022, "illegal access exception"),
-    INSTANTIANTION_EXCEPTION(10023, "instantiantion  exception"),
+    INSTANTIANTION_EXCEPTION(10023, "instantiantion exception"),
     NO_SUCH_FIELD_EXCEPTION(10024, "no such field exception"),
     TIME_OUT_EXCEPTION(10025, "timeout exception"),
     AUTHORIZATION_FAILED_EXCEPTION(10026, "authorization failed exception"),
