@@ -1,117 +1,59 @@
 package com.cloud.zuul.gateway.config;
 
-import com.google.gson.Gson;
-import com.google.gson.JsonObject;
+import com.cloud.zuul.gateway.service.IUserService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
-import org.springframework.boot.autoconfigure.security.oauth2.client.EnableOAuth2Sso;
-import org.springframework.boot.autoconfigure.security.oauth2.resource.PrincipalExtractor;
-import org.springframework.boot.autoconfigure.security.oauth2.resource.ResourceServerProperties;
-import org.springframework.boot.autoconfigure.security.oauth2.resource.UserInfoTokenServices;
-import org.springframework.boot.context.properties.ConfigurationProperties;
-import org.springframework.boot.context.properties.NestedConfigurationProperty;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
-import org.springframework.security.core.userdetails.User;
-import org.springframework.security.oauth2.client.OAuth2ClientContext;
-import org.springframework.security.oauth2.client.OAuth2RestTemplate;
-import org.springframework.security.oauth2.client.filter.OAuth2ClientAuthenticationProcessingFilter;
-import org.springframework.security.oauth2.client.token.grant.code.AuthorizationCodeResourceDetails;
-import org.springframework.security.web.authentication.LoginUrlAuthenticationEntryPoint;
-import org.springframework.security.web.authentication.www.BasicAuthenticationFilter;
-import org.springframework.web.filter.CompositeFilter;
 
-import javax.servlet.Filter;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
+import javax.sql.DataSource;
 
 @Configuration
-@EnableOAuth2Sso
-@EnableAutoConfiguration
+@EnableWebSecurity
 public class OAuthWebSecurityConfig extends WebSecurityConfigurerAdapter {
     @Autowired
-    private OAuth2ClientContext oauth2ClientContext;
+    private DataSource dataSource;
+
+    @Autowired
+    private IUserService userService;
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
-        http.csrf().disable()
-                .headers().frameOptions().disable()
+        http
+                .formLogin().disable() // disable form authentication
+                .anonymous().disable() // disable anonymous user
+                .httpBasic().and()
+                // restricting access to authenticated users
+                .authorizeRequests().anyRequest().authenticated();
+    }
+
+    @Override
+    protected void configure(AuthenticationManagerBuilder auth) throws Exception {
+        auth.userDetailsService(userService)
                 .and()
-                // UI
-                .authorizeRequests()
-                .antMatchers("/login").permitAll()
-                .anyRequest().authenticated()
-                // UI login / logout
-                .and().exceptionHandling().authenticationEntryPoint(new LoginUrlAuthenticationEntryPoint("/login"))
-                .and().logout().logoutUrl("/logout")
-                .and().addFilterBefore(ssoFilter(), BasicAuthenticationFilter.class);
+                .jdbcAuthentication()
+                .dataSource(dataSource)
+                .usersByUsernameQuery("select user_name as username, password, 'true' as enabled from `c_account_info` where user_name = ?")
+                .authoritiesByUsernameQuery("select user_name as username, null as role from `c_account_info` where user_name = ?");
+//        auth.jdbcAuthentication().dataSource(dataSource)
+//                .usersByUsernameQuery("select user_name as username, password, 'true' as enabled from `c_account_info` where user_name = ?")
+//                .authoritiesByUsernameQuery("select user_name as username, null as role from `c_account_info` where user_name = ?")
+
+//        auth.inMemoryAuthentication() // creating user in memory
+//                .withUser("user")
+//                .password("password").roles("USER")
+//                .and().withUser("admin")
+//                .password("password").authorities("ROLE_ADMIN");
     }
 
-    class ClientResources {
-
-        @NestedConfigurationProperty
-        private AuthorizationCodeResourceDetails client = new AuthorizationCodeResourceDetails();
-
-        @NestedConfigurationProperty
-        private ResourceServerProperties resource = new ResourceServerProperties();
-
-        public AuthorizationCodeResourceDetails getClient() {
-            return client;
-        }
-
-        public ResourceServerProperties getResource() {
-            return resource;
-        }
-    }
-
+    @Override
     @Bean
-    @ConfigurationProperties("security.oauth2")
-    public ClientResources getClientResources() {
-        return new ClientResources();
-    }
-
-
-    private Filter ssoFilter() {
-        CompositeFilter filter = new CompositeFilter();
-        List<Filter> filters = new ArrayList<>();
-        filters.add(ssoFilter(getClientResources(), "/login"));
-
-        filter.setFilters(filters);
-        return filter;
-    }
-
-    private Filter ssoFilter(ClientResources client, String path) {
-        final OAuth2PrefixedPrincipalExtractor principalExtractor = new OAuth2PrefixedPrincipalExtractor(client);
-
-        OAuth2ClientAuthenticationProcessingFilter oAuth2ClientAuthenticationFilter = new OAuth2ClientAuthenticationProcessingFilter(path);
-        OAuth2RestTemplate oAuth2RestTemplate = new OAuth2RestTemplate(client.getClient(), oauth2ClientContext);
-        oAuth2ClientAuthenticationFilter.setRestTemplate(oAuth2RestTemplate);
-        UserInfoTokenServices tokenServices = new UserInfoTokenServices(client.getResource().getUserInfoUri(),
-                client.getClient().getClientId());
-        tokenServices.setRestTemplate(oAuth2RestTemplate);
-        tokenServices.setPrincipalExtractor(principalExtractor);
-        oAuth2ClientAuthenticationFilter.setTokenServices(tokenServices);
-        return oAuth2ClientAuthenticationFilter;
-    }
-
-
-    public class OAuth2PrefixedPrincipalExtractor implements PrincipalExtractor {
-
-        private final ClientResources clientResources;
-
-        public OAuth2PrefixedPrincipalExtractor(final ClientResources clientResources) {
-            this.clientResources = clientResources;
-        }
-
-        @Override
-        public Object extractPrincipal(final Map<String, Object> map) {
-            JsonObject principal = new Gson().toJsonTree(map).getAsJsonObject();
-            principal.remove("authorities");
-
-            return new Gson().fromJson(principal.toString(), User.class);
-        }
+    public AuthenticationManager authenticationManagerBean() throws Exception {
+        // provides the default AuthenticationManager as a Bean
+        return super.authenticationManagerBean();
     }
 }
