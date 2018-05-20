@@ -90,15 +90,16 @@ public class UserController extends BaseController {
 
     @PostMapping(value = "/login", produces = MediaType.APPLICATION_FORM_URLENCODED_VALUE)
     @ApiOperation(value = "登陆")
-    public ErrorMsg complete (@ApiParam(value = "用户名",required = true)
+    public ErrorMsg complete (@ApiParam(value = "用户名/手机号",required = true)
                               @RequestParam(required = true) String userName,
                               @ApiParam(value = "密码",required = true)
                               @RequestParam(required = true) String password
 
     ) {
+        String pwd = MD5Util.MD5Encode(SystemConstant.PREFIX_MD5+password,"UTF-8");
         CAccountInfoExample example = new CAccountInfoExample();
-        example.createCriteria().andUserNameEqualTo(userName).andPasswordEqualTo(MD5Util.MD5Encode(SystemConstant.PREFIX_MD5+password,"UTF-8"));
-
+        CAccountInfoExample.Criteria criteria = example.createCriteria().andUserNameEqualTo(userName).andPasswordEqualTo(pwd);
+        example.or(criteria.andMobileNoEqualTo(userName).andPasswordEqualTo(pwd));
         List<CAccountInfo> infos = userService.selectByExample(example);
         if(infos.size()==0){
             return new ErrorMsg(Error.LOGIN_PASSWORD_ERROR, "用户名密码错误");

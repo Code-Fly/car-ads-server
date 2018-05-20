@@ -36,4 +36,7 @@ public abstract class Error {
 
     public static Integer LOGIN_PASSWORD_ERROR= 30001;
     public static Integer LOGIN_SYSTEM_ERROR= 30002;
+
+    public static Integer C_NOT_EXITS= 40001;
+    public static Integer C_FLAG_ERROR= 40002;
 }
