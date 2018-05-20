@@ -1,13 +1,10 @@
 package com.cloud.carads.account.controller;
 
 import com.cloud.carads.account.entity.CAccountInfo;
-import com.cloud.carads.account.entity.CAccountInfoExample;
 import com.cloud.carads.account.service.IAccountService;
 import com.cloud.carads.commons.controller.BaseController;
 import com.cloud.carads.commons.entity.Error;
 import com.cloud.carads.commons.entity.ErrorMsg;
-import com.cloud.carads.commons.utils.MD5Util;
-import com.cloud.carads.constant.SystemConstant;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
@@ -33,10 +30,11 @@ public class LoginController extends BaseController {
                              @RequestParam(required = true) String password
 
     ) {
-        CAccountInfoExample example = new CAccountInfoExample();
-        example.createCriteria().andUserNameEqualTo(userName).andPasswordEqualTo(MD5Util.MD5Encode(SystemConstant.PREFIX_MD5 + password, "UTF-8"));
+        CAccountInfo template = new CAccountInfo();
+        template.setUserName(userName);
+        template.setPassword(password);
 
-        List<CAccountInfo> infos = accountService.selectByExample(example);
+        List<CAccountInfo> infos = accountService.getList(template, 0, 0);
         if (infos.size() == 0) {
             return new ErrorMsg(Error.LOGIN_PASSWORD_ERROR, "用户名密码错误");
         } else {

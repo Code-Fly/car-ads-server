@@ -37,12 +37,12 @@ public class OAuthWebSecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
         auth.userDetailsService(userService)
-                .passwordEncoder(passwordEncoder)
-                .and()
-                .jdbcAuthentication()
-                .dataSource(dataSource)
-                .usersByUsernameQuery("select user_name as username, password, 'true' as enabled from `c_account_info` where user_name = ?")
-                .authoritiesByUsernameQuery("select user_name as username, null as role from `c_account_info` where user_name = ?");
+                .passwordEncoder(passwordEncoder);
+//                .and()
+//                .jdbcAuthentication();
+//                .dataSource(dataSource)
+//                .usersByUsernameQuery("select user_name as username, password, 'true' as enabled from `c_account_info` where user_name = ?")
+//                .authoritiesByUsernameQuery("select user_name as username, null as role from `c_account_info` where user_name = ?");
 //        auth.jdbcAuthentication().dataSource(dataSource)
 //                .usersByUsernameQuery("select user_name as username, password, 'true' as enabled from `c_account_info` where user_name = ?")
 //                .authoritiesByUsernameQuery("select user_name as username, null as role from `c_account_info` where user_name = ?")

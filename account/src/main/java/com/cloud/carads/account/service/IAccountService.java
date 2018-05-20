@@ -4,7 +4,6 @@
 package com.cloud.carads.account.service;
 
 import com.cloud.carads.account.entity.CAccountInfo;
-import com.cloud.carads.account.entity.CAccountInfoExample;
 
 import java.util.List;
 
@@ -12,9 +11,14 @@ import java.util.List;
  * @author Barrie
  */
 public interface IAccountService {
-    int addCAccount(CAccountInfo cAccountInfo);
-    int updateCAccountByID(CAccountInfo cAccountInfo);
-    List<CAccountInfo> selectByExample(CAccountInfoExample example);
-    CAccountInfo selectByPrimaryKey(Long id);
+    List<CAccountInfo> getList(CAccountInfo template, int rows, int page);
+
+    long getListCount(CAccountInfo template);
+
+    int add(CAccountInfo template);
+
+    int update(CAccountInfo template);
+
+    int delete(List<Long> ids);
 
 }
