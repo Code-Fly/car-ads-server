@@ -28,7 +28,7 @@ import java.util.List;
  */
 @RestController
 @Api(description = "用户管理接口", tags = "用户")
-public class UserController extends BaseController {
+public class AccountController extends BaseController {
     @Autowired
     private IAccountService accountService;
 
@@ -73,11 +73,8 @@ public class UserController extends BaseController {
         template.setFlag(flag);
 
         List<CAccountInfo> list = accountService.getList(template, page, rows);
-        for (int i = 0; i < list.size(); i++) {
-            list.get(i).setPassword("******");
-        }
 
-        return new ErrorMsg(Error.SUCCESS, "success", list);
+        return new ErrorMsg(Error.SUCCESS, "success", accountService.removePassword(list));
     }
 
     @GetMapping(value = "/user/{id}", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
@@ -90,11 +87,8 @@ public class UserController extends BaseController {
         template.setId(id);
 
         List<CAccountInfo> list = accountService.getList(template, 0, 0);
-        for (int i = 0; i < list.size(); i++) {
-            list.get(i).setPassword("******");
-        }
 
-        return new ErrorMsg(Error.SUCCESS, "success", list);
+        return new ErrorMsg(Error.SUCCESS, "success", accountService.removePassword(list));
     }
 
     @PostMapping(value = "/user/{id}", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)

@@ -128,4 +128,12 @@ public class AccountServiceImpl extends BaseService implements IAccountService {
         condition.or().andIdIn(ids);
         return cAccountInfoMapper.deleteByExample(condition);
     }
+
+    @Override
+    public List<CAccountInfo> removePassword(List<CAccountInfo> list) {
+        for (int i = 0; i < list.size(); i++) {
+            list.get(i).setPassword("******");
+        }
+        return list;
+    }
 }
