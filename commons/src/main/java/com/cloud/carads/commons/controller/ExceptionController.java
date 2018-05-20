@@ -27,7 +27,7 @@ public class ExceptionController extends BaseController {
     @RequestMapping(value = "/401")
     @ResponseStatus(value = HttpStatus.UNAUTHORIZED)
     public String missingLogin() {
-        logger.error("Missing login");
+        logger.warn("Missing login");
         ErrorMsg errMsg = new ErrorMsg(Integer.valueOf(HttpStatus.UNAUTHORIZED.toString()), "Missing login");
         return new Gson().toJson(errMsg);
     }
@@ -35,7 +35,7 @@ public class ExceptionController extends BaseController {
     @RequestMapping(value = "/403")
     @ResponseStatus(value = HttpStatus.FORBIDDEN)
     public String forbiddenDirectoryListing() {
-        logger.error("Forbidden directory listing");
+        logger.warn("Forbidden directory listing");
         ErrorMsg errMsg = new ErrorMsg(Integer.valueOf(HttpStatus.FORBIDDEN.toString()), "Forbidden directory listing");
         return new Gson().toJson(errMsg);
     }
@@ -64,7 +64,7 @@ public class ExceptionController extends BaseController {
     @RequestMapping(value = "/503")
     @ResponseStatus(value = HttpStatus.SERVICE_UNAVAILABLE)
     public ErrorMsg unsupportedServletMethod() {
-        logger.error("Unsupported servlet method");
+        logger.warn("Unsupported servlet method");
         return new ErrorMsg(Integer.valueOf(HttpStatus.SERVICE_UNAVAILABLE.toString()), "Unsupported servlet method");
     }
 
