@@ -7,13 +7,12 @@ import com.cloud.carads.account.service.ISMSService;
 import com.cloud.carads.commons.controller.BaseController;
 import com.cloud.carads.commons.entity.Error;
 import com.cloud.carads.commons.entity.ErrorMsg;
-import com.cloud.carads.commons.utils.MD5Util;
-import com.cloud.carads.constant.SystemConstant;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
+import org.springframework.security.crypto.password.StandardPasswordEncoder;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -53,7 +52,8 @@ public class RegisterController extends BaseController {
                 accountInfo.setGgrandId(infos.get(0).getGgrandId());
             }
         }
-        accountInfo.setPassword(MD5Util.MD5Encode(SystemConstant.PREFIX_MD5 + accountInfo.getPassword(), "UTF-8"));
+        accountInfo.setPassword(new StandardPasswordEncoder().encode(accountInfo.getPassword()));
+//        accountInfo.setPassword(MD5Util.MD5Encode(SystemConstant.PREFIX_MD5 + accountInfo.getPassword(), "UTF-8"));
         accountService.add(accountInfo);
         return new ErrorMsg(Error.SUCCESS.getValue(), Error.SUCCESS.getReasonPhrase(), accountInfo.getId());
     }
