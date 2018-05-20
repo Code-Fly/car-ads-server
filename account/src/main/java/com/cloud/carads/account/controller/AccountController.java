@@ -10,6 +10,8 @@ import com.cloud.carads.account.service.ISMSService;
 import com.cloud.carads.commons.controller.BaseController;
 import com.cloud.carads.commons.entity.Error;
 import com.cloud.carads.commons.entity.ErrorMsg;
+import com.cloud.carads.commons.utils.MD5Util;
+import com.cloud.carads.constant.SystemConstant;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
@@ -157,8 +159,8 @@ public class AccountController extends BaseController {
                 accountInfo.setGrandId(infos.get(0).getFatherId());
                 accountInfo.setGgrandId(infos.get(0).getGgrandId());
             }
-
         }
+        accountInfo.setPassword(MD5Util.MD5Encode(SystemConstant.PREFIX_MD5+accountInfo.getPassword(),"UTF-8"));
         accountService.add(accountInfo);
         return new ErrorMsg(Error.SUCCESS, "success", accountInfo.getId());
     }

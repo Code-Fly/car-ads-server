@@ -5,6 +5,8 @@ import com.cloud.carads.account.service.IAccountService;
 import com.cloud.carads.commons.controller.BaseController;
 import com.cloud.carads.commons.entity.Error;
 import com.cloud.carads.commons.entity.ErrorMsg;
+import com.cloud.carads.commons.utils.MD5Util;
+import com.cloud.carads.constant.SystemConstant;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
@@ -32,7 +34,7 @@ public class LoginController extends BaseController {
     ) {
         CAccountInfo template = new CAccountInfo();
         template.setUserName(userName);
-        template.setPassword(password);
+        template.setPassword(MD5Util.MD5Encode(SystemConstant.PREFIX_MD5+password,"UTF-8"));
 
         List<CAccountInfo> infos = accountService.getList(template, 0, 0);
         if (infos.size() == 0) {
