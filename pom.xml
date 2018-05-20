@@ -10,8 +10,12 @@
     <version>1.0-SNAPSHOT</version>
     <modules>
         <module>commons</module>
+        <module>eureka-server</module>
+        <module>config-server</module>
+        <module>zuul-gateway</module>
         <module>authorization</module>
         <module>account</module>
+        <module>system</module>
         <module>management-ui</module>
     </modules>
 

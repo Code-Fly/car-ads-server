@@ -1,6 +1,6 @@
 package com.cloud.carads.authorization.service.impl;
 
-import com.cloud.carads.authorization.service.UserService;
+import com.cloud.carads.authorization.service.IUserService;
 import com.cloud.carads.commons.service.BaseService;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
@@ -15,7 +15,7 @@ import java.util.Collection;
 import java.util.List;
 
 @Service
-public class UserServiceImpl extends BaseService implements UserService {
+public class UserServiceImpl extends BaseService implements IUserService {
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
         logger.info("===================获取到token已进入自定义验证：" + username);

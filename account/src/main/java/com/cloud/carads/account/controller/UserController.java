@@ -41,13 +41,7 @@ public class UserController extends BaseController {
     @ApiOperation(value = "根据id获取车主信息")
     public ErrorMsg getCAccountInfo(@ApiParam(value = "车主的id",required = true)
                                     @RequestParam(required = true)Long id){
-        CAccountInfo cAccountInfo = userService.selectByPrimaryKey(id);
-        if (null == cAccountInfo){
-            return new ErrorMsg(Error.C_NOT_EXITS, "车主不存在");
-        }else {
-            return new ErrorMsg(Error.SUCCESS, "SUCCESS",cAccountInfo);
-        }
-
+        return new ErrorMsg(Error.SUCCESS, "success",userService.selectByPrimaryKey(id));
     }
 
     @PostMapping(value = "/register", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
@@ -90,16 +84,15 @@ public class UserController extends BaseController {
 
     @PostMapping(value = "/login", produces = MediaType.APPLICATION_FORM_URLENCODED_VALUE)
     @ApiOperation(value = "登陆")
-    public ErrorMsg complete (@ApiParam(value = "用户名/手机号",required = true)
+    public ErrorMsg complete (@ApiParam(value = "用户名",required = true)
                               @RequestParam(required = true) String userName,
                               @ApiParam(value = "密码",required = true)
                               @RequestParam(required = true) String password
 
     ) {
-        String pwd = MD5Util.MD5Encode(SystemConstant.PREFIX_MD5+password,"UTF-8");
         CAccountInfoExample example = new CAccountInfoExample();
-        CAccountInfoExample.Criteria criteria = example.createCriteria().andUserNameEqualTo(userName).andPasswordEqualTo(pwd);
-        example.or(criteria.andMobileNoEqualTo(userName).andPasswordEqualTo(pwd));
+        example.createCriteria().andUserNameEqualTo(userName).andPasswordEqualTo(MD5Util.MD5Encode(SystemConstant.PREFIX_MD5+password,"UTF-8"));
+
         List<CAccountInfo> infos = userService.selectByExample(example);
         if(infos.size()==0){
             return new ErrorMsg(Error.LOGIN_PASSWORD_ERROR, "用户名密码错误");
@@ -110,17 +103,12 @@ public class UserController extends BaseController {
     }
 
     @GetMapping(value = "/querybyname", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
-    @ApiOperation(value = "根据用户名或者手机号获取已经审核通过（flag=1）的车主信息")
+    @ApiOperation(value = "根据用户名或者手机号获取车主信息")
     public ErrorMsg getCAccountInfoByname(@ApiParam(value = "车主的用户名/手机号", required = true)
                                           @RequestParam(required = true) String userName) {
         CAccountInfoExample example = new CAccountInfoExample();
         CAccountInfoExample.Criteria criteria = example.createCriteria().andUserNameEqualTo(userName).andFlagEqualTo(1);
         example.or(criteria.andMobileNoEqualTo(userName).andFlagEqualTo(1));
-        List<CAccountInfo> cAccountInfos = userService.selectByExample(example);
-        if (null == cAccountInfos){
-            return new ErrorMsg(Error.C_NOT_EXITS, "车主不存在,或未审核通过");
-        }else {
-            return new ErrorMsg(Error.SUCCESS, "SUCCESS",cAccountInfos.get(0));
-        }
+        return new ErrorMsg(Error.SUCCESS, "success", userService.selectByExample(example).get(0));
     }
 }

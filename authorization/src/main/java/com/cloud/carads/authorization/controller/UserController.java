@@ -23,7 +23,7 @@ public class UserController extends BaseController {
     @Autowired
     private TokenStore tokenStore;
 
-    @RequestMapping("/user")
+    @RequestMapping("/me")
     public User user(HttpServletRequest request) throws AuthorizationNotFoundException {
         String authHeader = request.getHeader("Authorization");
         logger.info("Authorization: " + authHeader);
