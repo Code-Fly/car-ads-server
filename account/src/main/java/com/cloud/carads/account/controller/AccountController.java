@@ -26,7 +26,7 @@ import java.util.List;
  */
 @RestController
 @Api(description = "用户管理接口", tags = "用户")
-public class UserController extends BaseController {
+public class AccountController extends BaseController {
     @Autowired
     private IAccountService accountService;
 
