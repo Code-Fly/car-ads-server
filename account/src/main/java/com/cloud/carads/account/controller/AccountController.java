@@ -138,7 +138,7 @@ public class AccountController extends BaseController {
         return new ErrorMsg(Error.SUCCESS.getValue(), Error.SUCCESS.getReasonPhrase(), accountService.delete(Arrays.asList(id)));
     }
 
-    @DeleteMapping(value = "/user", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
+    @DeleteMapping(value = "/users", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
     @ApiOperation(value = "批量删除车主信息")
     public ErrorMsg update(@ApiParam(value = "车主ids")
                            @RequestBody List<Long> ids
