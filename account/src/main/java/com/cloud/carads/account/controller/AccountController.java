@@ -100,13 +100,13 @@ public class AccountController extends BaseController {
         CAccountInfo tUserId = new CAccountInfo();
         tUserId.setId(id);
         users = accountService.getList(tUserId, 0, 0);
-        if (users.size() >= 0) {
+        if (users.size() >= 1) {
             return new ErrorMsg(Error.USER_ALREADY_EXIST_ERROR.getValue(), Error.USER_ALREADY_EXIST_ERROR.getReasonPhrase());
         }
         CAccountInfo tUserName = new CAccountInfo();
         tUserName.setUserName(accountInfo.getUserName());
         users = accountService.getList(tUserName, 0, 0);
-        if (users.size() >= 0) {
+        if (users.size() >= 1) {
             return new ErrorMsg(Error.USER_ALREADY_EXIST_ERROR.getValue(), Error.USER_ALREADY_EXIST_ERROR.getReasonPhrase());
         }
         if (null != accountInfo.getPassword()) {
