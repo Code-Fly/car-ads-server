@@ -108,11 +108,12 @@ public class CAppController extends BaseController {
     @ApiOperation(value = "更新版本信息")
     public ErrorMsg update(
             @ApiParam(value = "版本id")
-            @PathVariable Long id,
+            @PathVariable Integer id,
             @ApiParam(value = "用户信息,不需要使用的字段不添加或者写null")
             @RequestBody CAppVersion appVersion
 
     ) {
+        appVersion.setId(id);
         return new ErrorMsg(Error.SUCCESS.getValue(), Error.SUCCESS.getReasonPhrase(), cAppService.update(appVersion));
     }
 

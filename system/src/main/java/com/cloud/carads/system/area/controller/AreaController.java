@@ -83,10 +83,11 @@ public class AreaController extends BaseController {
     @ApiOperation(value = "更新区域信息")
     public ErrorMsg update(
             @ApiParam(value = "区域id")
-            @PathVariable Long id,
+            @PathVariable Integer id,
             @ApiParam(value = "用户信息,不需要使用的字段不添加或者写null")
             @RequestBody TAreainfo areainfo
     ) {
+        areainfo.setId(id);
         return new ErrorMsg(Error.SUCCESS.getValue(), Error.SUCCESS.getReasonPhrase(), areaService.update(areainfo));
     }
 

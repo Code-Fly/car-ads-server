@@ -98,6 +98,7 @@ public class DictionaryAttrController extends BaseController {
 
 
     ) {
+        tdictionaryAttr.setId(id);
         tdictionaryAttr.setUpdateTime(new Date());
         return new ErrorMsg(Error.SUCCESS.getValue(), Error.SUCCESS.getReasonPhrase(), dictionaryService.update(tdictionaryAttr));
     }
