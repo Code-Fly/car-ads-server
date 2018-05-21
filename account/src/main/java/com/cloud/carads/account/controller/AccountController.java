@@ -6,6 +6,7 @@ package com.cloud.carads.account.controller;
 import com.cloud.carads.account.entity.CAccountInfo;
 import com.cloud.carads.account.service.IAccountService;
 import com.cloud.carads.commons.controller.BaseController;
+import com.cloud.carads.commons.entity.DataGrid;
 import com.cloud.carads.commons.entity.Error;
 import com.cloud.carads.commons.entity.ErrorMsg;
 import io.swagger.annotations.Api;
@@ -68,7 +69,12 @@ public class AccountController extends BaseController {
 
         List<CAccountInfo> list = accountService.getList(template, page, rows);
 
-        return new ErrorMsg(Error.SUCCESS.getValue(), Error.SUCCESS.getReasonPhrase(), list);
+        DataGrid dg = new DataGrid();
+        long count = accountService.getListCount(template);
+        dg.setTotal(count);
+        dg.setRows(list);
+
+        return new ErrorMsg(Error.SUCCESS.getValue(), Error.SUCCESS.getReasonPhrase(), dg);
     }
 
     @GetMapping(value = "/user/{id}", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
