@@ -72,7 +72,7 @@ public class AreaController extends BaseController {
     @PostMapping(value = "/area", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
     @ApiOperation(value = "添加区域信息列表")
     public ErrorMsg add(
-            @ApiParam(value = "用户信息,不需要使用的字段不添加或者写null")
+            @ApiParam(value = "区域信息,不需要使用的字段不添加或者写null")
             @RequestBody TAreainfo areainfo
     ) {
         areaService.add(areainfo);
@@ -84,7 +84,7 @@ public class AreaController extends BaseController {
     public ErrorMsg update(
             @ApiParam(value = "区域id")
             @PathVariable Integer id,
-            @ApiParam(value = "用户信息,不需要使用的字段不添加或者写null")
+            @ApiParam(value = "区域信息,不需要使用的字段不添加或者写null")
             @RequestBody TAreainfo areainfo
     ) {
         areainfo.setId(id);

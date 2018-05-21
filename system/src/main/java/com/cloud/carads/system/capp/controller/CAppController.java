@@ -97,7 +97,7 @@ public class CAppController extends BaseController {
     @PostMapping(value = "/version", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
     @ApiOperation(value = "添加版本信息列表")
     public ErrorMsg add(
-            @ApiParam(value = "用户信息,不需要使用的字段不添加或者写null")
+            @ApiParam(value = "版本信息,不需要使用的字段不添加或者写null")
             @RequestBody CAppVersion areainfo
     ) {
         cAppService.add(areainfo);
@@ -109,7 +109,7 @@ public class CAppController extends BaseController {
     public ErrorMsg update(
             @ApiParam(value = "版本id")
             @PathVariable Integer id,
-            @ApiParam(value = "用户信息,不需要使用的字段不添加或者写null")
+            @ApiParam(value = "版本信息,不需要使用的字段不添加或者写null")
             @RequestBody CAppVersion appVersion
 
     ) {

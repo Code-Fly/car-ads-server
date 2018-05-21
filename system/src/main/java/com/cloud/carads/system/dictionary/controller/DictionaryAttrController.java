@@ -81,7 +81,7 @@ public class DictionaryAttrController extends BaseController {
     @PostMapping(value = "/dictionaryAttr", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
     @ApiOperation(value = "添加字典所有属性信息列表")
     public ErrorMsg add(
-            @ApiParam(value = "用户信息,不需要使用的字段不添加或者写null")
+            @ApiParam(value = "字典所有属性信息,不需要使用的字段不添加或者写null")
             @RequestBody TdictionaryAttr areainfo
     ) {
         dictionaryService.add(areainfo);
@@ -93,7 +93,7 @@ public class DictionaryAttrController extends BaseController {
     public ErrorMsg update(
             @ApiParam(value = "字典所有属性id")
             @PathVariable Long id,
-            @ApiParam(value = "用户信息,不需要使用的字段不添加或者写null")
+            @ApiParam(value = "字典所有属性信息,不需要使用的字段不添加或者写null")
             @RequestBody TdictionaryAttr tdictionaryAttr
 
 

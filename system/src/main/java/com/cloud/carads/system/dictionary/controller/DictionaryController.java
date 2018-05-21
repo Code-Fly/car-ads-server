@@ -28,7 +28,7 @@ public class DictionaryController extends BaseController {
     private IDictionaryService dictionaryService;
 
     @GetMapping(value = "/dictionary", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
-    @ApiOperation(value = "获取字典所有属性信息")
+    @ApiOperation(value = "获取字典详情信息")
     public ErrorMsg getList(
             @ApiParam(value = "字典code")
             @RequestParam(required = false) String dicCode,
@@ -56,7 +56,7 @@ public class DictionaryController extends BaseController {
     }
 
     @GetMapping(value = "/dictionary/{dicCode}", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
-    @ApiOperation(value = "获取字典所有属性信息列表")
+    @ApiOperation(value = "获取字典详情信息列表")
     public ErrorMsg getList(
             @ApiParam(value = "字典code")
             @PathVariable(required = false) String dicCode
@@ -70,9 +70,9 @@ public class DictionaryController extends BaseController {
     }
 
     @PostMapping(value = "/dictionary", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
-    @ApiOperation(value = "添加字典所有属性信息列表")
+    @ApiOperation(value = "添加字典详情信息列表")
     public ErrorMsg add(
-            @ApiParam(value = "用户信息,不需要使用的字段不添加或者写null")
+            @ApiParam(value = "字典详情,不需要使用的字段不添加或者写null")
             @RequestBody Tdictionary areainfo
     ) {
         dictionaryService.add(areainfo);
@@ -80,11 +80,11 @@ public class DictionaryController extends BaseController {
     }
 
     @PutMapping(value = "/dictionary/{dicCode}", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
-    @ApiOperation(value = "更新字典所有属性信息")
+    @ApiOperation(value = "更新字典详情信息")
     public ErrorMsg update(
             @ApiParam(value = "字典code")
             @PathVariable(required = false) String dicCode,
-            @ApiParam(value = "用户信息,不需要使用的字段不添加或者写null")
+            @ApiParam(value = "字典详情,不需要使用的字段不添加或者写null")
             @RequestBody Tdictionary tdictionary
 
 
@@ -95,7 +95,7 @@ public class DictionaryController extends BaseController {
     }
 
     @DeleteMapping(value = "/dictionary/{dicCode}", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
-    @ApiOperation(value = "删除字典所有属性信息")
+    @ApiOperation(value = "删除字典详情信息")
     public ErrorMsg update(
             @ApiParam(value = "字典code")
             @PathVariable(required = false) String dicCode
@@ -104,9 +104,9 @@ public class DictionaryController extends BaseController {
     }
 
     @DeleteMapping(value = "/dictionary", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
-    @ApiOperation(value = "批量删除字典所有属性信息")
+    @ApiOperation(value = "批量删除字典详情信息")
     public ErrorMsg update(
-            @ApiParam(value = "字典所有属性codes")
+            @ApiParam(value = "字典详情codes")
             @RequestBody List<String> dicCodes
     ) {
         return new ErrorMsg(Error.SUCCESS.getValue(), Error.SUCCESS.getReasonPhrase(), dictionaryService.delete(dicCodes));
