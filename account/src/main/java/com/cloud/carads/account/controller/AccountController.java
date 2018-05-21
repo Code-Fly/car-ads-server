@@ -103,6 +103,7 @@ public class AccountController extends BaseController {
         tUserName.setUserName(accountInfo.getUserName());
         users = accountService.getList(tUserName, 0, 0);
         if (users.size() >= 1) {
+            logger.error(Error.USER_ALREADY_EXIST_ERROR.getReasonPhrase());
             return new ErrorMsg(Error.USER_ALREADY_EXIST_ERROR.getValue(), Error.USER_ALREADY_EXIST_ERROR.getReasonPhrase());
         }
         if (null != accountInfo.getPassword()) {
