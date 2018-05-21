@@ -47,7 +47,7 @@ public class CAPPServiceImpl implements ICAppService {
         if (rows > 0 && page > 0) {
             condition.setPage(new Page((page - 1) * rows, rows));
         }
-        condition.setOrderByClause("`create_time` ASC");
+        condition.setOrderByClause("`update_time` ASC");
         return cappVersionMapper.selectByExample(condition);
     }
 
