@@ -91,24 +91,14 @@ public class AccountController extends BaseController {
         return new ErrorMsg(Error.SUCCESS.getValue(), Error.SUCCESS.getReasonPhrase(), list);
     }
 
-    @PostMapping(value = "/user/{id}", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
+    @PostMapping(value = "/user", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
     @ApiOperation(value = "添加车主信息列表")
-    public ErrorMsg add(@ApiParam(value = "车主id")
-                        @PathVariable Long id,
-                        @ApiParam(value = "用户信息,不需要使用的字段不添加或者写null")
+    public ErrorMsg add(@ApiParam(value = "用户信息,不需要使用的字段不添加或者写null")
                         @RequestBody CAccountInfo accountInfo
 
 
     ) {
-        accountInfo.setId(id);
-
         List<CAccountInfo> users;
-        CAccountInfo tUserId = new CAccountInfo();
-        tUserId.setId(id);
-        users = accountService.getList(tUserId, 0, 0);
-        if (users.size() >= 1) {
-            return new ErrorMsg(Error.USER_ALREADY_EXIST_ERROR.getValue(), Error.USER_ALREADY_EXIST_ERROR.getReasonPhrase());
-        }
         CAccountInfo tUserName = new CAccountInfo();
         tUserName.setUserName(accountInfo.getUserName());
         users = accountService.getList(tUserName, 0, 0);
