@@ -1,5 +1,6 @@
 package com.cloud.zuul.gateway.service.impl;
 
+import com.cloud.carads.commons.entity.DataGrid;
 import com.cloud.carads.commons.entity.Error;
 import com.cloud.carads.commons.entity.ErrorMsg;
 import com.cloud.carads.commons.service.BaseService;
@@ -40,8 +41,11 @@ public class UserServiceImpl extends BaseService implements IUserService {
             logger.error(response.getErrmsg());
             throw new UsernameNotFoundException(response.getErrmsg());
         } else {
-            List<CAccountInfo> users = new Gson().fromJson(new Gson().toJson(response.getData()), new TypeToken<List<CAccountInfo>>() {
+            DataGrid dataGrid = new Gson().fromJson(new Gson().toJson(response.getData()), DataGrid.class);
+
+            List<CAccountInfo> users = new Gson().fromJson(new Gson().toJson(dataGrid.getRows()), new TypeToken<List<CAccountInfo>>() {
             }.getType());
+
             if (users.size() != 1) {
                 logger.error("Username " + username + " not found");
                 throw new UsernameNotFoundException("Username " + username + " not found");
