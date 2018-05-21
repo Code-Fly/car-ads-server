@@ -110,7 +110,8 @@ public class AccountController extends BaseController {
             accountInfo.setPassword(new StandardPasswordEncoder().encode(accountInfo.getPassword()));
         }
         accountInfo.setCreateTime(new Date());
-        return new ErrorMsg(Error.SUCCESS.getValue(), Error.SUCCESS.getReasonPhrase(), accountService.add(accountInfo));
+        accountService.add(accountInfo);
+        return new ErrorMsg(Error.SUCCESS.getValue(), Error.SUCCESS.getReasonPhrase(), accountService.getList(accountInfo, 0, 0).get(0));
     }
 
     @PutMapping(value = "/user/{id}", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
