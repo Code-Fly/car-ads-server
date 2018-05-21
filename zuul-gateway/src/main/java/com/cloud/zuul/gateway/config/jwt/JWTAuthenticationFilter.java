@@ -22,16 +22,20 @@ import java.util.ArrayList;
  * @author zhaoxinguo on 2017/9/13.
  */
 public class JWTAuthenticationFilter extends BasicAuthenticationFilter {
+    private String jwtHeader;
+    private String jwtSecret;
 
-    public JWTAuthenticationFilter(AuthenticationManager authenticationManager) {
+    public JWTAuthenticationFilter(AuthenticationManager authenticationManager, String jwtHeader, String jwtSecret) {
         super(authenticationManager);
+        this.jwtHeader = jwtHeader;
+        this.jwtSecret = jwtSecret;
     }
 
     @Override
     protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain chain) throws IOException, ServletException {
-        String header = request.getHeader("Authorization");
+        String header = request.getHeader(jwtHeader);
 
-        if (header == null || !header.startsWith("Bearer ")) {
+        if (header == null) {
             chain.doFilter(request, response);
             return;
         }
@@ -44,12 +48,12 @@ public class JWTAuthenticationFilter extends BasicAuthenticationFilter {
     }
 
     private UsernamePasswordAuthenticationToken getAuthentication(HttpServletRequest request) {
-        String token = request.getHeader("Authorization");
+        String token = request.getHeader(jwtHeader);
         if (token != null) {
             // parse the token.
             String user = Jwts.parser()
-                    .setSigningKey("MyJwtSecret")
-                    .parseClaimsJws(token.replace("Bearer ", ""))
+                    .setSigningKey(jwtSecret)
+                    .parseClaimsJws(token)
                     .getBody()
                     .getSubject();
 

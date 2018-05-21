@@ -27,11 +27,17 @@ import java.util.Date;
  * @author zhaoxinguo on 2017/9/12.
  */
 public class JWTLoginFilter extends UsernamePasswordAuthenticationFilter {
+    private String jwtHeader;
+    private String jwtSecret;
+    private Long jwtExpire;
 
     private AuthenticationManager authenticationManager;
 
-    public JWTLoginFilter(AuthenticationManager authenticationManager) {
+    public JWTLoginFilter(AuthenticationManager authenticationManager, String jwtHeader, String jwtSecret, Long jwtExpire) {
         this.authenticationManager = authenticationManager;
+        this.jwtHeader = jwtHeader;
+        this.jwtSecret = jwtSecret;
+        this.jwtExpire = jwtExpire;
     }
 
     // 接收并解析用户凭证
@@ -62,10 +68,10 @@ public class JWTLoginFilter extends UsernamePasswordAuthenticationFilter {
 
         String token = Jwts.builder()
                 .setSubject(((org.springframework.security.core.userdetails.User) auth.getPrincipal()).getUsername())
-                .setExpiration(new Date(System.currentTimeMillis() + 60 * 60 * 24 * 1000))
-                .signWith(SignatureAlgorithm.HS512, "MyJwtSecret")
+                .setExpiration(new Date(System.currentTimeMillis() + jwtExpire))
+                .signWith(SignatureAlgorithm.HS512, jwtSecret)
                 .compact();
-        res.addHeader("Authorization", "Bearer " + token);
+        res.addHeader(jwtHeader, token);
     }
 
 }
