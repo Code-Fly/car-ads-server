@@ -44,7 +44,7 @@ public class SmsController extends BaseController {
         template.setChannel("aliyun");
         template.setFromIp(request.getRemoteAddr());
         template.setContent(String.valueOf(shortCode));
-        shortCode = smsService.add(template);
+        smsService.add(template);
         return new ErrorMsg(Error.SUCCESS.getValue(), Error.SUCCESS.getReasonPhrase(), shortCode);
     }
 

@@ -38,7 +38,7 @@ public class SMSServiceImpl implements ISMSService {
         if (rows > 0 && page > 0) {
             condition.setPage(new Page((page - 1) * rows, rows));
         }
-        condition.setOrderByClause("`update_time` ASC");
+        condition.setOrderByClause("`receiver_time` ASC");
         return logMapper.selectByExample(condition);
     }
 
