@@ -86,8 +86,6 @@ public class AreaController extends BaseController {
             @PathVariable Long id,
             @ApiParam(value = "用户信息,不需要使用的字段不添加或者写null")
             @RequestBody TAreainfo areainfo
-
-
     ) {
         return new ErrorMsg(Error.SUCCESS.getValue(), Error.SUCCESS.getReasonPhrase(), areaService.update(areainfo));
     }
