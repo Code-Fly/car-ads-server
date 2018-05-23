@@ -36,7 +36,15 @@ public enum Error {
     USER_ALREADY_EXIST_ERROR(30004, "User already exists"),
 
     C_NOT_EXITS(40001, "c not exists"),
-    C_FLAG_ERROR(40002, "c flag error");
+
+    C_FLAG_ERROR(40002, "c flag error"),
+    C_OLDPWD_ERROR(20001, "老密码错误"),
+    C_NAMEOCCUPY_ERROR(21001, "用户名已经被占用，请更换用户名"),
+    C_PHONEOCCUPY_ERROR(21002, "手机号已注册，请登录");
+
+
+
+
 
 
     private final int value;
