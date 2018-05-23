@@ -56,7 +56,7 @@ public class PasswordController extends BaseController {
 
         CAccountInfo template = new CAccountInfo();
         template.setUserName(userName);
-        List<CAccountInfo> users = accountService.getList(template, 10, 0);
+        List<CAccountInfo> users = accountService.getList(template, 0, 0);
         if (users.size() == 1) {
             CAccountInfo user = users.get(0);
             template.setId(user.getId());
@@ -87,7 +87,7 @@ public class PasswordController extends BaseController {
         info.setId(id);
         info.setPassword(new StandardPasswordEncoder().encode(oldPwd));
         info.setMobileNo(phoneNo);
-        List<CAccountInfo> infos =  accountService.getList(info,10,1);
+        List<CAccountInfo> infos =  accountService.getList(info,0,0);
         if (infos.size()==0){
             return new ErrorMsg(Error.C_OLDPWD_ERROR.getValue(), Error.C_OLDPWD_ERROR.getReasonPhrase());
         }
