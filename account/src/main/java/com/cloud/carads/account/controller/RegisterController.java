@@ -34,7 +34,7 @@ public class RegisterController extends BaseController {
                              @RequestBody(required = true) CAccountInfoDto accountInfo
     ) {
         // 校验验证码
-        ErrorMsg smsLog = smsService.queryLastSMSByPhone(accountInfo.getMobileNo());
+       // ErrorMsg smsLog = smsService.queryLastSMSByPhone(accountInfo.getMobileNo());
         //ToDO
        /* if (!accountInfo.getShortCode().equals(smsLog.getContent())){
             return new ErrorMsg(Error.SMS_SHORTCODE_ERROR, "验证码错误。");
