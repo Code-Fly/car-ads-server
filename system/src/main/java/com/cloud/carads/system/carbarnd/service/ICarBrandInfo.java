@@ -4,6 +4,6 @@ import com.cloud.carads.system.carbarnd.entity.CarBrandInfo;
 
 import java.util.List;
 
-public interface ICarBrandInfoInterface {
+public interface ICarBrandInfo {
     List<CarBrandInfo> getList(CarBrandInfo template);
 }

@@ -1,6 +1,7 @@
 package com.cloud.carads.authorization.config;
 
 import com.cloud.carads.authorization.service.IUserService;
+import com.cloud.carads.commons.config.DefaultPasswordEncoder;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -39,7 +40,8 @@ public class OAuthAuthorizationServerConfig extends AuthorizationServerConfigure
      * 加密方式
      */
     @Autowired
-    private OAuthPasswordEncoder passwordEncoder;
+    private DefaultPasswordEncoder passwordEncoder;
+
 
     @Autowired
     private DataSource dataSource;

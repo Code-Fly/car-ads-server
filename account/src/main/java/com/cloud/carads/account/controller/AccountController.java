@@ -5,6 +5,7 @@ package com.cloud.carads.account.controller;
 
 import com.cloud.carads.account.entity.CAccountInfo;
 import com.cloud.carads.account.service.IAccountService;
+import com.cloud.carads.commons.config.DefaultPasswordEncoder;
 import com.cloud.carads.commons.controller.BaseController;
 import com.cloud.carads.commons.entity.DataGrid;
 import com.cloud.carads.commons.entity.Error;
@@ -14,7 +15,6 @@ import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
-import org.springframework.security.crypto.password.StandardPasswordEncoder;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Arrays;
@@ -29,6 +29,9 @@ import java.util.List;
 public class AccountController extends BaseController {
     @Autowired
     private IAccountService accountService;
+
+    @Autowired
+    private DefaultPasswordEncoder passwordEncoder;
 
     @GetMapping(value = "/users", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
     @ApiOperation(value = "获取车主信息列表")
@@ -107,7 +110,7 @@ public class AccountController extends BaseController {
             return new ErrorMsg(Error.USER_ALREADY_EXIST_ERROR.getValue(), Error.USER_ALREADY_EXIST_ERROR.getReasonPhrase());
         }
         if (null != accountInfo.getPassword()) {
-            accountInfo.setPassword(new StandardPasswordEncoder().encode(accountInfo.getPassword()));
+            accountInfo.setPassword(passwordEncoder.encode(accountInfo.getPassword()));
         }
         accountInfo.setCreateTime(new Date());
         accountService.add(accountInfo);
@@ -125,7 +128,7 @@ public class AccountController extends BaseController {
     ) {
         accountInfo.setId(id);
         if (null != accountInfo.getPassword()) {
-            accountInfo.setPassword(new StandardPasswordEncoder().encode(accountInfo.getPassword()));
+            accountInfo.setPassword(passwordEncoder.encode(accountInfo.getPassword()));
         }
         accountInfo.setUpdateTime(new Date());
         return new ErrorMsg(Error.SUCCESS.getValue(), Error.SUCCESS.getReasonPhrase(), accountService.update(accountInfo));

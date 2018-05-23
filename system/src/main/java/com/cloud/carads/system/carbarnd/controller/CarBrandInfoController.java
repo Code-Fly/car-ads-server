@@ -4,7 +4,7 @@ package com.cloud.carads.system.carbarnd.controller;
 import com.cloud.carads.commons.entity.Error;
 import com.cloud.carads.commons.entity.ErrorMsg;
 import com.cloud.carads.system.carbarnd.entity.CarBrandInfo;
-import com.cloud.carads.system.carbarnd.service.ICarBrandInfoInterface;
+import com.cloud.carads.system.carbarnd.service.ICarBrandInfo;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
@@ -19,7 +19,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class CarBrandInfoController {
 
     @Autowired
-    private ICarBrandInfoInterface carBrandInfoInterface;
+    private ICarBrandInfo carBrandInfoInterface;
 
     @GetMapping(value = "/car/brandinfos", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
     @ApiOperation(value = "获取车辆品牌或者型号信息列表")

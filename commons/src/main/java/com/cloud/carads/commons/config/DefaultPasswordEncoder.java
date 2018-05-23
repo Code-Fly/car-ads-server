@@ -1,11 +1,11 @@
-package com.cloud.zuul.gateway.config.jwt;
+package com.cloud.carads.commons.config;
 
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.crypto.password.StandardPasswordEncoder;
 import org.springframework.stereotype.Component;
 
 @Component
-public class JwtPasswordEncoder implements PasswordEncoder {
+public class DefaultPasswordEncoder implements PasswordEncoder {
     @Override
     public String encode(CharSequence charSequence) {
         return new StandardPasswordEncoder().encode(charSequence);

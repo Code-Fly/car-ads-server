@@ -2,6 +2,7 @@ package com.cloud.carads.account.controller;
 
 import com.cloud.carads.account.entity.CAccountInfo;
 import com.cloud.carads.account.service.IAccountService;
+import com.cloud.carads.commons.config.DefaultPasswordEncoder;
 import com.cloud.carads.commons.controller.BaseController;
 import com.cloud.carads.commons.entity.Error;
 import com.cloud.carads.commons.entity.ErrorMsg;
@@ -11,7 +12,6 @@ import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
-import org.springframework.security.crypto.password.StandardPasswordEncoder;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -23,6 +23,9 @@ import java.util.List;
 public class PasswordController extends BaseController {
     @Autowired
     private IAccountService accountService;
+
+    @Autowired
+    private DefaultPasswordEncoder passwordEncoder;
 
     @PostMapping(value = "/user/password/validate", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
     @ApiOperation(value = "校验密码")
@@ -39,7 +42,7 @@ public class PasswordController extends BaseController {
         List<CAccountInfo> users = accountService.getList(template, 0, 0);
         if (users.size() == 1) {
             CAccountInfo user = users.get(0);
-            if (new StandardPasswordEncoder().matches(password, user.getPassword())) {
+            if (passwordEncoder.matches(password, user.getPassword())) {
                 return new ErrorMsg(Error.SUCCESS.getValue(), Error.SUCCESS.getReasonPhrase(), user);
             }
         }
@@ -60,39 +63,38 @@ public class PasswordController extends BaseController {
         if (users.size() == 1) {
             CAccountInfo user = users.get(0);
             template.setId(user.getId());
-            template.setPassword(new StandardPasswordEncoder().encode(password));
+            template.setPassword(passwordEncoder.encode(password));
             accountService.update(template);
             return new ErrorMsg(Error.SUCCESS.getValue(), Error.SUCCESS.getReasonPhrase(), password);
         }
         return new ErrorMsg(Error.USER_NOT_FOUND_ERROR.getValue(), Error.USER_NOT_FOUND_ERROR.getReasonPhrase());
     }
 
-    @PostMapping(value = "/user/password/modifyPwd", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
+    @PostMapping(value = "/user/password/change", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
     @ApiOperation(value = "修改密码")
     public ErrorMsg modifyPwd(
-                            @ApiParam(value = "用户id", required = true)
-                            @RequestParam(required = true) Long id,
-                            @ApiParam(value = "手机号", required = true)
-                          @RequestParam(required = true) String phoneNo,
-                          @ApiParam(value = "老密码", required = true)
-                          @RequestParam(required = true) String oldPwd,
-                          @ApiParam(value = "新密码", required = true)
-                          @RequestParam(required = true) String newPwd,
-                          @ApiParam(value = "短信验证码", required = true)
-                          @RequestParam(required = true) String shortCode
+            @ApiParam(value = "用户id")
+            @RequestParam(required = true) Long id,
+            @ApiParam(value = "手机号")
+            @RequestParam(required = true) String phoneNo,
+            @ApiParam(value = "老密码")
+            @RequestParam(required = true) String oldPwd,
+            @ApiParam(value = "新密码")
+            @RequestParam(required = true) String newPwd,
+            @ApiParam(value = "短信验证码")
+            @RequestParam(required = true) String shortCode
 
     ) {
         // TODO 短信验证码校验
         CAccountInfo info = new CAccountInfo();
         info.setId(id);
-        info.setPassword(new StandardPasswordEncoder().encode(oldPwd));
+        info.setPassword(passwordEncoder.encode(oldPwd));
         info.setMobileNo(phoneNo);
-        List<CAccountInfo> infos =  accountService.getList(info,0,0);
-        if (infos.size()==0){
+        List<CAccountInfo> infos = accountService.getList(info, 0, 0);
+        if (infos.size() == 0) {
             return new ErrorMsg(Error.C_OLDPWD_ERROR.getValue(), Error.C_OLDPWD_ERROR.getReasonPhrase());
-        }
-        else{
-            info.setPassword(new StandardPasswordEncoder().encode(newPwd));
+        } else {
+            info.setPassword(passwordEncoder.encode(newPwd));
             accountService.update(info);
         }
         return new ErrorMsg(Error.SUCCESS.getValue(), Error.SUCCESS.getReasonPhrase());

@@ -68,6 +68,7 @@ public class JWTLoginFilter extends UsernamePasswordAuthenticationFilter {
 
         String token = Jwts.builder()
                 .setSubject(((org.springframework.security.core.userdetails.User) auth.getPrincipal()).getUsername())
+                .setIssuedAt(new Date())
                 .setExpiration(new Date(System.currentTimeMillis() + jwtExpire))
                 .signWith(SignatureAlgorithm.HS512, jwtSecret)
                 .compact();

@@ -1,5 +1,6 @@
 package com.cloud.zuul.gateway.config.jwt;
 
+import com.cloud.carads.commons.config.DefaultPasswordEncoder;
 import com.cloud.zuul.gateway.service.IUserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -33,7 +34,7 @@ public class JwtWebSecurityConfig extends WebSecurityConfigurerAdapter {
     private IUserService userService;
 
     @Autowired
-    private JwtPasswordEncoder passwordEncoder;
+    private DefaultPasswordEncoder passwordEncoder;
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
