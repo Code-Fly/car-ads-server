@@ -17,7 +17,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 public interface IAccountService {
     @GetMapping(value = "/users", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
     ErrorMsg getUserByUserName(
-            @RequestParam("userName") String userName
+            @RequestParam(value = "userName", required = false) String userName
     );
 
 }
