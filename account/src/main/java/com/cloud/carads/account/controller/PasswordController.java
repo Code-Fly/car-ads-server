@@ -56,7 +56,7 @@ public class PasswordController extends BaseController {
 
         CAccountInfo template = new CAccountInfo();
         template.setUserName(userName);
-        List<CAccountInfo> users = accountService.getList(template, 0, 0);
+        List<CAccountInfo> users = accountService.getList(template, 10, 0);
         if (users.size() == 1) {
             CAccountInfo user = users.get(0);
             template.setId(user.getId());
