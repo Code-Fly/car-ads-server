@@ -66,4 +66,35 @@ public class PasswordController extends BaseController {
         }
         return new ErrorMsg(Error.USER_NOT_FOUND_ERROR.getValue(), Error.USER_NOT_FOUND_ERROR.getReasonPhrase());
     }
+
+    @PostMapping(value = "/user/password/modifyPwd", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
+    @ApiOperation(value = "修改密码")
+    public ErrorMsg modifyPwd(
+                            @ApiParam(value = "用户id", required = true)
+                            @RequestParam(required = true) Long id,
+                            @ApiParam(value = "手机号", required = true)
+                          @RequestParam(required = true) String phoneNo,
+                          @ApiParam(value = "老密码", required = true)
+                          @RequestParam(required = true) String oldPwd,
+                          @ApiParam(value = "新密码", required = true)
+                          @RequestParam(required = true) String newPwd,
+                          @ApiParam(value = "短信验证码", required = true)
+                          @RequestParam(required = true) String shortCode
+
+    ) {
+        // TODO 短信验证码校验
+        CAccountInfo info = new CAccountInfo();
+        info.setId(id);
+        info.setPassword(new StandardPasswordEncoder().encode(oldPwd));
+        info.setMobileNo(phoneNo);
+        List<CAccountInfo> infos =  accountService.getList(info,10,1);
+        if (infos.size()==0){
+            return new ErrorMsg(Error.C_OLDPWD_ERROR.getValue(), Error.C_OLDPWD_ERROR.getReasonPhrase());
+        }
+        else{
+            info.setPassword(new StandardPasswordEncoder().encode(newPwd));
+            accountService.update(info);
+        }
+        return new ErrorMsg(Error.SUCCESS.getValue(), Error.SUCCESS.getReasonPhrase());
+    }
 }
