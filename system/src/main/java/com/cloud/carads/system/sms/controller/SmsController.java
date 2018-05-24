@@ -15,6 +15,8 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
 import java.util.Arrays;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
 
 @RestController
@@ -50,7 +52,7 @@ public class SmsController extends BaseController {
 
 
     @GetMapping(value = "/smss/latest", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
-    @ApiOperation(value = "获取最新短信的车主app信息,返回的字段说明请看c_app_version表")
+    @ApiOperation(value = "获取最新的有效短信验证码")
     public ErrorMsg getAPPVersion(
             @ApiParam(value = "发送手机号码")
             @RequestParam(required = true) String phoneNo
@@ -58,7 +60,14 @@ public class SmsController extends BaseController {
         SmsLog template = new SmsLog();
         template.setPhoneNo(phoneNo);
         List<SmsLog> versions = smsService.getLatest(template);
-        return new ErrorMsg(Error.SUCCESS.getValue(), Error.SUCCESS.getReasonPhrase(), versions.get(0));
+        Calendar c=Calendar.getInstance();
+        c.add(Calendar.MINUTE, -1);//1分钟有效
+        if(versions.size()>0 && versions.get(0).getReceiverTime().compareTo(c.getTime())>0){
+            return new ErrorMsg(Error.SUCCESS.getValue(), Error.SUCCESS.getReasonPhrase(), versions.get(0));
+        }else{
+            return new ErrorMsg(Error.SUCCESS.getValue(), Error.SUCCESS.getReasonPhrase(), null);
+        }
+
     }
 
     @GetMapping(value = "/smss", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
