@@ -24,8 +24,13 @@ public class CarBrandInfoImpl implements ICarBrandInfo {
             criteria.andParentCodeEqualTo(template.getParentCode());
         }
         if (StringUtils.isNotEmpty(template.getModelCode())) {
-            criteria.andModelCodeEqualTo(template.getParentCode());
+            criteria.andModelCodeEqualTo(template.getModelCode());
         }
+
+        if (template.getLevel() != null) {
+            criteria.andLevelEqualTo(template.getLevel());
+        }
+
         if (StringUtils.isNotEmpty(template.getModelName())) {
             criteria.andModelNameLike("%" + template.getModelName() + "%");
         }

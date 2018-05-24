@@ -28,11 +28,15 @@ public class CarBrandInfoController {
                             @ApiParam(value = "品牌/型号name，支持模糊查询")
                             @RequestParam(required = false) String modelName,
                             @ApiParam(value = "父节点的code")
-                            @RequestParam(required = false) String parentCode) {
+                            @RequestParam(required = false) String parentCode,
+                            @ApiParam(value = "父节点的code")
+                                @RequestParam(required = false) Integer level
+                            ) {
         CarBrandInfo tem = new CarBrandInfo();
         tem.setModelCode(modelCode);
         tem.setModelName(modelName);
         tem.setParentCode(parentCode);
+        tem.setInLevel(level);
         return new ErrorMsg(Error.SUCCESS.getValue(), Error.SUCCESS.getReasonPhrase(), carBrandInfoInterface.getList(tem));
 
     }
