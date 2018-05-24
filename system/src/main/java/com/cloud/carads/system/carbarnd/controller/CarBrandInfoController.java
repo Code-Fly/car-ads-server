@@ -29,7 +29,7 @@ public class CarBrandInfoController {
                             @RequestParam(required = false) String modelName,
                             @ApiParam(value = "父节点的code")
                             @RequestParam(required = false) String parentCode,
-                            @ApiParam(value = "父节点的code")
+                            @ApiParam(value = "层级1是品牌2是型号")
                                 @RequestParam(required = false) Integer level
                             ) {
         CarBrandInfo tem = new CarBrandInfo();
