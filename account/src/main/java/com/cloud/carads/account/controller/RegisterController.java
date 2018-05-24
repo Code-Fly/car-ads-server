@@ -39,7 +39,7 @@ public class RegisterController extends BaseController {
                              @RequestBody(required = true) CAccountInfoDto accountInfo
     ) {
         // 校验验证码
-        SmsLog smsLog = new Gson().fromJson(new Gson().toJson(smsService.getAPPVersion(accountInfo.getMobileNo()).getData()), SmsLog.class);
+       // SmsLog smsLog = new Gson().fromJson(new Gson().toJson(smsService.getAPPVersion(accountInfo.getMobileNo()).getData()), SmsLog.class);
         //ToDO
        /* if (!accountInfo.getShortCode().equals(smsLog.getContent())) {
             return new ErrorMsg(Error.SMS_SHORTCODE_ERROR.getValue(), Error.SMS_SHORTCODE_ERROR.getReasonPhrase());
