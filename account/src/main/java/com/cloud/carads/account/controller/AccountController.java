@@ -130,6 +130,9 @@ public class AccountController extends BaseController {
         if (null != accountInfo.getPassword()) {
             accountInfo.setPassword(passwordEncoder.encode(accountInfo.getPassword()));
         }
+        if(null == accountInfo.getFlag()){
+            accountInfo.setFlag(0);
+        }
         accountInfo.setUpdateTime(new Date());
         return new ErrorMsg(Error.SUCCESS.getValue(), Error.SUCCESS.getReasonPhrase(), accountService.update(accountInfo));
     }
