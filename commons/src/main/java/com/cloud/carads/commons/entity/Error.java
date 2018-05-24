@@ -27,20 +27,20 @@ public enum Error {
     TIME_OUT_EXCEPTION(10025, "timeout exception"),
     AUTHORIZATION_FAILED_EXCEPTION(10026, "authorization failed exception"),
 
-    SMS_SEND_ERROR(20001, "sms send error"),
-    SMS_SHORTCODE_ERROR(20002, "sms shortcode error"),
+    SMS_SEND_ERROR(20001, "发信发送失败，请重试"),
+    SMS_SHORTCODE_ERROR(20002, "验证码发送失败 请重试"),
 
-    LOGIN_PASSWORD_ERROR(30001, "Username or password incorrect"),
+    LOGIN_PASSWORD_ERROR(30001, "用户名密码错误"),
     LOGIN_SYSTEM_ERROR(30002, "Login system error"),
     USER_NOT_FOUND_ERROR(30003, "Username incorrect"),
-    USER_ALREADY_EXIST_ERROR(30004, "User already exists"),
+    USER_ALREADY_EXIST_ERROR(30004, "用户已经存在"),
 
     C_NOT_EXITS(40001, "c not exists"),
 
     C_FLAG_ERROR(40002, "c flag error"),
-    C_OLDPWD_ERROR(20001, "老密码错误"),
-    C_NAMEOCCUPY_ERROR(21001, "用户名已经被占用，请更换用户名"),
-    C_PHONEOCCUPY_ERROR(21002, "手机号已注册，请登录");
+    C_OLDPWD_ERROR(50001, "老密码错误"),
+    C_NAMEOCCUPY_ERROR(51001, "用户名已经被占用，请更换用户名"),
+    C_PHONEOCCUPY_ERROR(51002, "手机号已注册，请登录");
 
 
 
