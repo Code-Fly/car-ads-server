@@ -78,7 +78,7 @@ public class PasswordController extends BaseController {
             @ApiParam(value = "手机号")
             @RequestParam(required = true) String phoneNo,
             @ApiParam(value = "老密码")
-            @RequestParam(required = true) String oldPwd,
+            @RequestParam(required = false) String oldPwd,
             @ApiParam(value = "新密码")
             @RequestParam(required = true) String newPwd,
             @ApiParam(value = "短信验证码")
@@ -88,15 +88,15 @@ public class PasswordController extends BaseController {
         // TODO 短信验证码校验
         CAccountInfo info = new CAccountInfo();
         info.setId(id);
-        info.setPassword(passwordEncoder.encode(oldPwd));
+        // info.setPassword(passwordEncoder.encode(oldPwd));
         info.setMobileNo(phoneNo);
-        List<CAccountInfo> infos = accountService.getList(info, 0, 0);
-        if (infos.size() == 0) {
-            return new ErrorMsg(Error.C_OLDPWD_ERROR.getValue(), Error.C_OLDPWD_ERROR.getReasonPhrase());
-        } else {
+        // List<CAccountInfo> infos = accountService.getList(info, 0, 0);
+      //   if (infos.size() == 0) {
+       //      return new ErrorMsg(Error.C_OLDPWD_ERROR.getValue(), Error.C_OLDPWD_ERROR.getReasonPhrase());
+       //  } else {
             info.setPassword(passwordEncoder.encode(newPwd));
             accountService.update(info);
-        }
+      //   }
         return new ErrorMsg(Error.SUCCESS.getValue(), Error.SUCCESS.getReasonPhrase());
     }
 }

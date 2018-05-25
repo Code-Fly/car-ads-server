@@ -41,23 +41,23 @@ public class RegisterController extends BaseController {
         // 校验验证码
         SmsLog smsLog = new Gson().fromJson(new Gson().toJson(smsService.getAPPVersion(accountInfo.getMobileNo()).getData()), SmsLog.class);
         //ToDO
-        if (!accountInfo.getShortCode().equals(smsLog.getContent())) {
+       /* if (!accountInfo.getShortCode().equals(smsLog.getContent())) {
             return new ErrorMsg(Error.SMS_SHORTCODE_ERROR.getValue(), Error.SMS_SHORTCODE_ERROR.getReasonPhrase());
-        }
+        }*/
         // 草稿未完善信息
         // 校验验证码用户名是否被占用
         CAccountInfo template = new CAccountInfo();
         template.setUserName(accountInfo.getUserName());
         List<CAccountInfo> users = accountService.getList(template, 0, 0);
         if (users.size() > 0) {
-            new ErrorMsg(Error.C_NAMEOCCUPY_ERROR.getValue(), Error.C_NAMEOCCUPY_ERROR.getReasonPhrase());
+         return   new ErrorMsg(Error.C_NAMEOCCUPY_ERROR.getValue(), Error.C_NAMEOCCUPY_ERROR.getReasonPhrase());
         } else {
             // 校验验证码手机号是否被占用
             template.setUserName(null);
             template.setMobileNo(accountInfo.getMobileNo());
             users = accountService.getList(template, 10, 0);
             if (users.size() > 0) {
-                new ErrorMsg(Error.C_PHONEOCCUPY_ERROR.getValue(), Error.C_PHONEOCCUPY_ERROR.getReasonPhrase());
+            return    new ErrorMsg(Error.C_PHONEOCCUPY_ERROR.getValue(), Error.C_PHONEOCCUPY_ERROR.getReasonPhrase());
             }
         }
         accountInfo.setFlag(9);
