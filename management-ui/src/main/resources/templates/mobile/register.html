@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:th="http://www.thymeleaf.org" lang="zh-cmn-Hans">
 <head>
     <meta http-equiv="pragma" content="no-cache"/>
     <meta http-equiv="cache-control" content="no-cache"/>
@@ -9,7 +9,93 @@
     <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no"/>
     <meta name="format-detection" content="telephone=no"/>
     <title>Title</title>
+    <base href="../"/>
+    <link rel="stylesheet" type="text/css" th:href="@{assets/css/weui.min.css}"/>
+    <link rel="stylesheet" type="text/css" th:href="@{assets/css/example.css}"/>
 </head>
-register
+<body>
+<div class="">
+    <div class="page__hd">
+        <h1 class="page__title">用户注册</h1>
+        <p class="page__desc">Register</p>
+    </div>
+    <div class="page__bd">
+        <div class="weui-cells weui-cells_form">
+            <div class="weui-cell weui-cell_vcode">
+                <div class="weui-cell__hd">
+                    <label class="weui-label">手机号码</label>
+                </div>
+                <div class="weui-cell__bd">
+                    <input class="weui-input" type="tel" placeholder="请输入手机号"/>
+                </div>
+                <div class="weui-cell__ft">
+                    <button class="weui-vcode-btn">获取验证码</button>
+                </div>
+            </div>
+
+            <div class="weui-cell">
+                <div class="weui-cell__hd"><label class="weui-label">用户名</label></div>
+                <div class="weui-cell__bd">
+                    <input class="weui-input" type="number" pattern="[0-9]*" placeholder="请输入用户名"/>
+                </div>
+            </div>
+        </div>
+
+        <div class="weui-cells weui-cells_form">
+            <div class="weui-cell">
+                <div class="weui-cell__hd"><label class="weui-label">设置密码</label></div>
+                <div class="weui-cell__bd">
+                    <input class="weui-input" type="password" placeholder="请输入密码"/>
+                </div>
+            </div>
+            <div class="weui-cell">
+                <div class="weui-cell__hd"><label class="weui-label">确认密码</label></div>
+                <div class="weui-cell__bd">
+                    <input class="weui-input" type="password" placeholder="请确认输入密码"/>
+                </div>
+            </div>
+        </div>
+
+        <div class="weui-cells weui-cells_form">
+            <div class="weui-cell">
+                <div class="weui-cell__hd"><label class="weui-label">手机验证码</label></div>
+                <div class="weui-cell__bd">
+                    <input class="weui-input" type="number" placeholder="请输入验证码"/>
+                </div>
+            </div>
+            <div class="weui-cell weui-cell_select">
+                <div class="weui-cell__bd">
+                    <select class="weui-select" name="select1">
+                        <option selected="" value="1">朋友推荐</option>
+                        <option value="2">网络广告</option>
+                        <option value="3">论坛贴吧</option>
+                    </select>
+                </div>
+            </div>
+            <div class="weui-cell">
+                <div class="weui-cell__hd"><label class="weui-label">邀请人</label></div>
+                <div class="weui-cell__bd">
+                    <input class="weui-input" type="text" placeholder="admin"/>
+                </div>
+            </div>
+        </div>
+
+        <label for="weuiAgree" class="weui-agree">
+            <input id="weuiAgree" type="checkbox" class="weui-agree__checkbox"/>
+            <span class="weui-agree__text">
+                阅读并同意<a href="javascript:void(0);">《相关条款》</a>
+            </span>
+        </label>
+
+        <div class="weui-cells__tips">*本页备注说明：新注册用户为未审核状态，只有完成资料后才会审核，通过审核的用户才可以接单和收到邀请信等信息。</div>
+
+        <div class="weui-btn-area">
+            <a class="weui-btn weui-btn_primary" href="javascript:" id="showTooltips">确定</a>
+        </div>
+    </div>
+    <div class="page__ft">
+        <a href="#"><img th:src="@{assets/image/weui/icon_footer_link.png}"/></a>
+    </div>
+</div>
 </body>
 </html>

@@ -43,6 +43,7 @@ public class OAuthWebSecurityConfig extends WebSecurityConfigurerAdapter {
                 // UI
                 .authorizeRequests()
                 .antMatchers("/login").permitAll()
+                .antMatchers("/assets/**").permitAll()
                 .antMatchers("/mobile/**").permitAll()
                 .anyRequest().authenticated()
                 // UI login / logout
