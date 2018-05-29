@@ -74,7 +74,7 @@ public class PasswordController extends BaseController {
     @ApiOperation(value = "修改密码")
     public ErrorMsg modifyPwd(
             @ApiParam(value = "用户id")
-            @RequestParam(required = true) Long id,
+            @RequestParam(required = false) Long id,
             @ApiParam(value = "手机号")
             @RequestParam(required = true) String phoneNo,
             @ApiParam(value = "老密码")
