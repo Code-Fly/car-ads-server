@@ -36,7 +36,7 @@ public class CarBrandInfoController {
         tem.setModelCode(modelCode);
         tem.setModelName(modelName);
         tem.setParentCode(parentCode);
-        tem.setInLevel(level);
+        tem.setLevel(level);
         return new ErrorMsg(Error.SUCCESS.getValue(), Error.SUCCESS.getReasonPhrase(), carBrandInfoInterface.getList(tem));
 
     }
