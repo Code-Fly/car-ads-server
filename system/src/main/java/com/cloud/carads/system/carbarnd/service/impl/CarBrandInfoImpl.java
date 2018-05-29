@@ -35,7 +35,7 @@ public class CarBrandInfoImpl implements ICarBrandInfo {
             criteria.andModelNameLike("%" + template.getModelName() + "%");
         }
         criteria.andFlagEqualTo(1);
-        carBrandInfoMapper.selectByExample(example);
-        return null;
+       
+        return carBrandInfoMapper.selectByExample(example);
     }
 }
