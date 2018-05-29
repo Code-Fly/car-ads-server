@@ -35,7 +35,7 @@ public enum Error {
     USER_NOT_FOUND_ERROR(30003, "Username incorrect"),
     USER_ALREADY_EXIST_ERROR(30004, "用户已经存在"),
 
-    C_NOT_EXITS(40001, "c not exists"),
+    C_NOT_EXITS(40001, "用户不存在"),
 
     C_FLAG_ERROR(40002, "c flag error"),
     C_OLDPWD_ERROR(50001, "老密码错误"),

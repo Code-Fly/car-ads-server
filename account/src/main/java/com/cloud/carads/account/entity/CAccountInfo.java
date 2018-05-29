@@ -1400,4 +1400,14 @@ public class CAccountInfo {
     public void setCarVideo(String carVideo) {
         this.carVideo = carVideo;
     }
+    @ApiModelProperty(value = "头衔地址", example = "zhangqw",position = 35,required=true)
+    private String headImg;
+
+    public String getHeadImg() {
+        return headImg;
+    }
+
+    public void setHeadImg(String headImg) {
+        this.headImg = headImg;
+    }
 }

@@ -49,36 +49,11 @@ public class PasswordController extends BaseController {
         return new ErrorMsg(Error.LOGIN_PASSWORD_ERROR.getValue(), Error.LOGIN_PASSWORD_ERROR.getReasonPhrase());
     }
 
-    @PostMapping(value = "/user/password/reset", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
-    @ApiOperation(value = "重置密码")
-    public ErrorMsg reset(@ApiParam(value = "用户名", required = true)
-                          @RequestParam(required = true) String userName
-
-    ) {
-        String password = UUIDKeyGenerator.getUUID();
-
-        CAccountInfo template = new CAccountInfo();
-        template.setUserName(userName);
-        List<CAccountInfo> users = accountService.getList(template, 0, 0);
-        if (users.size() == 1) {
-            CAccountInfo user = users.get(0);
-            template.setId(user.getId());
-            template.setPassword(passwordEncoder.encode(password));
-            accountService.update(template);
-            return new ErrorMsg(Error.SUCCESS.getValue(), Error.SUCCESS.getReasonPhrase(), password);
-        }
-        return new ErrorMsg(Error.USER_NOT_FOUND_ERROR.getValue(), Error.USER_NOT_FOUND_ERROR.getReasonPhrase());
-    }
-
     @PostMapping(value = "/user/password/change", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
-    @ApiOperation(value = "修改密码")
+    @ApiOperation(value = "重置密码")
     public ErrorMsg modifyPwd(
-            @ApiParam(value = "用户id")
-            @RequestParam(required = false) Long id,
             @ApiParam(value = "手机号")
             @RequestParam(required = true) String phoneNo,
-            @ApiParam(value = "老密码")
-            @RequestParam(required = false) String oldPwd,
             @ApiParam(value = "新密码")
             @RequestParam(required = true) String newPwd,
             @ApiParam(value = "短信验证码")
@@ -86,17 +61,16 @@ public class PasswordController extends BaseController {
 
     ) {
         // TODO 短信验证码校验
-        CAccountInfo info = new CAccountInfo();
-        info.setId(id);
-        // info.setPassword(passwordEncoder.encode(oldPwd));
-        info.setMobileNo(phoneNo);
-        // List<CAccountInfo> infos = accountService.getList(info, 0, 0);
-      //   if (infos.size() == 0) {
-       //      return new ErrorMsg(Error.C_OLDPWD_ERROR.getValue(), Error.C_OLDPWD_ERROR.getReasonPhrase());
-       //  } else {
-            info.setPassword(passwordEncoder.encode(newPwd));
-            accountService.update(info);
-      //   }
-        return new ErrorMsg(Error.SUCCESS.getValue(), Error.SUCCESS.getReasonPhrase());
+        CAccountInfo contions = new CAccountInfo();
+        contions.setMobileNo(phoneNo);
+        CAccountInfo template = new CAccountInfo();
+        template.setPassword(passwordEncoder.encode(newPwd));
+       int num =  accountService.update(contions,template);
+       if(num == 0){
+           return new ErrorMsg(Error.C_NOT_EXITS.getValue(), Error.C_NOT_EXITS.getReasonPhrase());
+       }else{
+           return new ErrorMsg(Error.SUCCESS.getValue(), Error.SUCCESS.getReasonPhrase());
+       }
+
     }
 }

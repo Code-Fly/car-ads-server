@@ -9,6 +9,7 @@ import com.cloud.carads.account.mapper.CAccountInfoMapper;
 import com.cloud.carads.account.service.IAccountService;
 import com.cloud.carads.commons.service.BaseService;
 import com.rosegun.plugin.Page;
+import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -119,6 +120,19 @@ public class AccountServiceImpl extends BaseService implements IAccountService {
     public int update(CAccountInfo template) {
         CAccountInfoExample condition = new CAccountInfoExample();
         condition.or().andIdEqualTo(template.getId());
+        return cAccountInfoMapper.updateByExampleSelective(template, condition);
+    }
+
+    @Override
+    public int update(CAccountInfo conditions,CAccountInfo template) {
+        CAccountInfoExample condition = new CAccountInfoExample();
+        CAccountInfoExample.Criteria criteria = condition.createCriteria();
+        if(StringUtils.isNotBlank(conditions.getMobileNo())){
+            criteria.andMobileNoEqualTo(conditions.getMobileNo());
+        }
+        if(StringUtils.isNotBlank(conditions.getUserName())){
+            criteria.andUserNameEqualTo(conditions.getUserName());
+        }
         return cAccountInfoMapper.updateByExampleSelective(template, condition);
     }
 

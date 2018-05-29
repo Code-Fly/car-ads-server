@@ -19,6 +19,8 @@ public interface IAccountService {
 
     int update(CAccountInfo template);
 
+    int update(CAccountInfo conditions,CAccountInfo template);
+
     int delete(List<Long> ids);
 
     List<CAccountInfo> removePassword(List<CAccountInfo> list);
