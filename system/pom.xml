@@ -13,7 +13,7 @@
     <artifactId>system</artifactId>
     <packaging>jar</packaging>
 
-    <name>Car Ads Server :: System</name>
+    <name>Car Ads Server :: System Configuration</name>
 
     <dependencies>
         <dependency>
