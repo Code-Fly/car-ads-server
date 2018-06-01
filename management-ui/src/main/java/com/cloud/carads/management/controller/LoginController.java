@@ -1,5 +1,6 @@
 package com.cloud.carads.management.controller;
 
+import com.cloud.carads.commons.controller.BaseController;
 import com.cloud.carads.commons.utils.ConfigUtil;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.core.context.SecurityContext;
@@ -16,7 +17,7 @@ import java.security.Principal;
 
 @Controller
 @RequestMapping(value = "/")
-public class LoginController {
+public class LoginController extends BaseController {
 
     @Value("${wechat.setting.appid}")
     public String WECHAT_SETTING_APP_ID;
