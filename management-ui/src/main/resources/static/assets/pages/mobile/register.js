@@ -1,5 +1,14 @@
 $(document).ready(function () {
     var vcode = null;
+    var userId = GetQueryString('userId');
+    var userName = GetQueryString('userName');
+    var infoFrom = GetQueryString('infoFrom');
+
+    if (!(userId != null && userName != null && infoFrom != null)) {
+        showWarning('页面参数有误!');
+    }
+
+    $('#fatherName').val(userName);
 
     function showWarning(message) {
         var $tooltips = $('.js_tooltips');
@@ -52,7 +61,7 @@ $(document).ready(function () {
         var password = $.trim($('#password').val());
         var password2 = $.trim($('#password2').val());
         var mobileNo = $.trim($('#mobileNo').val());
-        var check = shortCode != '' && userName != '' && password != '' && password2 != '' && mobileNo != ''
+        var check = shortCode != '' && userName != '' && password != '' && password2 != '' && mobileNo != '' && userId != '' && infoFrom != '';
         if (!check) {
             showWarning('表单有未完成项!');
         }
@@ -126,7 +135,8 @@ $(document).ready(function () {
             'userName': $('#userName').val(),
             'password': $('#password').val(),
             'mobileNo': $('#mobileNo').val(),
-            'infoFrom': 'COMMUNITY_ADS'
+            'infoFrom': infoFrom,
+            'fatherId': userId
         };
 
         $.ajax({

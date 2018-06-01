@@ -14,6 +14,7 @@
     <link rel="stylesheet" type="text/css" th:href="@{assets/css/example.css}"/>
     <script type="text/javascript" th:src="@{assets/js/jquery/jquery-1.11.3.min.js}"></script>
     <script type="text/javascript" th:src="@{assets/pages/mobile/register.js}"></script>
+    <script type="text/javascript" th:src="@{assets/js/utils/global.js}"></script>
 </head>
 <body>
 <div class="weui-toptips weui-toptips_warn js_tooltips">错误提示</div>
@@ -87,7 +88,7 @@
             <div class="weui-cell">
                 <div class="weui-cell__hd"><label class="weui-label">邀请人</label></div>
                 <div class="weui-cell__bd">
-                    <input class="weui-input" type="text" placeholder="admin"/>
+                    <input id="fatherName" class="weui-input" type="text" disabled="disabled"/>
                 </div>
             </div>
         </div>
