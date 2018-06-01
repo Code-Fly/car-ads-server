@@ -1,7 +1,9 @@
 $(document).ready(function () {
-    var $tooltips = $('.js_tooltips');
+    var vcode = null;
 
     function showWarning(message) {
+        var $tooltips = $('.js_tooltips');
+
         if ($tooltips.css('display') != 'none') return;
 
         // toptips的fixed, 如果有`animation`, `position: fixed`不生效
@@ -57,12 +59,65 @@ $(document).ready(function () {
         return check;
     }
 
-    $('#submit').on('click', function () {
+    function checkShortCode() {
+        var shortCode = $.trim($('#shortCode').val());
+        var check = shortCode == vcode;
+
+        if (!check) {
+            showWarning('手机验证码有误!');
+        }
+        return check;
+    }
+
+    $('#btnSendCode').click(function () {
+        var param = {
+            'phoneNo': $('#mobileNo').val()
+        };
+
+        $.ajax({
+            url: '/mobile/api/smss/send',
+            type: 'GET',
+            cache: false,
+            data: param,
+            success: function (r) {
+                if (r.hasOwnProperty('errcode')) {
+                    if ('0' == r.errcode) {
+                        setTimeout(function () {
+                            vcode = r.data;
+                            $('#shortCode').val(vcode);
+                        }, 1000);
+                    } else {
+                        showWarning(r.errmsg);
+                    }
+                } else {
+                    showWarning('请求失败!');
+                }
+            },
+            beforeSend: function (XMLHttpRequest) {
+                // MaskUtil.mask();
+                vcode = null;
+                showLoadingToast('正在发送中');
+            },
+            error: function (request) {
+                showWarning('请求失败!');
+            },
+            complete: function (XMLHttpRequest, textStatus) {
+                hideLoadingToast();
+            }
+
+        });
+    });
+
+    $('#submit').click(function () {
         if (!checkForm()) {
             return;
         }
 
         if (!checkPwd()) {
+            return;
+        }
+
+        if (!checkShortCode()) {
             return;
         }
 
