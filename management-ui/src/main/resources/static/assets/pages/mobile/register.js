@@ -79,6 +79,11 @@ $(document).ready(function () {
     }
 
     $('#btnSendCode').click(function () {
+        var mobileNo = $.trim($('#mobileNo').val());
+        if (mobileNo == '') {
+            showWarning('请输入手机号!');
+            return;
+        }
         var param = {
             'phoneNo': $('#mobileNo').val()
         };
