@@ -1,0 +1,111 @@
+$(document).ready(function () {
+    var $tooltips = $('.js_tooltips');
+
+    function showWarning(message) {
+        if ($tooltips.css('display') != 'none') return;
+
+        // toptips的fixed, 如果有`animation`, `position: fixed`不生效
+        $('.page.cell').removeClass('slideIn');
+        $tooltips.html(message);
+        $tooltips.css('display', 'block');
+        setTimeout(function () {
+            $tooltips.css('display', 'none');
+        }, 2000);
+    }
+
+    function showToast(message) {
+        var $toast = $('#toast');
+        $toast.find('.weui-toast__content').html(message);
+        if ($toast.css('display') != 'none') return;
+        $toast.fadeIn(100);
+        setTimeout(function () {
+            $toast.fadeOut(100);
+        }, 2000);
+    }
+
+    function showLoadingToast(message) {
+        var $loadingToast = $('#loadingToast');
+        $loadingToast.find('.weui-toast__content').html(message);
+        if ($loadingToast.css('display') != 'none') return;
+
+        $loadingToast.fadeIn(100);
+    }
+
+    function hideLoadingToast() {
+        var $loadingToast = $('#loadingToast');
+        $loadingToast.fadeOut(100);
+    }
+
+    function checkPwd() {
+        var check = $('#password').val() == $('#password2').val();
+        if (!check) {
+            showWarning('密码不一致!');
+        }
+        return check;
+    }
+
+    function checkForm() {
+        var shortCode = $.trim($('#shortCode').val());
+        var userName = $.trim($('#userName').val());
+        var password = $.trim($('#password').val());
+        var password2 = $.trim($('#password2').val());
+        var mobileNo = $.trim($('#mobileNo').val());
+        var check = shortCode != '' && userName != '' && password != '' && password2 != '' && mobileNo != ''
+        if (!check) {
+            showWarning('表单有未完成项!');
+        }
+        return check;
+    }
+
+    $('#submit').on('click', function () {
+        if (!checkForm()) {
+            return;
+        }
+
+        if (!checkPwd()) {
+            return;
+        }
+
+        var param = {
+            'shortCode': $('#shortCode').val(),
+            'userName': $('#userName').val(),
+            'password': $('#password').val(),
+            'mobileNo': $('#mobileNo').val(),
+            'infoFrom': 'COMMUNITY_ADS'
+        };
+
+        $.ajax({
+            url: '/mobile/api/register',
+            type: 'POST',
+            cache: false,
+            contentType: 'application/json;charset=UTF-8',
+            data: JSON.stringify(param),
+            success: function (r) {
+                if (r.hasOwnProperty('errcode')) {
+                    if ('0' == r.errcode) {
+                        setTimeout(function () {
+                            showToast('注册成功!');
+                        }, 1000);
+                    } else {
+                        showWarning(r.errmsg);
+                    }
+                } else {
+                    showWarning('请求失败!');
+                }
+            },
+            beforeSend: function (XMLHttpRequest) {
+                // MaskUtil.mask();
+                showLoadingToast('数据加载中');
+            },
+            error: function (request) {
+                showWarning('请求失败!');
+            },
+            complete: function (XMLHttpRequest, textStatus) {
+                hideLoadingToast();
+            }
+
+        });
+    });
+
+
+});
